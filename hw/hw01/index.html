@@ -91,8 +91,8 @@
         <header>
           <h1>
 
-            Homework 1: Variables & Functions, Control
-
+            <!-- Homework 1: Variables & Functions, Control -->
+            作业1：变量和函数，控制结构
 
 
             <ul class="inline-block list-inline">
@@ -110,11 +110,12 @@
 
 
 
-        <h2>Instructions</h2>
+        <!-- <h2>Instructions</h2> -->
+        <h2>说明</h2>
 
-        <p>Download <a href="hw01.zip">hw01.zip</a>.</p>
+        <p>下载 <a href="hw01.zip">hw01.zip</a>.</p>
 
-        <p><strong>Submission:</strong> When you are done, submit with <code>python3 ok
+        <!-- <p><strong>Submission:</strong> When you are done, submit with <code>python3 ok
   --submit</code>. You may submit more than once before the deadline; only the
           final submission will be scored. Check that you have successfully submitted
           your code on <a href="https://okpy.org/">okpy.org</a>. See <a
@@ -123,11 +124,17 @@
           submitting assignments.</p>
 
         <p><strong>Using Ok:</strong> If you have any questions about using Ok, please
-          refer to <a href="../../articles/using-ok.html">this guide.</a>
+          refer to <a href="../../articles/using-ok.html">this guide.</a> -->
 
+        <p><strong>提交：</strong>完成后使用<code>python3 ok
+          --submit</code>来提交代码。你可以在截止日期前多次提交；只有最后一次提交会被评分。请检查你是否成功提交了代码到<a
+            href="https://okpy.org/">okpy.org</a>。更多提交作业的说明请参见<a
+            href="../../lab/lab00#submitting-the-assignment">Lab0</a>。</p>
+        <p><strong>使用Ok:</strong>如果你对使用Ok有任何疑问，请参考<a href="../../articles/using-ok.html">本指南</a>。</p>
 
-        <p><strong>Readings:</strong> You might find the following references
-          useful:</p>
+        <!-- <p><strong>Readings:</strong> You might find the following references
+          useful:</p> -->
+        <p><strong>阅读材料：</strong>以下阅读材料可能对你有帮助</p>
         <ul>
           <li><a href="http://composingprograms.com/pages/12-elements-of-programming.html">Section 1.2</a></li>
           <li><a href="http://composingprograms.com/pages/13-defining-new-functions.html">Section 1.3</a></li>
@@ -135,24 +142,25 @@
           <li><a href="http://composingprograms.com/pages/15-control.html">Section 1.5</a></li>
         </ul>
 
-        <p><strong>Note:</strong> Some of these readings necessary for the homework questions will not be covered until
+        <!-- <p><strong>Note:</strong> Some of these readings necessary for the homework questions will not be covered until
           Monday's lecture on Control.</p>
 
 
         <p><strong>Grading:</strong> Homework is graded based on
           correctness. Each incorrect problem will decrease the total score by one point. There is a homework recovery
           policy as stated in the syllabus.
-          <strong>This homework is out of 2 points.</strong>
+          <strong>This homework is out of 2 points.</strong> -->
+        <p><strong>注意：</strong>其中一些阅读材料是作业问题所必需的，但直到周一的控制结构讲座才会涉及。</p>
+
+        <p><strong>评分：</strong>作业评分基于正确性。每个错误的问题将使总分减少一分。课程大纲中有作业恢复政策。
+          <strong>本次作业满分为2分。</strong>
+        </p>
 
 
 
 
-
-        <h1 id="required-questions">Required Questions</h1>
-
-
-
-        <button id='toggle-1' class='btn btn-outline btn-lg alwaystoggle toggle'>
+        <h1 id="required-questions">必答题</h1>
+        <!-- <button id='toggle-1' class='btn btn-outline btn-lg alwaystoggle toggle'>
           Hint Video<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-1">
@@ -175,7 +183,32 @@
 
         <p>Fill in the blanks in the following function for adding <code>a</code> to the
           absolute value of <code>b</code>, without calling <code>abs</code>. You may <strong>not</strong> modify any
-          of the provided code other than the two blanks.</p>
+          of the provided code other than the two blanks.</p> -->
+
+        <button id='toggle-1' class='btn btn-outline btn-lg alwaystoggle toggle'>
+          提示视频<noscript> (enable JavaScript)</noscript>
+        </button>
+        <div class="solution toggle-1">
+
+          <h3 id="assignment-hint-video">作业提示视频</h3>
+
+          <p>本视频为解决本次作业的问题提供一些指导。
+            <br>
+
+            <iframe width="560" height="315"
+              src="//player.bilibili.com/player.html?isOutside=true&aid=427281261&bvid=BV1s3411G7yM&cid=745904336&p=5&autoplay=0"
+              scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" autoplay=0></iframe>
+        </div>
+        </p>
+
+        <h3 class="question" id="q1">Q1: 课程大纲测验</h3> 请根据我们<a
+          href="https://cs61a.org/articles/about.html">课程大纲页面</a>上的政策完成<a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSeaHfn-kBxKMDgmrj1EISCRdw9NIS9MQlVf6WTrLHaHfTnscw/viewform?usp=sf_link">课程大纲测验</a>。
+        <h3 class="question" id="q2">Q2: A 加上 B 的绝对值</h3>
+
+        <p>
+          在以下函数中填空，在不调用<code>abs</code>函数的情况下将<code>a</code>加到<code>b</code>的绝对值上。除了两个空白处以外，你<strong>不能</strong>修改所提供的代码。
+        </p>
 
         <pre><code>from operator import add, sub
 
@@ -197,16 +230,20 @@ def a_plus_abs_b(a, b):
         f = _____
     return f(a, b)</code></pre>
 
-        <p>Use Ok to test your code:</p>
-        <pre><code class="nohighlight">python3 ok -q a_plus_abs_b</code></pre>
+        <!-- <p>Use Ok to test your code:</p>
+        <pre><code class="nohighlight">python3 ok -q a_plus_abs_b</code></pre> -->
+        <p>使用 Ok 来测试你的代码：</p>
+        <pre><code class="nohighlight">python3 ok -q a_plus_abs_b --local</code></pre>
 
 
-
-        <h3 class="question" id="q3">Q3: Two of Three</h3>
+        <!-- <h3 class="question" id="q3">Q3: Two of Three</h3>
 
         <p>Write a function that takes three <em>positive</em> numbers as arguments and returns the sum
           of the squares of the two smallest numbers. <strong>Use only a single line for
-            the body of the function.</strong></p>
+            the body of the function.</strong></p> -->
+        <h3 class="question" id="q3">Q3: 三个数中取两个</h3>
+
+        <p>编写一个函数，该函数接受三个<em>正数</em>作为参数，并返回其中两个最小数的平方和。<strong>函数体只能使用一行代码。</strong></p>
 
         <pre><code>def two_of_three(x, y, z):
     &quot;&quot;&quot;Return a*a + b*b, where a and b are the two smallest members of the
@@ -230,24 +267,26 @@ def a_plus_abs_b(a, b):
 </code></pre>
 
         <blockquote>
-          <p><strong>Hint:</strong> Consider using the <code>max</code> or <code>min</code> function:</p>
-
+          <!-- <p><strong>Hint:</strong> Consider using the <code>max</code> or <code>min</code> function:</p> -->
+          <p><strong>提示：</strong>考虑使用<code>max</code>或<code>min</code>函数：</p>
           <pre><code>&gt;&gt;&gt; max(1, 2, 3)
 3
 &gt;&gt;&gt; min(&#x2d;1, &#x2d;2, &#x2d;3)
 &#x2d;3</code></pre>
         </blockquote>
 
-        <p>Use Ok to test your code:</p>
-        <pre><code class="nohighlight">python3 ok -q two_of_three</code></pre>
+        <p>使用 Ok 来测试你的代码：</p>
+        <pre><code class="nohighlight">python3 ok -q two_of_three --local</code></pre>
 
 
 
-        <h3 class="question" id="q4">Q4: Largest Factor</h3>
+        <!-- <h3 class="question" id="q4">Q4: Largest Factor</h3>
 
         <p>Write a function that takes an integer <code>n</code> that is <strong>greater than 1</strong> and
-          returns the largest integer that is smaller than <code>n</code> and evenly divides <code>n</code>.</p>
+          returns the largest integer that is smaller than <code>n</code> and evenly divides <code>n</code>.</p> -->
+        <h3 class="question" id="q4">Q4: 最大因子</h3>
 
+        <p>编写一个函数，该函数接受一个<strong>大于1</strong>的整数<code>n</code>，并返回一个小于<code>n</code>且能整除<code>n</code>的最大整数。</p>
         <pre><code>def largest_factor(n):
     &quot;&quot;&quot;Return the largest factor of n that is smaller than n.
 
@@ -261,21 +300,28 @@ def a_plus_abs_b(a, b):
     "*** YOUR CODE HERE ***"
 </code></pre>
 
-        <blockquote>
+        <!-- <blockquote>
           <p><strong>Hint:</strong> To check if <code>b</code> evenly divides <code>a</code>,
             you can use the expression <code>a % b == 0</code>, which can be read as,
             "the remainder of dividing <code>a</code> by <code>b</code> is 0."</p>
+        </blockquote> -->
+        <blockquote>
+          <p><strong>提示：</strong>要确定<code>b</code>是否能整除<code>a</code>，
+            你可以使用表达式<code>a % b == 0</code>，它的意思是：
+            “<code>a</code>除以<code>b</code>的余数为0。”</p>
         </blockquote>
-
-        <p>Use Ok to test your code:</p>
-        <pre><code class="nohighlight">python3 ok -q largest_factor</code></pre>
-
+        <p>使用 Ok 来测试你的代码：</p>
+        <pre><code class="nohighlight">python3 ok -q largest_factor --local</code></pre>
 
 
-        <h3 class="question" id="q5">Q5: If Function vs Statement</h3>
+
+        <!-- <h3 class="question" id="q5">Q5: If Function vs Statement</h3>
 
         <p>Let's try to write a function that does the same thing as an <code>if</code>
-          statement.</p>
+          statement.</p> -->
+        <h3 class="question" id="q5">Q5: If 函数 vs 语句</h3>
+
+        <p>下面是一个函数，该函数与<code>if</code>语句执行相同的操作。</p>
 
         <pre><code>def if_function(condition, true_result, false_result):
     &quot;&quot;&quot;Return true_result if condition is a true value, and
@@ -294,13 +340,19 @@ def a_plus_abs_b(a, b):
         return true_result
     else:
         return false_result</code></pre>
-
+        <!-- 
         <p>Despite the doctests above, this function actually does <em>not</em> do the
           same thing as an <code>if</code> statement in all cases. To prove this fact,
           write functions <code>cond</code>, <code>true_func</code>, and <code>false_func</code> such that
           <code>with_if_statement</code>
           prints the number <code>47</code>, but <code>with_if_function</code> prints both <code>42</code> and
           <code>47</code>.
+        </p> -->
+        <p>尽管上面 doctests
+          的结果与<code>if</code>语句的结果相同，但实际上在任何情况下它并<em>不</em>与<code>if</code>语句执行相同的操作。
+          为了证明这一点，请你编写函数<code>cond</code>、<code>true_func</code>和<code>false_func</code>，使得
+          <code>with_if_statement</code>
+          打印数字<code>47</code>，但是<code>with_if_function</code>打印<code>42</code>和<code>47</code>。
         </p>
 
         <pre><code>def with_if_statement():
@@ -335,7 +387,7 @@ def false_func():
     "*** YOUR CODE HERE ***"
 </code></pre>
 
-        <blockquote>
+        <!-- <blockquote>
           <p><strong>Hint</strong>: If you are having a hard time identifying how an <code>if</code> statement and
             <code>if_function</code> differ, consider the <a
               href="http://composingprograms.com/pages/15-control.html#conditional-statements">rules of evaluation for
@@ -343,14 +395,18 @@ def false_func():
             and <a href="http://composingprograms.com/pages/12-elements-of-programming.html#call-expressions">call
               expressions</a>.
           </p>
+        </blockquote> -->
+        <blockquote>
+          <p><strong>提示</strong>：如果你很难区分<code>if</code>语句和<code>if_function</code>，
+            请看一下<a href="http://composingprograms.com/pages/15-control.html#conditional-statements">if 语句的求值规则</a>和<a
+              href="http://composingprograms.com/pages/12-elements-of-programming.html#call-expressions">调用表达式</a>。</p>
         </blockquote>
+        <p>使用 Ok 来测试你的代码：</p>
+        <pre><code class="nohighlight">python3 ok -q with_if_statement --local
+python3 ok -q with_if_function --local</code></pre>
 
-        <p>Use Ok to test your code:</p>
-        <pre><code class="nohighlight">python3 ok -q with_if_statement
-python3 ok -q with_if_function</code></pre>
 
-
-        <h3 class="question" id="q6">Q6: Hailstone</h3>
+        <!-- <h3 class="question" id="q6">Q6: Hailstone</h3>
 
         <p>Douglas Hofstadter's Pulitzer-prize-winning book, <em>Gödel, Escher, Bach</em>, poses
           the following mathematical puzzle.</p>
@@ -380,7 +436,27 @@ python3 ok -q with_if_function</code></pre>
         <p>This sequence of values of <code>n</code> is often called a Hailstone sequence. Write a
           function that takes a single argument with formal parameter name <code>n</code>, prints
           out the hailstone sequence starting at <code>n</code>, and returns the number of steps in
-          the sequence:</p>
+          the sequence:</p> -->
+        <h3 class="question" id="q6">Q6: 冰雹序列</h3>
+
+        <p>Douglas Hofstadter在普利策奖获奖书籍 <em>Gödel, Escher, Bach</em> 中提出了以下数学猜想。</p>
+
+        <ol>
+          <li>选择一个正整数<code>n</code>作为开始。</li>
+          <li>如果<code>n</code>是偶数，将它除以2。</li>
+          <li>如果<code>n</code>是奇数，将它乘以3再加1。</li>
+          <li>继续这个过程直到<code>n</code>变为1。</li>
+        </ol>
+
+        <p>数字<code>n</code>会上下波动，但最终会变为1（至少对于所有尝试过的数字来说——没有人曾经证明这个序列会终止）。类似地，冰雹在最终落到地面之前会在大气中上下波动。</p>
+
+        <blockquote>
+          <p><strong>突发新闻</strong>（或者至少在数学中最接近突发新闻的东西）。去年冰雹猜想有了<a
+              href="https://www.quantamagazine.org/mathematician-terence-tao-and-the-collatz-conjecture-20191211/">最新进展</a>，表明如果你重复这个过程，几乎所有的数字最终都会变为1。这不是一个完整的证明，但却是一个重大突破。
+          </p>
+        </blockquote>
+
+        <p>这个<code>n</code>值的序列通常被称为冰雹序列。编写一个函数，该函数接受一个名为<code>n</code>的形式参数，打印出从<code>n</code>开始的冰雹序列，并返回序列中的步骤数：</p>
 
         <pre><code>def hailstone(n):
     &quot;&quot;&quot;Print the hailstone sequence starting at n and return its
@@ -400,19 +476,22 @@ python3 ok -q with_if_function</code></pre>
     "*** YOUR CODE HERE ***"
 </code></pre>
 
-        <p>Hailstone sequences can get quite long! Try 27. What's the longest you can
+        <!-- <p>Hailstone sequences can get quite long! Try 27. What's the longest you can
           find?</p>
 
-        <p>Use Ok to test your code:</p>
-        <pre><code class="nohighlight">python3 ok -q hailstone</code></pre>
+        <p>Use Ok to test your code:</p> -->
+        <p>冰雹序列可能会变得非常长！试试27。你找到的最长序列是什么？</p>
+
+        <p>使用 Ok 来测试你的代码：</p>
+        <pre><code class="nohighlight">python3 ok -q hailstone --local</code></pre>
 
 
 
 
-        <h2 id="submit">Submit</h2>
-
-
-        <p>Make sure to submit this assignment by running:</p>
+        <!-- <h2 id="submit">Submit</h2>
+        <p>Make sure to submit this assignment by running:</p> -->
+        <h2 id="submit">提交</h2>
+        <p>确保通过运行以下命令提交此作业：</p>
 
         <pre><code>python3 ok &#x2d;&#x2d;submit</code></pre>
 
@@ -427,7 +506,7 @@ python3 ok -q with_if_function</code></pre>
 
       </div>
 
-      <div class='col-md-3 sticky'>
+      <!-- <div class='col-md-3 sticky'>
         <nav class='hidden-print hidden-sm hidden-xs sidebar'>
           <ul>
             <li><a href="#required-questions">Required Questions</a></li>
@@ -442,6 +521,25 @@ python3 ok -q with_if_function</code></pre>
             </ul>
             <ul>
               <li><a href="#submit">Submit</a></li>
+            </ul>
+          </ul>
+        </nav>
+      </div> -->
+      <div class='col-md-3 sticky'>
+        <nav class='hidden-print hidden-sm hidden-xs sidebar'>
+          <ul>
+            <li><a href="#required-questions">必答题</a></li>
+            <ul>
+              <li><a href="#assignment-hint-video">作业提示视频</a></li>
+              <li><a href="#q1">Q1: 课程大纲测验</a></li>
+              <li><a href="#q2">Q2: A 加上 B 的绝对值</a></li>
+              <li><a href="#q3">Q3: 三个数中取两个</a></li>
+              <li><a href="#q4">Q4: 最大因子</a></li>
+              <li><a href="#q5">Q5: If 函数 vs 语句</a></li>
+              <li><a href="#q6">Q6: 冰雹序列</a></li>
+            </ul>
+            <ul>
+              <li><a href="#submit">提交</a></li>
             </ul>
           </ul>
         </nav>

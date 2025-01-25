@@ -134,9 +134,11 @@
 
         <p>Here's a video that the Summer 2020 course staff made to guide you.</p>
 
-
-        <iframe width="560" height="315" src="https://youtube.com/embed/YlothkvwsJo" frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315"
+          src="//player.bilibili.com/player.html?isOutside=true&aid=427281261&bvid=BV1s3411G7yM&cid=743312521&p=2&autoplay=0"
+          scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+        <!-- <iframe width="560" height="315" src="https://youtube.com/embed/YlothkvwsJo" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
 
         <h2 id="setup">Setup</h2>
@@ -393,7 +395,8 @@ Are you sure you want to continue connecting (yes/no)?</code></pre>
             <code>winpty py &#x2d;3</code>, etc. as described below),
             but it will be painful, as you will have to remember to do this <em>every time</em> for the rest of the
             course!
-            Hence, we recommend that you go back and reinstall Git-Bash with the recommended options if possible.</p>
+            Hence, we recommend that you go back and reinstall Git-Bash with the recommended options if possible.
+          </p>
         </blockquote>
 
         <p>If everything succeeded, you are now able to launch a terminal on Windows by running Git-Bash.</p>
@@ -403,7 +406,8 @@ Are you sure you want to continue connecting (yes/no)?</code></pre>
             and/or
             enable TLS 1.2 (e.g. see <a href="https://support.microsoft.com/en-us/help/3140245">here</a> for Windows 7).
             You can check your TLS version by installing Python first, and running the following in
-            <code>python3</code>:</p>
+            <code>python3</code>:
+          </p>
 
           <pre><code>from json import loads; from urllib.request import urlopen;
 loads(urlopen(&#x27;https://www.howsmyssl.com/a/check&#x27;).read().decode(&#x27;UTF&#x2d;8&#x27;))[&#x27;tls_version&#x27;]</code></pre>
@@ -559,7 +563,8 @@ loads(urlopen(&#x27;https://www.howsmyssl.com/a/check&#x27;).read().decode(&#x27
                 here</a>.)
               Alternatively, go to the <code>WindowsApps</code> folder whose path is shown and just rename
               <code>python.exe</code> and <code>python3.exe</code>
-              to something else, or delete them entirely if you are able to. Then try again.</li>
+              to something else, or delete them entirely if you are able to. Then try again.
+            </li>
             <li>If Python doesn't run <em>at all</em>, and you used our automated installer:
               Go back and try installing using the manual method.</li>
             <li>If Python doesn't run <em>at all</em>, and you installed manually:
@@ -595,7 +600,8 @@ loads(urlopen(&#x27;https://www.howsmyssl.com/a/check&#x27;).read().decode(&#x27
         <blockquote>
           <p>Make sure your prompt contains a <code>$</code> somewhere in it and does not begin with
             <code>&gt;&gt;&gt;</code>. If it begins with <code>&gt;&gt;&gt;</code> you are still in a Python shell, and
-            you need to exit. See above for how.</p>
+            you need to exit. See above for how.
+          </p>
         </blockquote>
 
 
@@ -637,7 +643,8 @@ loads(urlopen(&#x27;https://www.howsmyssl.com/a/check&#x27;).read().decode(&#x27
         <pre><code>cd OneDrive/Desktop</code></pre>
 
         <p>If you're <em>not</em> already in your home directory, try <code>cd ~/Desktop</code> instead (or
-          <code>cd ~/OneDrive/Desktop</code>).</p>
+          <code>cd ~/OneDrive/Desktop</code>).
+        </p>
 
         <p>If you still can't find your Desktop directory, ask for help on Piazza or in office hours.</p>
 
@@ -650,7 +657,8 @@ loads(urlopen(&#x27;https://www.howsmyssl.com/a/check&#x27;).read().decode(&#x27
           <li><code>cd ~</code> (the tilde). Remember that <code>~</code> means home directory, so
             this command will always change to your home directory.</li>
           <li><code>cd</code> (<code>cd</code> on its own). Typing just <code>cd</code> is a shortcut for typing
-            <code>cd ~</code>.</li>
+            <code>cd ~</code>.
+          </li>
         </ul>
 
         <blockquote>
@@ -685,7 +693,8 @@ loads(urlopen(&#x27;https://www.howsmyssl.com/a/check&#x27;).read().decode(&#x27
         <p>At this point, let's create some more directories. First, make sure you are in
           the <code>~/Desktop/cs61a</code> directory. Then, create folders called <code>projects</code> and
           <code>lab</code>
-          inside of your <code>cs61a</code> folder:</p>
+          inside of your <code>cs61a</code> folder:
+        </p>
 
         <pre><code>cd ~/Desktop/cs61a
 mkdir projects
@@ -771,9 +780,11 @@ mkdir lab</code></pre>
         <ul>
           <li><code>ls</code>: <strong>l</strong>i<strong>s</strong>ts all files in the current directory</li>
           <li><code>cd &lt;path to directory&gt;</code>: <strong>c</strong>hange into the specified
-            <strong>d</strong>irectory</li>
+            <strong>d</strong>irectory
+          </li>
           <li><code>mkdir &lt;directory name&gt;</code>: <strong>m</strong>a<strong>k</strong>e a new
-            <strong>dir</strong>ectory with the given name</li>
+            <strong>dir</strong>ectory with the given name
+          </li>
           <li><code>mv &lt;source path&gt; &lt;destination path&gt;</code>: <strong>m</strong>o<strong>v</strong>e the
             file at the given source to the
             given destination</li>
@@ -1130,7 +1141,8 @@ URL: https://okpy.org/...</code></pre>
 
         <blockquote>
           <p>More information on Ok is available <a href="../../articles/using-ok.html">here</a>. You can also use the
-            <code>&#x2d;&#x2d;help</code> flag:</p>
+            <code>&#x2d;&#x2d;help</code> flag:
+          </p>
 
           <pre><code>python3 ok &#x2d;&#x2d;help</code></pre>
 
