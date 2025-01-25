@@ -10,7 +10,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="/assets/js/hl.js"></script>
+  <script src="../../assets/js/hl.js"></script>
   <script>
     // we aren't registering builtins since
     //      (1) they don't render differently in the current CSS from other names
@@ -21,17 +21,17 @@
     });
     hljs.initHighlightingOnLoad();
   </script>
-  <script src="/assets/js/dark-mode.js"></script>
+  <script src="../../assets/js/dark-mode.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Inconsolata|Roboto:300,400,500|Work+Sans:400,700">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/mono-blue.css">
-  <link rel="icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/mono-blue.css">
+  <link rel="icon" href="../../assets/images/favicon.ico">
 
 
 
-  <link href="/assets/css/project.css" rel="stylesheet" type="text/css">
+  <link href="../../assets/css/project.css" rel="stylesheet" type="text/css">
 
 
   <title>
@@ -49,29 +49,29 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">
-          <img style="max-width:60px; margin-top: -20px;" class="logo" src="/assets/images/logo.png" />
+        <a class="navbar-brand" href="../../">
+          <img style="max-width:60px; margin-top: -20px;" class="logo" src="../../assets/images/logo.png" />
         </a>
       </div>
 
       <div class="collapse navbar-collapse" id="navbar-collapse-section">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/weekly.html">Weekly Schedule</a></li>
-          <li><a href="/office-hours.html">Office Hours</a></li>
+          <li><a href="../../weekly.html">Weekly Schedule</a></li>
+          <li><a href="../../office-hours.html">Office Hours</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               Staff
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a href="/instructor.html">Instructors</a></li>
-              <li><a href="/TAs.html">TAs</a></li>
-              <li><a href="/tutors.html">Tutors</a></li>
-              <!-- <li><a href="/academic-interns.html">Academic Interns</a></li> -->
+              <li><a href="../../instructor.html">Instructors</a></li>
+              <li><a href="../../TAs.html">TAs</a></li>
+              <li><a href="../../tutors.html">Tutors</a></li>
+              <!-- <li><a href="../../academic-interns.html">Academic Interns</a></li> -->
             </ul>
           </li>
-          <li><a href="/resources.html">Resources</a></li>
-          <li><a href="/articles/about.html">Syllabus</a></li>
+          <li><a href="../../resources.html">Resources</a></li>
+          <li><a href="../../articles/about.html">Syllabus</a></li>
           <li><a href="https://piazza.com/berkeley/fall2020/cs61a" target="_blank">Piazza</a></li>
           <li><a href="https://denero.org/feedback.html" target="_blank">Feedback</a></li>
           <!--             <li><a href="https://edge.edx.org/courses/course-v1:BerkeleyX+CSW61A+2020_SP">EdX</a></li> -->
@@ -129,8 +129,8 @@
             enforced. The two points corresponding to the checkpoint will be added to the
             points given for correctness.</p>
 
-          <p>We've written a <a href="/articles/scheme-spec.html">language specification</a> and <a
-              href="/articles/scheme-builtins.html">built-in procedure
+          <p>We've written a <a href="../../articles/scheme-spec.html">language specification</a> and <a
+              href="../../articles/scheme-builtins.html">built-in procedure
               reference</a> for the CS 61A subset of Scheme that you'll be building
             in this project. You will not be responsible for implementing everything in
             these documents, but what you do implement should be consistent with the
@@ -165,7 +165,8 @@
           project includes several files, but all of your changes will be made to only
           four: <code>scheme.py</code>, <code>scheme_reader.py</code>, <code>questions.scm</code>, and
           <code>tests.scm</code>. Here
-          are all the files included in the archive:</p>
+          are all the files included in the archive:
+        </p>
 
         <ul>
           <li><code>scheme.py</code>: implements the REPL and a evaluator for Scheme expressions</li>
@@ -212,7 +213,8 @@
 
 
         <p>The project is worth 30 points assigned for correctness, which includes 1 point for passing all of
-          <code>tests.scm</code>.</p>
+          <code>tests.scm</code>.
+        </p>
 
 
         <p>You will turn in the following files:</p>
@@ -496,7 +498,8 @@ hello</code></pre>
                 <code>BuiltInProcedure</code> instance. If the procedure is a user-defined procedure,
                 <code>scheme_apply</code> creates a new call frame and calls <code>eval_all</code> on the body of the
                 procedure, resulting in a
-                mutually recursive eval-apply loop.</li>
+                mutually recursive eval-apply loop.
+              </li>
             </ul>
           </li>
           <li><strong>Print</strong>: This step prints the <code>__str__</code> representation of the obtained
@@ -627,7 +630,8 @@ scm&gt; true
           the tokens <code>&#x27;(&#x27;</code>, <code>&#x27;+&#x27;</code>, <code>&#x27;(&#x27;</code>, <code>2</code>,
           <code>3</code>, <code>&#x27;)&#x27;</code>, and <code>&#x27;)&#x27;</code>. See the
           doctests in <code>buffer.py</code> for more examples. You do not have to understand the
-          code in this file.</p>
+          code in this file.
+        </p>
 
         <p>You will write the parsing functionality, which consists of two mutually
           recursive functions <code>scheme_read</code> and <code>read_tail</code>. These functions each take
@@ -643,7 +647,8 @@ scm&gt; true
             and returns it. For the sake of simplicity, if we imagine <code>src</code> as a Python
             list such as <code>[4, &#x27;.&#x27;, 3, &#x27;)&#x27;]</code>, <code>src.pop_first()</code> will return
             <code>4</code>, and <code>src</code>
-            will be left with <code>[&#x27;.&#x27;, 3, &#x27;)&#x27;]</code>.</li>
+            will be left with <code>[&#x27;.&#x27;, 3, &#x27;)&#x27;]</code>.
+          </li>
           <li><code>src.current()</code>: returns the <strong>first</strong> token in <code>src</code> without removing
             it.
             For example, if <code>src</code> currently contains the tokens
@@ -729,7 +734,8 @@ repr: Pair(1, Pair(Pair(2, Pair(3, nil)), Pair(Pair(4, Pair(Pair(5, nil), nil)),
 
         <p>In this problem, you will implement the core functionality of the interpreter. You should fill in the
           <code>scheme_eval</code> function
-          and add any necessary functions/classes so that your interpreter is able to do the following:</p>
+          and add any necessary functions/classes so that your interpreter is able to do the following:
+        </p>
 
         <ul>
           <li>Evaluate self-evaluating atomic expressions including numbers, booleans, and nil</li>
@@ -744,9 +750,11 @@ repr: Pair(1, Pair(Pair(2, Pair(3, nil)), Pair(Pair(4, Pair(Pair(5, nil), nil)),
           special form (although you will
           in the next part). That is, your interpreter should be able to handle expressions such as
           <code>(define x 1)</code> but not <code>(define (foo x) 1)</code>
-          after this question.</p>
+          after this question.
+        </p>
 
-        <p>Remember to refer to the <a href="/articles/scheme-spec.html#define">Scheme Specifications</a> in order to
+        <p>Remember to refer to the <a href="../../articles/scheme-spec.html#define">Scheme Specifications</a> in order
+          to
           determine the behavior of <code>define</code> (and other special forms).</p>
 
         <p>We've provided a few classes that you will use in this part:</p>
@@ -757,7 +765,8 @@ repr: Pair(1, Pair(Pair(2, Pair(3, nil)), Pair(Pair(4, Pair(Pair(5, nil), nil)),
           <li>
             <p>The <code>BuiltinProcedure</code> class inherits from the <code>Procedure</code> class (since your
               interpreter should handle both user-defined and built-in procedures). The constructor for a
-              <code>BuiltinProcedure</code> creates two instance attributes</p>
+              <code>BuiltinProcedure</code> creates two instance attributes
+            </p>
 
             <ul>
               <li><code>fn</code> is a <em>Python</em> function implementing the built-in scheme procedure</li>
@@ -875,7 +884,8 @@ scm&gt; (eval (cons &#x27;car &#x27;(&#x27;(1 2))))
             this in the interpreter is by returning the Python value <code>None</code>.</li>
           <li>User-defined procedures in Scheme are the same as lambda procedures. For example, the expression
             <code>(define (foo x) x)</code> binds the
-            value <code>(lambda (x) x)</code> to the name <code>foo</code> in the current environment.</li>
+            value <code>(lambda (x) x)</code> to the name <code>foo</code> in the current environment.
+          </li>
           <li>The body of a procedure can contain multiple expressions, which will be represented as a list of
             expressions. Only the value that the
             final expression evaluates to will be returned by the function call.</li>
@@ -929,7 +939,8 @@ scm&gt; (print&#x2d;twice 1)
             form <code>mu</code></li>
         </ul>
 
-        <p>Make sure to read the <a href="/articles/scheme-spec.html">Scheme Specifications</a> for informaion on these
+        <p>Make sure to read the <a href="../../articles/scheme-spec.html">Scheme Specifications</a> for informaion on
+          these
           special forms. Here are some clarifications on their behavior
           which are not mentioned in the specifications.</p>
 
@@ -940,7 +951,8 @@ scm&gt; (print&#x2d;twice 1)
             procedures (evaluate the operator, evaluate the operand, apply the operator
             to the operands). However, <code>mu</code> procedures are <em>dynamically scoped</em> - meaning the
             <code>Frame</code> created by calling a <code>mu</code> procedure should have its parent as the
-            <code>Frame</code> it is called in, not the <code>Frame</code> it was defined in.</li>
+            <code>Frame</code> it is called in, not the <code>Frame</code> it was defined in.
+          </li>
         </ul>
 
         <p>Test your implementation before moving on:</p>
@@ -1251,14 +1263,16 @@ scm&gt; (zip &#x27;())
           <code>complete_apply</code>.
           This function is needed to implement the built-in <code>apply</code> procedure, as well as a few other
           built-in procedures.
-          You may additionally find it useful for your own code.</p>
+          You may additionally find it useful for your own code.
+        </p>
 
         <p>Currently, <code>complete_apply</code> just returns the result of calling <code>scheme_apply</code>. However,
           <code>complete_apply</code> differs
           from <code>scheme_apply</code> in that it should never return a thunk.
           Therefore, if <code>scheme_apply</code> returns a thunk, you should extract and evaluate the expression
           contained inside the
-          thunk instead, ensuring that you do not return a thunk.</p>
+          thunk instead, ensuring that you do not return a thunk.
+        </p>
 
         <p>Test your implementation using</p>
 
@@ -1400,27 +1414,27 @@ scm&gt; (for i &#x27;(1 2 3)
   <footer class="container">
     <div class="row text-center">
       <div class="col col-sm-4">
-        <h3><a href="/">CS 61A</a></h3>
+        <h3><a href="../../">CS 61A</a></h3>
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="/weekly.html">Weekly Schedule</a></li>
-          <li><a href="/office-hours.html">Office Hours</a></li>
-          <li><a href="/staff.html">Staff</a></li>
+          <li><a href="../../weekly.html">Weekly Schedule</a></li>
+          <li><a href="../../office-hours.html">Office Hours</a></li>
+          <li><a href="../../staff.html">Staff</a></li>
         </ul>
       </div>
       <div class="col col-sm-4">
-        <h3><a href="/resources.html">Resources</a></h3>
+        <h3><a href="../../resources.html">Resources</a></h3>
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="/articles/studying.html">Studying Guide</a></li>
-          <li><a href="/articles/debugging.html">Debugging Guide</a></li>
-          <li><a href="/articles/composition.html">Composition Guide</a></li>
+          <li><a href="../../articles/studying.html">Studying Guide</a></li>
+          <li><a href="../../articles/debugging.html">Debugging Guide</a></li>
+          <li><a href="../../articles/composition.html">Composition Guide</a></li>
         </ul>
       </div>
       <div class="col col-sm-4">
-        <h3><a href="/articles/about.html">Policies</a></h3>
+        <h3><a href="../../articles/about.html">Policies</a></h3>
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="/articles/about.html#assignments">Assignments</a></li>
-          <li><a href="/articles/about.html#exams">Exams</a></li>
-          <li><a href="/articles/about.html#grading">Grading</a></li>
+          <li><a href="../../articles/about.html#assignments">Assignments</a></li>
+          <li><a href="../../articles/about.html#exams">Exams</a></li>
+          <li><a href="../../articles/about.html#grading">Grading</a></li>
         </ul>
       </div>
     </div>
@@ -1428,7 +1442,7 @@ scm&gt; (for i &#x27;(1 2 3)
 
 
 
-  <script src="/assets/js/sketchy.js"></script>
+  <script src="../../assets/js/sketchy.js"></script>
   <script>
     $('.sidebar ul').addClass('nav nav-stacked noselect');
     $('body').scrollspy({

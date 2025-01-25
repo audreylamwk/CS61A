@@ -10,7 +10,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="/assets/js/hl.js"></script>
+  <script src="../../assets/js/hl.js"></script>
   <script>
     // we aren't registering builtins since
     //      (1) they don't render differently in the current CSS from other names
@@ -21,13 +21,13 @@
     });
     hljs.initHighlightingOnLoad();
   </script>
-  <script src="/assets/js/dark-mode.js"></script>
+  <script src="../../assets/js/dark-mode.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Inconsolata|Roboto:300,400,500|Work+Sans:400,700">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/mono-blue.css">
-  <link rel="icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/mono-blue.css">
+  <link rel="icon" href="../../assets/images/favicon.ico">
 
 
 
@@ -46,29 +46,29 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">
-          <img style="max-width:60px; margin-top: -20px;" class="logo" src="/assets/images/logo.png" />
+        <a class="navbar-brand" href="../../">
+          <img style="max-width:60px; margin-top: -20px;" class="logo" src="../../assets/images/logo.png" />
         </a>
       </div>
 
       <div class="collapse navbar-collapse" id="navbar-collapse-section">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/weekly.html">Weekly Schedule</a></li>
-          <li><a href="/office-hours.html">Office Hours</a></li>
+          <li><a href="../../weekly.html">Weekly Schedule</a></li>
+          <li><a href="../../office-hours.html">Office Hours</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               Staff
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a href="/instructor.html">Instructors</a></li>
-              <li><a href="/TAs.html">TAs</a></li>
-              <li><a href="/tutors.html">Tutors</a></li>
-              <!-- <li><a href="/academic-interns.html">Academic Interns</a></li> -->
+              <li><a href="../../instructor.html">Instructors</a></li>
+              <li><a href="../../TAs.html">TAs</a></li>
+              <li><a href="../../tutors.html">Tutors</a></li>
+              <!-- <li><a href="../../academic-interns.html">Academic Interns</a></li> -->
             </ul>
           </li>
-          <li><a href="/resources.html">Resources</a></li>
-          <li><a href="/articles/about.html">Syllabus</a></li>
+          <li><a href="../../resources.html">Resources</a></li>
+          <li><a href="../../articles/about.html">Syllabus</a></li>
           <li><a href="https://piazza.com/berkeley/fall2020/cs61a" target="_blank">Piazza</a></li>
           <li><a href="https://denero.org/feedback.html" target="_blank">Feedback</a></li>
           <!--             <li><a href="https://edge.edx.org/courses/course-v1:BerkeleyX+CSW61A+2020_SP">EdX</a></li> -->
@@ -297,7 +297,8 @@ add(x, y)</code>) to see what they evaluate to.</p>
           that we can use in PyCombinator at the bottom of <code>expr.py</code>. Note that our set
           of primitives doesn't include the operators <code>+</code>, <code>&#x2d;</code>, <code>*</code>,
           <code>/</code> -- these are
-          replaced by <code>add</code>, <code>sub</code>, etc.</p>
+          replaced by <code>add</code>, <code>sub</code>, etc.
+        </p>
 
         <p>Right now, any names (e.g. <code>add</code>) and call expressions (e.g. <code>add(2, 3)</code>) will
           output <code>None</code>. It's your job to implement <code>Name.eval</code> and <code>CallExpr.eval</code> so
@@ -504,7 +505,8 @@ CallExpr(Name(&#x27;add&#x27;), [Literal(2), Literal(3)])</code></pre>
         <ul>
           <li><code>parameters</code> -- a list of strings, e.g. <code>[&#x27;f&#x27;, &#x27;x&#x27;]</code></li>
           <li><code>body</code> -- an <code>Expr</code>, e.g.
-            <code>CallExpr(Name(&#x27;f&#x27;), [Name(&#x27;x&#x27;)])</code></li>
+            <code>CallExpr(Name(&#x27;f&#x27;), [Name(&#x27;x&#x27;)])</code>
+          </li>
           <li><code>parent</code> -- the parent environment in which we want to look up our variables.
             Notice that this is the environment the lambda function was defined in.
             <code>LambdaFunction</code>s are created in the <code>LambdaExpr.eval</code> method, and the current
@@ -628,7 +630,8 @@ except TypeError as e:
           will look for an except suite that handles <code>TypeError</code>s -- the second except
           suite. Generally, we want to specify exactly which exceptions we want to handle,
           such as <code>OverflowError</code> or <code>ZeroDivisionError</code> (or both!), rather than handling
-          all exceptions.</p>
+          all exceptions.
+        </p>
 
         <p>Notice that we can define the exception <code>as e</code>. This assigns the exception
           object to the variable <code>e</code>. This can be helpful when we want to use information
@@ -694,27 +697,27 @@ except TypeError as e:
   <footer class="container">
     <div class="row text-center">
       <div class="col col-sm-4">
-        <h3><a href="/">CS 61A</a></h3>
+        <h3><a href="../../">CS 61A</a></h3>
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="/weekly.html">Weekly Schedule</a></li>
-          <li><a href="/office-hours.html">Office Hours</a></li>
-          <li><a href="/staff.html">Staff</a></li>
+          <li><a href="../../weekly.html">Weekly Schedule</a></li>
+          <li><a href="../../office-hours.html">Office Hours</a></li>
+          <li><a href="../../staff.html">Staff</a></li>
         </ul>
       </div>
       <div class="col col-sm-4">
-        <h3><a href="/resources.html">Resources</a></h3>
+        <h3><a href="../../resources.html">Resources</a></h3>
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="/articles/studying.html">Studying Guide</a></li>
-          <li><a href="/articles/debugging.html">Debugging Guide</a></li>
-          <li><a href="/articles/composition.html">Composition Guide</a></li>
+          <li><a href="../../articles/studying.html">Studying Guide</a></li>
+          <li><a href="../../articles/debugging.html">Debugging Guide</a></li>
+          <li><a href="../../articles/composition.html">Composition Guide</a></li>
         </ul>
       </div>
       <div class="col col-sm-4">
-        <h3><a href="/articles/about.html">Policies</a></h3>
+        <h3><a href="../../articles/about.html">Policies</a></h3>
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="/articles/about.html#assignments">Assignments</a></li>
-          <li><a href="/articles/about.html#exams">Exams</a></li>
-          <li><a href="/articles/about.html#grading">Grading</a></li>
+          <li><a href="../../articles/about.html#assignments">Assignments</a></li>
+          <li><a href="../../articles/about.html#exams">Exams</a></li>
+          <li><a href="../../articles/about.html#grading">Grading</a></li>
         </ul>
       </div>
     </div>
@@ -722,7 +725,7 @@ except TypeError as e:
 
 
 
-  <script src="/assets/js/sketchy.js"></script>
+  <script src="../../assets/js/sketchy.js"></script>
   <script>
     $('.sidebar ul').addClass('nav nav-stacked noselect');
     $('body').scrollspy({

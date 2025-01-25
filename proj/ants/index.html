@@ -10,7 +10,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="/assets/js/hl.js"></script>
+  <script src="../../assets/js/hl.js"></script>
   <script>
     // we aren't registering builtins since
     //      (1) they don't render differently in the current CSS from other names
@@ -21,17 +21,17 @@
     });
     hljs.initHighlightingOnLoad();
   </script>
-  <script src="/assets/js/dark-mode.js"></script>
+  <script src="../../assets/js/dark-mode.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Inconsolata|Roboto:300,400,500|Work+Sans:400,700">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/mono-blue.css">
-  <link rel="icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/mono-blue.css">
+  <link rel="icon" href="../../assets/images/favicon.ico">
 
 
 
-  <link href="/assets/css/project.css" rel="stylesheet" type="text/css">
+  <link href="../../assets/css/project.css" rel="stylesheet" type="text/css">
 
 
   <title>
@@ -49,29 +49,29 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">
-          <img style="max-width:60px; margin-top: -20px;" class="logo" src="/assets/images/logo.png" />
+        <a class="navbar-brand" href="../../">
+          <img style="max-width:60px; margin-top: -20px;" class="logo" src="../../assets/images/logo.png" />
         </a>
       </div>
 
       <div class="collapse navbar-collapse" id="navbar-collapse-section">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/weekly.html">Weekly Schedule</a></li>
-          <li><a href="/office-hours.html">Office Hours</a></li>
+          <li><a href="../../weekly.html">Weekly Schedule</a></li>
+          <li><a href="../../office-hours.html">Office Hours</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               Staff
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a href="/instructor.html">Instructors</a></li>
-              <li><a href="/TAs.html">TAs</a></li>
-              <li><a href="/tutors.html">Tutors</a></li>
-              <!-- <li><a href="/academic-interns.html">Academic Interns</a></li> -->
+              <li><a href="../../instructor.html">Instructors</a></li>
+              <li><a href="../../TAs.html">TAs</a></li>
+              <li><a href="../../tutors.html">Tutors</a></li>
+              <!-- <li><a href="../../academic-interns.html">Academic Interns</a></li> -->
             </ul>
           </li>
-          <li><a href="/resources.html">Resources</a></li>
-          <li><a href="/articles/about.html">Syllabus</a></li>
+          <li><a href="../../resources.html">Resources</a></li>
+          <li><a href="../../articles/about.html">Syllabus</a></li>
           <li><a href="https://piazza.com/berkeley/fall2020/cs61a" target="_blank">Piazza</a></li>
           <li><a href="https://denero.org/feedback.html" target="_blank">Feedback</a></li>
           <!--             <li><a href="https://edge.edx.org/courses/course-v1:BerkeleyX+CSW61A+2020_SP">EdX</a></li> -->
@@ -443,7 +443,8 @@ will need to start unlocking from scratch.</p> -->
             attribute, representing their remaining health, and a <code>place</code> attribute, representing the
             <code>Place</code> where
             they are currently located. Each turn, every active <code>Insect</code> in the game
-            performs its <code>action</code>.</li>
+            performs its <code>action</code>.
+          </li>
           <li><code>Ant</code>: Represents ants. Each <code>Ant</code> subclass has special attributes or a
             special <code>action</code> that distinguish it from other <code>Ant</code> types. For example, a
             <code>HarvesterAnt</code> gets food for the colony and a <code>ThrowerAnt</code> attacks <code>Bee</code>s.
@@ -580,13 +581,15 @@ optional arguments:
           </tr>
           <tr>
             <td><img class="img-responsive center-block" src="assets/insects/ant_harvester.gif" /> <br>
-              <code>HarvesterAnt</code></td>
+              <code>HarvesterAnt</code>
+            </td>
             <td>2</td>
             <td>1</td>
           </tr>
           <tr>
             <td><img class="img-responsive center-block" src="assets/insects/ant_thrower.gif" /> <br>
-              <code>ThrowerAnt</code></td>
+              <code>ThrowerAnt</code>
+            </td>
             <td>3</td>
             <td>1</td>
             </td>
@@ -595,7 +598,8 @@ optional arguments:
         <p>Now that deploying <code>Ant</code>s cost food, we need to be able to gather more food!
           To fix this issue, implement the <code>HarvesterAnt</code> class. A <code>HarvesterAnt</code> is a
           type of <code>Ant</code> that adds one food to the <code>gamestate.food</code> total as its
-          <code>action</code>.</p>
+          <code>action</code>.
+        </p>
 
         <p>After writing code, test your implementation:</p>
 
@@ -796,7 +800,8 @@ optional arguments:
           </tr>
           <tr>
             <td><img class="img-responsive center-block" src="assets/insects/ant_longthrower.gif" /> <br>
-              <code>LongThrower</code></td>
+              <code>LongThrower</code>
+            </td>
             <td>2</td>
             <td>1</td>
           </tr>
@@ -816,7 +821,8 @@ optional arguments:
           <code>ThrowerAnt</code> that do
           not change its behavior. Then, implement the subclasses <code>LongThrower</code> and <code>ShortThrower</code>
           with appropriately
-          constrained ranges and correct food costs.</p>
+          constrained ranges and correct food costs.
+        </p>
 
         <blockquote>
           <p><em>Hint:</em> <code>float(&#x27;inf&#x27;)</code> returns an infinite positive value represented as a
@@ -895,7 +901,8 @@ python3 ok &#x2d;q 04</code></pre>
           <p><em>Hint:</em> To damage the <code>FireAnt</code>, call the <code>reduce_armor</code> method inherited from
             <code>Ant</code>.
             Do <em>not</em> call <code>self.reduce_armor</code>, or you'll end up stuck in a recursive loop. (Can you
-            see why?)</p>
+            see why?)
+          </p>
 
           <p><em>Hint:</em> To damage a <code>Bee</code>, call the <code>reduce_armor</code> method inherited from
             <code>Insect</code>.
@@ -991,7 +998,8 @@ python3 ok &#x2d;q 04</code></pre>
           </tr>
           <tr>
             <td><img class="img-responsive center-block" src="assets/insects/ant_hungry.gif" /> <br>
-              <code>HungryAnt</code></td>
+              <code>HungryAnt</code>
+            </td>
             <td>4</td>
             <td>1</td>
             </td>
@@ -1106,7 +1114,8 @@ python3 ok &#x2d;q 04</code></pre>
         <p>Once you've finished this problem, play a game that includes water. To access
           the <code>wet_layout</code> which includes water, add the <code>&#x2d;&#x2d;water</code> option (or
           <code>&#x2d;w</code> for
-          short) when you start the game.</p>
+          short) when you start the game.
+        </p>
 
         <pre><code>python3 ants_gui.py &#x2d;&#x2d;water</code></pre>
 
@@ -1142,7 +1151,8 @@ python3 ok &#x2d;q 04</code></pre>
           </tr>
           <tr>
             <td><img class="img-responsive center-block" src="assets/insects/ant_scuba.gif" /> <br>
-              <code>ScubaThrower</code></td>
+              <code>ScubaThrower</code>
+            </td>
             <td>6</td>
             <td>1</td>
           </tr>
@@ -1186,7 +1196,8 @@ python3 ok &#x2d;q 04</code></pre>
           </tr>
           <tr>
             <td><img class="img-responsive center-block" src="assets/insects/ant_queen.gif" /> <br>
-              <code>QueenAnt</code></td>
+              <code>QueenAnt</code>
+            </td>
             <td>7</td>
             <td>1</td>
           </tr>
@@ -1264,7 +1275,8 @@ python3 ok &#x2d;q 04</code></pre>
           </tr>
           <tr>
             <td><img class="img-responsive center-block" src="assets/insects/ant_ninja.gif" /> <br>
-              <code>NinjaAnt</code></td>
+              <code>NinjaAnt</code>
+            </td>
             <td>5</td>
             <td>1</td>
             </td>
@@ -1290,7 +1302,8 @@ python3 ok &#x2d;q 04</code></pre>
 
         <blockquote>
           <p><em>Hint</em>: Having trouble visualizing the test cases? Try drawing them out on paper! See the example in
-            <a href="#game-layout">Game Layout</a> for help.</p>
+            <a href="#game-layout">Game Layout</a> for help.
+          </p>
         </blockquote>
 
         <p>After writing code, test your implementation:</p>
@@ -1319,7 +1332,8 @@ python3 ok &#x2d;q 04</code></pre>
           </tr>
           <tr>
             <td><img class="img-responsive center-block" src="assets/insects/ant_bodyguard.gif" /> <br>
-              <code>BodyguardAnt</code></td>
+              <code>BodyguardAnt</code>
+            </td>
             <td>4</td>
             <td>2</td>
           </tr>
@@ -1357,7 +1371,8 @@ python3 ok &#x2d;q 04</code></pre>
             </ul>
 
             <p>Currently <code>Ant.can_contain</code> returns False by default; it needs to be overridden in
-              <code>ContainerAnt</code></p>
+              <code>ContainerAnt</code>
+            </p>
           </li>
           <li>
             <p>Modify <code>Ant.add_to</code> to allow a container and a non-container ant
@@ -1472,13 +1487,15 @@ python3 ok &#x2d;q 04</code></pre>
           </tr>
           <tr>
             <td><img class="img-responsive center-block" src="assets/insects/ant_slow.gif" /> <br>
-              <code>SlowThrower</code></td>
+              <code>SlowThrower</code>
+            </td>
             <td>4</td>
             <td>1</td>
           </tr>
           <tr>
             <td><img class="img-responsive center-block" src="assets/insects/ant_scary.gif" /> <br>
-              <code>ScaryThrower</code></td>
+              <code>ScaryThrower</code>
+            </td>
             <td>6</td>
             <td>1</td>
           </tr>
@@ -1566,7 +1583,8 @@ python3 ok &#x2d;q 04</code></pre>
           </tr>
           <tr>
             <td><img class="img-responsive center-block" src="assets/insects/ant_laser.gif" /> <br>
-              <code>LaserAnt</code></td>
+              <code>LaserAnt</code>
+            </td>
             <td>10</td>
             <td>1</td>
           </tr>
@@ -1755,27 +1773,27 @@ python3 ok &#x2d;q 04</code></pre>
   <footer class="container">
     <div class="row text-center">
       <div class="col col-sm-4">
-        <h3><a href="/">CS 61A</a></h3>
+        <h3><a href="../../">CS 61A</a></h3>
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="/weekly.html">Weekly Schedule</a></li>
-          <li><a href="/office-hours.html">Office Hours</a></li>
-          <li><a href="/staff.html">Staff</a></li>
+          <li><a href="../../weekly.html">Weekly Schedule</a></li>
+          <li><a href="../../office-hours.html">Office Hours</a></li>
+          <li><a href="../../staff.html">Staff</a></li>
         </ul>
       </div>
       <div class="col col-sm-4">
-        <h3><a href="/resources.html">Resources</a></h3>
+        <h3><a href="../../resources.html">Resources</a></h3>
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="/articles/studying.html">Studying Guide</a></li>
-          <li><a href="/articles/debugging.html">Debugging Guide</a></li>
-          <li><a href="/articles/composition.html">Composition Guide</a></li>
+          <li><a href="../../articles/studying.html">Studying Guide</a></li>
+          <li><a href="../../articles/debugging.html">Debugging Guide</a></li>
+          <li><a href="../../articles/composition.html">Composition Guide</a></li>
         </ul>
       </div>
       <div class="col col-sm-4">
-        <h3><a href="/articles/about.html">Policies</a></h3>
+        <h3><a href="../../articles/about.html">Policies</a></h3>
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="/articles/about.html#assignments">Assignments</a></li>
-          <li><a href="/articles/about.html#exams">Exams</a></li>
-          <li><a href="/articles/about.html#grading">Grading</a></li>
+          <li><a href="../../articles/about.html#assignments">Assignments</a></li>
+          <li><a href="../../articles/about.html#exams">Exams</a></li>
+          <li><a href="../../articles/about.html#grading">Grading</a></li>
         </ul>
       </div>
     </div>
@@ -1783,7 +1801,7 @@ python3 ok &#x2d;q 04</code></pre>
 
 
 
-  <script src="/assets/js/sketchy.js"></script>
+  <script src="../../assets/js/sketchy.js"></script>
   <script>
     $('.sidebar ul').addClass('nav nav-stacked noselect');
     $('body').scrollspy({

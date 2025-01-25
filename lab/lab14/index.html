@@ -10,7 +10,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="/assets/js/hl.js"></script>
+  <script src="../../assets/js/hl.js"></script>
   <script>
     // we aren't registering builtins since
     //      (1) they don't render differently in the current CSS from other names
@@ -21,13 +21,13 @@
     });
     hljs.initHighlightingOnLoad();
   </script>
-  <script src="/assets/js/dark-mode.js"></script>
+  <script src="../../assets/js/dark-mode.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Inconsolata|Roboto:300,400,500|Work+Sans:400,700">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/mono-blue.css">
-  <link rel="icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/mono-blue.css">
+  <link rel="icon" href="../../assets/images/favicon.ico">
 
 
 
@@ -46,29 +46,29 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">
-          <img style="max-width:60px; margin-top: -20px;" class="logo" src="/assets/images/logo.png" />
+        <a class="navbar-brand" href="../../">
+          <img style="max-width:60px; margin-top: -20px;" class="logo" src="../../assets/images/logo.png" />
         </a>
       </div>
 
       <div class="collapse navbar-collapse" id="navbar-collapse-section">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/weekly.html">Weekly Schedule</a></li>
-          <li><a href="/office-hours.html">Office Hours</a></li>
+          <li><a href="../../weekly.html">Weekly Schedule</a></li>
+          <li><a href="../../office-hours.html">Office Hours</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               Staff
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a href="/instructor.html">Instructors</a></li>
-              <li><a href="/TAs.html">TAs</a></li>
-              <li><a href="/tutors.html">Tutors</a></li>
-              <!-- <li><a href="/academic-interns.html">Academic Interns</a></li> -->
+              <li><a href="../../instructor.html">Instructors</a></li>
+              <li><a href="../../TAs.html">TAs</a></li>
+              <li><a href="../../tutors.html">Tutors</a></li>
+              <!-- <li><a href="../../academic-interns.html">Academic Interns</a></li> -->
             </ul>
           </li>
-          <li><a href="/resources.html">Resources</a></li>
-          <li><a href="/articles/about.html">Syllabus</a></li>
+          <li><a href="../../resources.html">Resources</a></li>
+          <li><a href="../../articles/about.html">Syllabus</a></li>
           <li><a href="https://piazza.com/berkeley/fall2020/cs61a" target="_blank">Piazza</a></li>
           <li><a href="https://denero.org/feedback.html" target="_blank">Feedback</a></li>
           <!--             <li><a href="https://edge.edx.org/courses/course-v1:BerkeleyX+CSW61A+2020_SP">EdX</a></li> -->
@@ -174,7 +174,8 @@
           <code>n</code> is
           greater than the length of <code>lst</code>, <code>(car new)</code> should be <code>lst</code> and
           <code>(cdr new)</code>
-          should be <code>nil</code>.</p>
+          should be <code>nil</code>.
+        </p>
 
         <solution>
 
@@ -378,7 +379,8 @@ class Check(object):
           <code>&#x2d;[5]</code> represents removing a "5" to the skeleton code.
           In the second example, we add in the letters "f", "o", and "r" and remove the letters "w", "h", "i", "l", and
           "e" from the skeleton code to
-          transform it to the submitted code.</p>
+          transform it to the submitted code.
+        </p>
 
         <blockquote>
           <p>Note: For simplicity, all whitespaces are stripped from both the skeleton and submitted code, so you don't
@@ -389,7 +391,8 @@ class Check(object):
           <code>skeleton_idx</code> and <code>code_idx</code>, the indices of the letters
           from <code>skeleton</code> and <code>code</code> which we are comparing. It returns two things: match, the
           sequence of edit corrections, and cost, the numer of edit
-          operations made. First, you should define your three base cases:</p>
+          operations made. First, you should define your three base cases:
+        </p>
 
         <ul>
           <li>If both <code>skeleton_idx</code> and <code>code_idx</code> are at the end of their respective strings,
@@ -397,14 +400,17 @@ class Check(object):
           <li>If we have not finished considering all letters in <code>skeleton</code> but we have considered all
             letters in <code>code</code>, then
             we simply need to delete all the remaining letters in <code>skeleton</code> to match it to
-            <code>code</code>.</li>
+            <code>code</code>.
+          </li>
           <li>If we have not finished considering all letters in <code>code</code> but we have considered all letters in
             <code>skeleton</code> , then
-            we simply need to add all the remaining letters in <code>code</code> to <code>skeleton</code>.</li>
+            we simply need to add all the remaining letters in <code>code</code> to <code>skeleton</code>.
+          </li>
         </ul>
 
         <p>Next, you should implement the rest of the edit operations for <code>align_skeleton</code> and
-          <code>helper_align</code>. You may not need all the lines provided.</p>
+          <code>helper_align</code>. You may not need all the lines provided.
+        </p>
 
         <solution>
 
@@ -645,27 +651,27 @@ def foldl2(link, fn, z):
   <footer class="container">
     <div class="row text-center">
       <div class="col col-sm-4">
-        <h3><a href="/">CS 61A</a></h3>
+        <h3><a href="../../">CS 61A</a></h3>
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="/weekly.html">Weekly Schedule</a></li>
-          <li><a href="/office-hours.html">Office Hours</a></li>
-          <li><a href="/staff.html">Staff</a></li>
+          <li><a href="../../weekly.html">Weekly Schedule</a></li>
+          <li><a href="../../office-hours.html">Office Hours</a></li>
+          <li><a href="../../staff.html">Staff</a></li>
         </ul>
       </div>
       <div class="col col-sm-4">
-        <h3><a href="/resources.html">Resources</a></h3>
+        <h3><a href="../../resources.html">Resources</a></h3>
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="/articles/studying.html">Studying Guide</a></li>
-          <li><a href="/articles/debugging.html">Debugging Guide</a></li>
-          <li><a href="/articles/composition.html">Composition Guide</a></li>
+          <li><a href="../../articles/studying.html">Studying Guide</a></li>
+          <li><a href="../../articles/debugging.html">Debugging Guide</a></li>
+          <li><a href="../../articles/composition.html">Composition Guide</a></li>
         </ul>
       </div>
       <div class="col col-sm-4">
-        <h3><a href="/articles/about.html">Policies</a></h3>
+        <h3><a href="../../articles/about.html">Policies</a></h3>
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="/articles/about.html#assignments">Assignments</a></li>
-          <li><a href="/articles/about.html#exams">Exams</a></li>
-          <li><a href="/articles/about.html#grading">Grading</a></li>
+          <li><a href="../../articles/about.html#assignments">Assignments</a></li>
+          <li><a href="../../articles/about.html#exams">Exams</a></li>
+          <li><a href="../../articles/about.html#grading">Grading</a></li>
         </ul>
       </div>
     </div>
@@ -673,7 +679,7 @@ def foldl2(link, fn, z):
 
 
 
-  <script src="/assets/js/sketchy.js"></script>
+  <script src="../../assets/js/sketchy.js"></script>
   <script>
     $('.sidebar ul').addClass('nav nav-stacked noselect');
     $('body').scrollspy({
