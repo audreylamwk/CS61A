@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 
 <head>
   <meta name="description" content="CS 61A: Structure and Interpretation of Computer Programs" />
@@ -53,8 +53,6 @@
 
       <div class="collapse navbar-collapse" id="navbar-collapse-section">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="../../weekly.html">Weekly Schedule</a></li>
-          <li><a href="../../office-hours.html">Office Hours</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
@@ -69,13 +67,16 @@
           </li>
           <li><a href="../../resources.html">Resources</a></li>
           <li><a href="../../articles/about.html">Syllabus</a></li>
-          <li><a href="https://piazza.com/berkeley/fall2020/cs61a" target="_blank">Piazza</a></li>
-          <li><a href="https://denero.org/feedback.html" target="_blank">Feedback</a></li>
-          <!--             <li><a href="https://edge.edx.org/courses/course-v1:BerkeleyX+CSW61A+2020_SP">EdX</a></li> -->
-          <!-- <li><a href="https://scheme.cs61a.org">Scheme</a></li> -->
-          <!-- <li><a href="https://sql.cs61a.org">SQL</a></li> -->
           <li><a href="https://code.cs61a.org">Code</a></li>
           <li><a href="http://tutor.cs61a.org">Tutor</a></li>
+          <li>
+            <a style="color:white; font-size: 15px;vertical-align: middle" href="https://github.com/ChillyHigh/CS61A-CN"
+              title="前往仓库" target="_blank">
+              <img height="21px" src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub"
+                style="filter: invert(1) brightness(1000%);">
+              <span style="vertical-align: middle;padding-left: 0.5rem;"> CS61A-CN</span>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -88,10 +89,11 @@
         <header>
           <h1>
 
-            Lab 1: Variables & Functions, Control
+            实验1: 变量和函数，控制结构
+            <br>
+            <small>Lab 1: Variables & Functions, Control</small>
 
-
-
+            <br>
             <ul class="inline-block list-inline">
               <li><a href="lab01.zip" class="label label-outline">lab01.zip</a></li>
             </ul>
@@ -105,71 +107,53 @@
 
 
 
+        <h3><a href="EN.html">查看英文原文</a></h3>
+        <h2 id='starter-files'>起始文件</h2>
 
-        <h2 id='starter-files'>Starter Files</h2>
+        <p>下载 <a href="lab01.zip">lab01.zip</a>。
+          在压缩包中，你会找到本实验问题的起始文件，
+          以及一份 <a href="ok">Ok</a> 自动评分器。</p>
+        <p>另外，请填写 <a href="https://forms.gle/BP3tcRgqPhHq4Ymf9">这份调查问卷</a>，告知我们你在实验0中遇到的任何问题，或者你是否使用了Windows自动安装程序。</p>
 
-        <p>Download <a href="lab01.zip">lab01.zip</a>.
-          Inside the archive, you will find starter files for the questions in this lab,
-          along with a copy of the <a href="ok">Ok</a> autograder.</p>
+        <p><strong>为了快速生成ok命令，你现在可以使用 <a href="https://links.cs61a.org/ok-help">ok命令生成器</a>。</strong></p>
 
-
-
-
-
-
-
-        <p>Additionally, please fill out <a href="https://forms.gle/BP3tcRgqPhHq4Ymf9">this survey</a> with any issues
-          you might have faced in Lab 0 Python installation or if you used the Windows automated installer.</p>
-
-        <p><strong>For quickly generating ok commands, you can now use the <a href="https://links.cs61a.org/ok-help">ok
-              command generator</a>.</strong></p>
-
-
-        <h1 id="quick-logistics-review">Quick Logistics Review</h1>
-
-
-
+        <h1 id="quick-logistics-review">快速检查</h1>
         <button id='toggle-1' class='btn btn-outline btn-lg alwaystoggle toggle'>
-          Using Python<noscript> (enable JavaScript)</noscript>
+          使用Python<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-1">
 
-          <h2 id="using-python">Using Python</h2>
+          <h2 id="using-python">使用 Python</h2>
 
 
-          <p>When running a Python file, you can use options on the command line
-            to inspect your code further. Here are a few that will come in handy.
-            If you want to learn more about other Python command-line options, take a look
-            at the <a href="https://docs.python.org/3.4/using/cmdline.html">documentation</a>.</p>
+          <p>在运行Python文件时，你可以使用命令行选项进一步检查你的代码。
+            以下是一些有用的选项。
+            如果你想了解更多关于其他Python命令行选项的信息，可以查看 <a href="https://docs.python.org/3.4/using/cmdline.html">此文档</a>。</p>
 
           <ul>
             <li>
-              <p>Using no command-line options will run the code in the file you
-                provide and return you to the command line.</p>
+              <p>不使用任何命令行选项：这将运行你提供的文件中的代码，并返回到命令行。</p>
 
               <pre><code>python3 foo.py</code></pre>
             </li>
             <li>
-              <p><strong><code>&#x2d;i</code></strong>: The <code>&#x2d;i</code> option runs your Python script, then
-                opens an interactive
-                session. In an interactive session, you run Python code line by line and get
-                immediate feedback instead of running an entire file all at once. To exit,
-                type <code>exit()</code> into the interpreter prompt. You can also use the keyboard
-                shortcut <code>Ctrl&#x2d;D</code> on Linux/Mac machines or <code>Ctrl&#x2d;Z  Enter</code> on Windows.
-              </p>
+              <p><strong><code>&#x2d;i</code></strong>：<code>&#x2d;i</code>选项会运行你的 Python 脚本，然后打开一个交互式会话。
+                在交互式会话中，你可以逐行运行 Python 代码，并实时得到结果，而不是一次性运行整个文件。
+                你可以输入<code>exit()</code>来退出。也可以使用 Linux/Mac 系统中的快捷键<code>Ctrl&#x2d;D</code>
+                或者 Windows 系统中的<code>Ctrl&#x2d;Z  Enter</code>来退出。</p>
 
-              <p>If you edit the Python file while running it interactively, you will need to
-                exit and restart the interpreter in order for those changes to take effect.</p>
+
+              <p>如果在交互模式下运行 Python 文件时编辑了文件，你需要退出并重新启动解释器，才能让更改生效。</p>
 
               <pre><code>python3 &#x2d;i foo.py</code></pre>
             </li>
             <li>
-              <p><strong><code>&#x2d;m doctest</code></strong>: Runs doctests in a particular file. Doctests are
-                surrounded by triple quotes (<code>&quot;&quot;&quot;</code>) within functions.</p>
+              <p><strong><code>&#x2d;m doctest</code></strong>：在特定文件中运行doctests。
+                doctests可用于测试函数中用三引号(<code>&quot;&quot;&quot;</code>)包裹的测试样例。</p>
 
-              <p>Each test in the file consists of <code>&gt;&gt;&gt;</code> followed by some Python code and
-                the expected output (though the <code>&gt;&gt;&gt;</code> are not seen in the output of the
-                doctest command).</p>
+              <p>文件中的每个测试都由 <code>&gt;&gt;&gt;</code> 开头，
+                后跟一些 Python 代码和预期的输出（不过 <code>&gt;&gt;&gt;</code>
+                不会出现在 doctest 命令的输出中）。</p>
 
               <pre><code> python3 &#x2d;m doctest foo.py</code></pre>
 
@@ -177,56 +161,50 @@
         <br>
 
         <button id='toggle-2' class='btn btn-outline btn-lg alwaystoggle toggle'>
-          Using OK<noscript> (enable JavaScript)</noscript>
+          使用OK<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-2">
 
-          <h2 id="using-ok">Using OK</h2>
+          <h2 id="using-ok">使用OK</h2>
           </li>
           </ul>
 
-          <p>In 61A, we use a program called Ok for autograding labs, homeworks, and
-            projects. You should have Ok in the starter files downloaded at the start of
-            this lab. For more information on using Ok commands, learn more
-            <a href="http://cs61a.org/articles/using-ok.html">here</a>.
+          <p>在 CS61A 课程中，我们使用 Ok 来对实验、作业和项目进行自动评分。在本实验的起始文件中，你应该已经下载了 Ok。要了解更多关于 Ok 命令的使用信息，请点击<a
+              href="../../articles/using-ok.html">这里</a>.
           </p>
 
-          <p><strong>You can quickly generate most ok commands at <a
-                href="https://links.cs61a.org/ok-help">links.cs61a.org/ok-help</a>!</strong></p>
+          <p><strong>你可以在 <a href="https://links.cs61a.org/ok-help">links.cs61a.org/ok-help</a> 快速生成大多数 Ok 命令！</strong>
+          </p>
 
-          <p>To use Ok to run doctests for a
-            specified function, run the following command:</p>
+          <p>要使用 Ok 运行指定函数的 doctest，请运行以下命令：</p>
 
-          <pre><code>python3 ok &#x2d;q &lt;specified function&gt;</code></pre>
+          <pre><code>python3 ok &#x2d;q &lt;指定函数名&gt; &#x2d;&#x2d;local</code></pre>
 
-          <p>By default, only tests that did not pass will show up. You can use the <code>&#x2d;v</code>
-            option to show all tests, including tests you have passed:</p>
+          <p>默认情况下，只有未通过的测试会显示出来。你可以使用 <code>&#x2d;v</code>
+            选项来查看所有测试，包括你已通过的测试：</p>
 
           <pre><code>python3 ok &#x2d;v</code></pre>
 
-          <p>You can also use the debug printing feature in OK by writing</p>
+          <p>你还可以在 Ok 中使用调试打印功能，方法如下：</p>
 
           <pre><code>print(&quot;DEBUG:&quot;, x)</code></pre>
 
-          <p>Finally, when you have finished all the questions in
-            <a href="lab01.py">lab01.py</a>, you must submit the assignment using the
-            <code>&#x2d;&#x2d;submit</code> option:
+          <p>最后，当你完成了
+            <a href="lab01.py">lab01.py</a> 中的所有问题后，必须使用
+            <code>&#x2d;&#x2d;submit</code> 选项提交作业：
           </p>
 
           <pre><code>python3 ok &#x2d;&#x2d;submit</code></pre>
 
-          <p>For more Ok commands, visit <a href="https://cal-cs-61a-staff.github.io/ok-help/">here</a>.
+          <p>要了解更多 Ok 命令，请访问<a href="https://cal-cs-61a-staff.github.io/ok-help/">这里</a>.
         </div>
         </p>
 
 
-        <h1 id="topics">Topics</h1>
+        <h1 id="topics">主要内容</h1>
 
 
-        <p>Consult this section if you need a refresher on the material for this lab. It's
-          okay to skip directly to <a href="#required-questions">the questions</a> and refer back
-          here should you get stuck.</p>
-
+        <p>如果你需要复习本实验的内容，请参考这一部分。你也可以直接跳到<a href="#required-questions">问题部分</a>，遇到困难时再回来看这里。</p>
 
         <button id='toggle-3' class='btn btn-outline btn-lg alwaystoggle toggle'>
           Division<noscript> (enable JavaScript)</noscript>
@@ -629,24 +607,23 @@ TypeError: square() takes 1 positional argument but 2 were given</code></pre>
         </div>
         </p>
 
-        <h1 id="required-questions">Required Questions</h1>
+        <h1 id="required-questions">必答题</h1>
         </li>
         </ul>
 
 
-        <h2 id="what-would-python-display-part-1">What Would Python Display? (Part 1)</h2>
+        <h2 id="what-would-python-display-part-1">Python会输出什么？ (Part 1)</h2>
 
 
-        <h3 class="question" id="q1">Q1: WWPD: Control</h3>
+        <h3 class="question" id="q1">Q1: WWPD: 控制</h3>
 
         <blockquote>
-          <p>Use Ok to test your knowledge with the following "What Would Python Display?"
-            questions:</p>
+          <p>使用 Ok 的 "Python会输出什么？" 的题目来测试你的学习成果：</p>
 
-          <pre><code>python3 ok &#x2d;q control &#x2d;u</code></pre>
+          <pre><code>python3 ok &#x2d;q control &#x2d;u &#x2d;&#x2d;local</code></pre>
 
-          <p><strong>Hint</strong>: Make sure your <code>while</code> loop conditions eventually evaluate to a false
-            value, or they'll never stop! Typing <code>Ctrl&#x2d;C</code> will stop infinite loops in the interpreter.
+          <p><strong>提示</strong>: 确保你的 <code>while</code> 循环的判断条件最终为 False ，不然你的程序将进入死循环。
+            按 <code>Ctrl&#x2d;C</code> 来停止
           </p>
         </blockquote>
 
@@ -725,13 +702,12 @@ TypeError: square() takes 1 positional argument but 2 were given</code></pre>
         </button>
 
 
-        <h3 class="question" id="q2">Q2: WWPD: Veritasiness</h3>
+        <h3 class="question" id="q2">Q2: WWPD: 值的真假</h3>
 
         <blockquote>
-          <p>Use Ok to test your knowledge with the following "What Would Python Display?"
-            questions:</p>
+          <p>使用 Ok 的 "Python会输出什么？" 的题目来测试你的学习成果：</p>
 
-          <pre><code>python3 ok &#x2d;q short&#x2d;circuit &#x2d;u</code></pre>
+          <pre><code>python3 ok &#x2d;q short&#x2d;circuit &#x2d;u &#x2d;&#x2d;local</code></pre>
         </blockquote>
 
         <pre><code>&gt;&gt;&gt; True and 13
@@ -779,29 +755,27 @@ TypeError: square() takes 1 positional argument but 2 were given</code></pre>
         </button>
 
 
-        <h3 class="question" id="q3">Q3: Debugging Quiz!</h3>
+        <h3 class="question" id="q3">Q3: 调试测验!</h3>
 
-        <p>The following is a quick quiz on different debugging techniques you should use
-          in this class. You should refer to <a href="../../articles/debugging.html">this document</a> to
-          answer the questions!</p>
+        <p>以下是一个关于本课程中应使用的不同调试技巧的快速测验。你应该参考<a href="../../articles/debugging.html">此文档</a>来回答问题！
+        </p>
+        <p>运行以下命令开始测验：</p>
 
-        <p>Run the following to run the quiz.</p>
-
-        <pre><code>python3 ok &#x2d;q debugging&#x2d;quiz &#x2d;u</code></pre>
+        <pre><code>python3 ok &#x2d;q debugging&#x2d;quiz &#x2d;u &#x2d;&#x2d;local</code></pre>
 
 
-        <h2 id="coding-practice">Coding Practice</h2>
+        <h2 id="coding-practice">编程练习</h2>
 
 
-        <h3 class="question" id="q4">Q4: Falling Factorial</h3>
+        <h3 class="question" id="q4">Q4: 递减阶乘</h3>
 
-        <p>Let's write a function <code>falling</code>, which is a "falling" factorial
-          that takes two arguments, <code>n</code> and <code>k</code>, and returns the product of <code>k</code>
-          consecutive numbers, starting from <code>n</code> and working downwards.</p>
+        <p>让我们编写一个函数 <code>falling</code>，
+          它是一个“递减”阶乘函数，接受两个参数 <code>n</code> 和 <code>k</code>，并返回从 <code>n</code>
+          开始，向下递减的 <code>k</code> 个连续数字的乘积。
 
-        <solution>
+          <solution>
 
-          <pre><code>def falling(n, k):
+            <pre><code>def falling(n, k):
     &quot;&quot;&quot;Compute the falling factorial of n to depth k.
 
     &gt;&gt;&gt; falling(6, 3)  # 6 * 5 * 4
@@ -816,15 +790,14 @@ TypeError: square() takes 1 positional argument but 2 were given</code></pre>
     "*** YOUR CODE HERE ***"
 </code></pre>
 
-        </solution>
+          </solution>
 
-        <p>Use Ok to test your code:</p>
-        <pre><code class="nohighlight">python3 ok -q falling</code></pre>
+        <p>使用 Ok 来测试你的代码：</p>
+        <pre><code class="nohighlight">python3 ok -q falling --local</code></pre>
 
-        <h3 class="question" id="q5">Q5: Sum Digits</h3>
+        <h3 class="question" id="q5">Q5: 数位之和</h3>
 
-        <p>Write a function that takes in a nonnegative integer and sums its digits. (Using
-          floor division and modulo might be helpful here!)</p>
+        <p>编写一个函数，该函数接受一个非负整数并计算其各位数字的和。（使用取整除法和取模运算可能会对你有帮助！）</p>
 
         <solution>
 
@@ -846,8 +819,8 @@ TypeError: square() takes 1 positional argument but 2 were given</code></pre>
 
         </solution>
 
-        <p>Use Ok to test your code:</p>
-        <pre><code class="nohighlight">python3 ok -q sum_digits</code></pre>
+        <p>使用 Ok 来测试你的代码：</p>
+        <pre><code class="nohighlight">python3 ok -q sum_digits --local</code></pre>
 
 
         <h2 id="submit">Submit</h2>
@@ -861,31 +834,28 @@ TypeError: square() takes 1 positional argument but 2 were given</code></pre>
           assignment): <a href="https://forms.gle/BP3tcRgqPhHq4Ymf9">this survey</a></p>
 
 
-        <h1 id="extra-practice">Extra Practice</h1>
+        <h1 id="extra-practice">扩展练习</h1>
 
 
         <blockquote>
-          <p>These questions are optional and will not affect your score on this assignment. However, they are
-            <strong>great practice</strong> for future assignments, projects, and exams. Attempting these questions is
-            valuable in
-            helping cement your knowledge of course concepts, and it's fun!
+          <p>这些问题是可选的，不会影响你在本次作业中的分数。
+            然而，它们对于未来的作业、项目和考试是<strong>很好的练习</strong>。
+            尝试这些问题对巩固你对课程概念和理解非常有帮助，而且它们很有趣！
           </p>
         </blockquote>
 
 
-        <h2 id="what-would-python-display-part-2">What Would Python Display? (Part 2)</h2>
+        <h2 id="what-would-python-display-part-2">Python会输出什么？(Part 2)</h2>
 
 
-        <h3 class="question" id="q6">Q6: WWPD: What If?</h3>
+        <h3 class="question" id="q6">Q6: WWPD: 条件判断</h3>
 
         <blockquote>
-          <p>Use Ok to test your knowledge with the following "What Would Python Display?"
-            questions:</p>
+          <p>使用 Ok 的"Python会输出什么？"的题目来测试你的学习成果：</p>
 
-          <pre><code>python3 ok &#x2d;q if&#x2d;statements &#x2d;u</code></pre>
+          <pre><code>python3 ok &#x2d;q if&#x2d;statements &#x2d;u &#x2d;&#x2d;local</code></pre>
 
-          <p><strong>Hint</strong>: <code>print</code> (unlike <code>return</code>) does <em>not</em> cause the function
-            to exit!</p>
+          <p><strong>提示</strong>: <code>print</code> (与 <code>return</code> 不同) <em>不会</em>导致函数退出！</p>
         </blockquote>
 
         <!--
@@ -941,13 +911,12 @@ TypeError: square() takes 1 positional argument but 2 were given</code></pre>
 
 
 
-        <h2 id="more-coding-practice">More Coding Practice</h2>
+        <h2 id="more-coding-practice">扩展编程练习</h2>
 
 
-        <h3 class="question" id="q7">Q7: Double Eights</h3>
+        <h3 class="question" id="q7">Q7: 双8</h3>
 
-        <p>Write a function that takes in a number and determines if the digits contain two
-          adjacent 8s.</p>
+        <p>编写一个函数，该函数接受一个数字，并判断其数字中是否包含两个相邻的 8。</p>
 
         <solution>
 
@@ -971,8 +940,8 @@ TypeError: square() takes 1 positional argument but 2 were given</code></pre>
 
         </solution>
 
-        <p>Use Ok to test your code:</p>
-        <pre><code class="nohighlight">python3 ok -q double_eights</code></pre>
+        <p>使用 Ok 来测试你的代码：</p>
+        <pre><code class="nohighlight">python3 ok -q double_eights --local</code></pre>
         <script>
           $('.alwaystoggle').css('display', 'inline-block');
           $('.alwaystoggle').click(function () {
@@ -986,12 +955,12 @@ TypeError: square() takes 1 positional argument but 2 were given</code></pre>
       <div class='col-md-3 sticky'>
         <nav class='hidden-print hidden-sm hidden-xs sidebar'>
           <ul>
-            <li><a href="#quick-logistics-review">Quick Logistics Review</a></li>
+            <li><a href="#quick-logistics-review">快速检查</a></li>
             <ul>
-              <li><a href="#using-python">Using Python</a></li>
-              <li><a href="#using-ok">Using OK</a></li>
+              <li><a href="#using-python">使用Python</a></li>
+              <li><a href="#using-ok">使用OK</a></li>
             </ul>
-            <li><a href="#topics">Topics</a></li>
+            <li><a href="#topics">主要内容</a></li>
             <ul>
               <li><a href="#division">Division</a></li>
               <li><a href="#functions">Functions</a></li>
@@ -1010,30 +979,30 @@ TypeError: square() takes 1 positional argument but 2 were given</code></pre>
               </ul>
               <li><a href="#error-messages">Error Messages</a></li>
             </ul>
-            <li><a href="#required-questions">Required Questions</a></li>
+            <li><a href="#required-questions">必答题</a></li>
             <ul>
-              <li><a href="#what-would-python-display-part-1">What Would Python Display? (Part 1)</a></li>
+              <li><a href="#what-would-python-display-part-1">Python会输出什么？(Part 1)</a></li>
               <ul>
-                <li><a href="#q1">Q1: WWPD: Control</a></li>
-                <li><a href="#q2">Q2: WWPD: Veritasiness</a></li>
-                <li><a href="#q3">Q3: Debugging Quiz!</a></li>
+                <li><a href="#q1">Q1: WWPD: 控制</a></li>
+                <li><a href="#q2">Q2: WWPD: 值的真假</a></li>
+                <li><a href="#q3">Q3: 调试测验</a></li>
               </ul>
-              <li><a href="#coding-practice">Coding Practice</a></li>
+              <li><a href="#coding-practice">编程练习</a></li>
               <ul>
-                <li><a href="#q4">Q4: Falling Factorial</a></li>
-                <li><a href="#q5">Q5: Sum Digits</a></li>
+                <li><a href="#q4">Q4: 递减阶乘</a></li>
+                <li><a href="#q5">Q5: 数位之和</a></li>
               </ul>
               <li><a href="#submit">Submit</a></li>
             </ul>
-            <li><a href="#extra-practice">Extra Practice</a></li>
+            <li><a href="#extra-practice">扩展练习</a></li>
             <ul>
-              <li><a href="#what-would-python-display-part-2">What Would Python Display? (Part 2)</a></li>
+              <li><a href="#what-would-python-display-part-2">Python会输出什么？(Part 2)</a></li>
               <ul>
-                <li><a href="#q6">Q6: WWPD: What If?</a></li>
+                <li><a href="#q6">Q6: WWPD: 条件判断</a></li>
               </ul>
-              <li><a href="#more-coding-practice">More Coding Practice</a></li>
+              <li><a href="#more-coding-practice">扩展编程练习</a></li>
               <ul>
-                <li><a href="#q7">Q7: Double Eights</a></li>
+                <li><a href="#q7">Q7: 双8</a></li>
               </ul>
             </ul>
           </ul>

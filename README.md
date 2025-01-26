@@ -28,7 +28,7 @@
 
 我们对网站的主要内容（课程介绍、指南、部分作业及讲义）进行了中文翻译，帮助学习者更好地理解课程内容。
 
-> 本人翻译能力有限，如有疏漏，还请见谅。欢迎提交 [Issue](https://github.com/your-github-username/cs61a-chinese/issues) 和 [Pull Request](https://github.com/your-github-username/cs61a-chinese/pulls) 来改进翻译。
+> 本人翻译能力有限，如有疏漏，还请见谅。欢迎提交 [Issue](https://github.com/ChillyHigh/CS61A-CN/issues) 和 [Pull Request](https://github.com/ChillyHigh/CS61A-CN/pulls) 来改进翻译。
 
 ### 3. **视频资源替换**
 
