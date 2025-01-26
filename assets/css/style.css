@@ -390,7 +390,7 @@ code {
 }
 
 .due {
-  background-color: #ccc;
+  /* background-color: #ccc; */
   vertical-align: top;
 }
 
