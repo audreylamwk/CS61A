@@ -233,7 +233,7 @@
 
         <p>我们的项目解决方案可以在 <a href="https://hog.cs61a.org">hog.cs61a.org</a> 上试玩！当你完成这个项目时，你将自己实现这个游戏的一个重要部分。</p>
 
-        <h2 id="download-starter-files">下载起始文件</h2>
+        <h2 id="download-starter-files">下载初始文件</h2>
 
         <p>要开始，请下载所有项目代码的 <a href="hog.zip">zip 压缩包</a>。以下是压缩包中所有文件的列表。不过，你只需要修改 <code>hog.py</code> 文件。</p>
 
@@ -247,12 +247,12 @@
           <li><code>gui_files</code>：Web GUI 使用的各种文件目录</li>
         </ul>
 
-        <h2 id="logistics">组织安排</h2>
+        <h2 id="logistics">项目安排与提交</h2>
 
         <!-- <p>Remember that you can earn an additional bonus point by submitting the
         project at least 24 hours before the deadline.</p> -->
 
-        <p>该项目总共25分。22分用于正确性，1分用于在截止日期前提交 Phase 1，2分用于整体<a href="https://cs61a.org//articles/composition.html">组成</a>。
+        <p>该项目总共25分。22分用于正确性，1分用于在截止日期前提交 Phase 1，2分用于整体<a href="../../articles/composition.html">组成</a>。
         </p>
 
         <p>你需要提交以下文件：</p>
@@ -398,7 +398,7 @@ will need to start unlocking from scratch.</p> -->
 
         如果你想交互式地测试你的代码，你可以运行
 
-        <pre>python3 ok -q [问题编号] -i</pre>
+        <pre>python3 ok -q [问题编号] -i --local</pre>
 
         插入适当的问题编号（例如 <code>01</code>）。这将运行该问题的测试，遇到第一个失败的测试时，你可以交互式地测试你编写的函数。</p>
 
@@ -436,7 +436,7 @@ will need to start unlocking from scratch.</p> -->
 
         <p>在编写代码之前，请阅读 <code>dice.py</code> 文件，并通过解锁以下测试来检查你的理解。</p>
 
-        <pre><code class="hljs">python3 ok -q 00 -u</code></pre>
+        <pre><code class="hljs">python3 ok -q 00 -u --local</code></pre>
 
         <p>输出内容类似于：</p>
         <pre><code>=====================================================================
@@ -513,7 +513,7 @@ Question 0 &gt; Suite 1 &gt; Case 1
 
         <p><strong>理解问题</strong>：</p>
         <p>在编写代码之前，你需要解锁测试以验证你对问题的理解。<strong>注意：在解锁相应问题的测试用例之前，你将无法使用 OK 测试你的代码</strong>。</p>
-        <pre><code>python3 ok -q 01 -u</code></pre>
+        <pre><code>python3 ok -q 01 -u --local</code></pre>
         <p><strong>编写代码并检查你的工作</strong>：</p>
         <p>解锁完成后，你可以编写代码，并使用以下命令检查正确性：</p>
 
@@ -531,7 +531,7 @@ Question 0 &gt; Suite 1 &gt; Case 1
             <br>
 
             <iframe width="560" height="315"
-              src="//player.bilibili.com/player.html?isOutside=true&aid=427281261&bvid=BV1s3411G7yM&cid=753493984&p=10&autoplay=0"
+              src="//player.bilibili.com/player.html?isOutside=true&aid=427281261&bvid=BV1s3411G7yM&cid=753493984&p=10&autoplay=0&t=180"
               scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
         </div>
         </p>
@@ -568,7 +568,8 @@ Question 0 &gt; Suite 1 &gt; Case 1
           <p>继续调试你的代码并运行 <code>ok</code> 测试，直到它们全部通过。你应该遵循这个理解问题、实现解决方案、测试和调试的过程来解决这个项目中的所有问题。</p>
 
           <blockquote>
-            <p>另一个调试提示：要在 <code>ok</code> 测试失败时自动启动交互式解释器，请使用 <code>-i</code>。例如，<code>python3 ok -q 01 -i</code>
+            <p>另一个调试提示：要在 <code>ok</code> 测试失败时自动启动交互式解释器，请使用
+              <code>-i</code>。例如，<code>python3 ok -q 01 -i --local</code>
               将运行问题1的测试，然后在测试失败时启动一个加载了 <code>hog.py</code> 的交互式解释器。</p>
           </blockquote>
 
@@ -586,76 +587,67 @@ Question 0 &gt; Suite 1 &gt; Case 1
 
         <ul>
           <li>
-            <p><strong>Free Bacon</strong>. A player who chooses to roll zero dice scores <code>k+3</code> points,
-              where <code>k</code> is the <code>n</code>th digit of pi after the decimal point, and <code>n</code> is
-              the
-              total score of their opponent. As a special case, if the opponent's score is
-              <code>n = 0</code>, then <code>k = 3</code> (the digit of pi before the decimal point).
+            <p><strong>Free Bacon</strong>。选择掷零个骰子的玩家将获得 <code>k+3</code> 分，其中 <code>k</code> 是 π 的小数点后第 <code>n</code>
+              位数字，<code>n</code> 是对手的总分。作为一个特殊情况，如果对手的得分是 <code>n = 0</code>，那么 <code>k = 3</code>（π小数点前的数字）。
             </p>
 
 
             <button id='toggle-9' class='btn btn-outline btn-lg alwaystoggle toggle'>
-              Examples<noscript> (enable JavaScript)</noscript>
+              示例<noscript> (enable JavaScript)</noscript>
             </button>
             <div class="solution toggle-9">
 
               <ul>
-                <li><em>Example 1</em>: The opponent has a score of 0, and the current player rolls
-                  zero dice. The current player will receive <code>3 + 3 = 6</code> points.</li>
-                <li><em>Example 2</em>: The opponent has a score of 1, and the current player rolls
-                  zero dice. The current player will receive <code>1 + 3 = 4</code> points.</li>
-                <li><em>Example 3</em>: The opponent has a score of 2, and the current player rolls
-                  zero dice. The current player will receive <code>4 + 3 = 7</code> points.</li>
-                <li><em>Example 4</em>: The opponent has a score of 42, and the current player rolls
-                  zero dice. The current player will receive <code>9 + 3 = 12</code> points.</li>
+                <li><em>示例 1</em>：对手的得分为 0，当前玩家掷零个骰子。当前玩家将获得 <code>3 + 3 = 6</code> 分。</li>
+                <li><em>示例 2</em>：对手的得分为 1，当前玩家掷零个骰子。当前玩家将获得 <code>1 + 3 = 4</code> 分。</li>
+                <li><em>示例 3</em>：对手的得分为 2，当前玩家掷零个骰子。当前玩家将获得 <code>4 + 3 = 7</code> 分。</li>
+                <li><em>示例 4</em>：对手的得分为 42，当前玩家掷零个骰子。当前玩家将获得 <code>9 + 3 = 12</code> 分。</li>
               </ul>
 
             </div>
           </li>
         </ul>
 
-        <p>The provided code includes the <code>FIRST_101_DIGITS_OF_PI</code> as an integer, which is
-          stored locally as <code>pi</code>. One way to solve this problem is to trim <code>pi</code> until it
-          has only <code>score+1</code> digits, then return 3 more than the last digit of <code>pi</code>.</p>
 
-        <p><strong>Hint:</strong> An integer <code>n</code> has <code>k+1</code> digits if <code>n</code> is less than
-          <code>pow(10, k+1)</code> but
-          greater than or equal to <code>pow(10, k)</code>.
+        <p>提供的代码中包含了一个整数 <code>FIRST_101_DIGITS_OF_PI</code>，它存储了 <code>pi</code>。解决这个问题的一种方法是将 <code>pi</code>
+          截断到只有 <code>score+1</code> 位数字，然后返回 <code>pi</code> 的最后一位数字加上 3。</p>
+
+        <p><strong>提示：</strong> 一个整数 <code>n</code> 如果小于 <code>pow(10, k+1)</code> 但大于或等于 <code>pow(10, k)</code>，则它有
+          <code>k+1</code> 位数字。
         </p>
 
-        <p>You are allowed to implement this function in any way you want. You don't have
-          to follow this recommended method or use the provided starter code. However,
-          <strong>You may not use for loops or square brackets <code>[</code> <code>]</code> in your implementation,
-            since we
-            haven't covered those yet.</strong>
-        </p>
+        <p>你可以以任何你想要的方式实现这个函数。你不必遵循这个推荐的方法或使用提供的起始代码。然而，<strong>你不能在实现中使用 for 循环或方括号 <code>[</code>
+            <code>]</code>，因为我们还没有讲到这些内容。</strong></p>
 
-        <p>Before writing any code, unlock the tests to verify your understanding of the question.</p>
-        <pre><code class="hljs">python3 ok -q 02 -u</code></pre>
-        <p>Once you are done unlocking, begin implementing your solution. You can check your correctness with:</p>
-        <pre><code class="hljs">python3 ok -q 02</code></pre>
+        <p>在编写代码之前，你需要解锁测试以验证你对问题的理解。</p>
+        <pre><code class="hljs">python3 ok -q 02 -u --local</code></pre>
+        <p>解锁完成后，你可以编写代码，并使用以下命令检查正确性：</p>
+        <pre><code class="hljs">python3 ok -q 02 --local</code></pre>
 
         <p>You can also test <code>free_bacon</code> interactively by entering <code>python3 &#x2d;i hog.py</code> in
           the terminal and then calling <code>free_bacon</code> with various inputs.</p>
-
+        <p>你也可以通过在终端中输入 <code>python3 -i hog.py</code> 以交互方式测试 <code>free_bacon</code> 函数，你可以使用不同的输入来调用
+          <code>free_bacon</code> 函数。
+        </p>
 
         <button id='toggle-10' class='btn btn-outline btn-lg alwaystoggle toggle'>
-          Hint Video<noscript> (enable JavaScript)</noscript>
+          提示视频<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-10">
 
-          <h3 id="problem-2-hint-video">Problem 2 Hint Video</h3>
+          <h3 id="problem-2-hint-video">Problem 2 提示视频</h3>
 
-          <p>This video provides some helpful direction for tackling the problems on this phase of Hog.
+          <p>这个视频为解决 Hog 游戏这一阶段的问题提供了一些有用的指导。
             <br>
 
-            <iframe width="560" height="315" src="https://youtube.com/embed/s4hM5HqMA2c" frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315"
+              src="//player.bilibili.com/player.html?isOutside=true&aid=427281261&bvid=BV1s3411G7yM&cid=753493984&p=10&autoplay=0"
+              scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
         </div>
         </p>
 
 
-        <h3 id="problem-3-2-pt">Problem 3 (2 pt)</h3>
+        <h3 id="problem-3-2-pt">Problem 3 (2 分)</h3>
 
 
         <p>Implement the <code>take_turn</code> function, which returns the number of points scored
@@ -665,69 +657,60 @@ Question 0 &gt; Suite 1 &gt; Case 1
           <code>free_bacon</code>
           when possible.
         </p>
+        <p>实现 <code>take_turn</code> 函数，该函数返回通过掷 <code>dice</code> 函数 <code>num_rolls</code> 次所得的分数。</p>
 
-        <p>Before writing any code, unlock the tests to verify your understanding of the question.</p>
-        <pre><code class="hljs">python3 ok -q 03 -u</code></pre>
-        <p>Once you are done unlocking, begin implementing your solution. You can check your correctness with:</p>
-        <pre><code class="hljs">python3 ok -q 03</code></pre>
+        <p>你的 <code>take_turn</code> 实现应在可能的情况下调用 <code>roll_dice</code> 和 <code>free_bacon</code>。</p>
+
+        <p>在编写代码之前，你需要解锁测试以验证你对问题的理解。</p>
+        <pre><code class="hljs">python3 ok -q 03 -u --local</code></pre>
+        <p>解锁完成后，你可以编写代码，并使用以下命令检查正确性：</p>
+        <pre><code class="hljs">python3 ok -q 03 --local</code></pre>
 
 
         <button id='toggle-11' class='btn btn-outline btn-lg alwaystoggle toggle'>
-          Hint Video<noscript> (enable JavaScript)</noscript>
+          提示视频<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-11">
 
-          <h3 id="problem-3-hint-video">Problem 3 Hint Video</h3>
+          <h3 id="problem-3-hint-video">Problem 3 提示视频</h3>
 
-          <p>This video provides some helpful direction for tackling the problems on this phase of Hog.
+          <p>这个视频为解决 Hog 游戏这一阶段的问题提供了一些有用的指导。
             <br>
 
-            <iframe width="560" height="315" src="https://youtube.com/embed/Rg_MMYioXEM" frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315"
+              src="//player.bilibili.com/player.html?isOutside=true&aid=427281261&bvid=BV1s3411G7yM&cid=753493984&p=10&autoplay=0"
+              scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
         </div>
         </p>
 
 
-        <h3 id="problem-4a-1-pt">Problem 4a (1 pt)</h3>
+        <h3 id="problem-4a-1-pt">Problem 4a (1 分)</h3>
 
-
-        <p>Implement <code>swine_align</code>, which takes the current player and opponent scores and
-          returns whether the current player will take another turn due to Swine Align.
-          <strong>Note:</strong> In the special case where one score is 0, return <code>False</code>.
-        </p>
-
+        <p>实现 <code>swine_align</code> 函数，该函数接受当前玩家和对手的得分，并返回当前玩家是否会因为 Swine Align 规则而再进行一次回合。<strong>注意：</strong>
+          在某一玩家得分为 0 的特殊情况下，返回 <code>False</code>。</p>
         <blockquote>
-          <p>The Swine Align rule:</p>
+          <p>Swine Align 规则:</p>
         </blockquote>
 
         <ul>
           <li>
-            <p><strong>Swine Align</strong>. After points for the turn are added to the current player's
-              score, if both players have a positive score and the Greatest Common Divisor
-              (GCD) of the current player's score and the opponent's score is at least 10,
-              take another turn.</p>
+            <p><strong>Swine Align</strong>。在本回合得分加到当前玩家的总分后，如果两名玩家的得分都为正且当前玩家的得分与对手的得分的最大公约数（GCD）至少为10，则当前玩家再进行一次回合。
+            </p>
 
 
             <button id='toggle-12' class='btn btn-outline btn-lg alwaystoggle toggle'>
-              Examples<noscript> (enable JavaScript)</noscript>
+              示例<noscript> (enable JavaScript)</noscript>
             </button>
             <div class="solution toggle-12">
 
               <ul>
-                <li><em>Example 1</em>: At the end of the first player's turn, the players have scores
-                  of 8 and 36. The GCD of the scores is 4, so the first player does not take
-                  another turn due to swine align.</li>
-                <li><em>Example 2</em>: At the end of the first player's turn, the players have scores
-                  of 20 and 30. The GCD of the scores is 10, so the first player takes an
-                  extra turn.</li>
-                <li><em>Example 3</em>: At the end of the first player's turn, the players have scores
-                  of 24 and 36. The GCD of the scores is 12, so the first player takes an
-                  extra turn. The first player rolls a 12 and the scores are now 36 and 36.
-                  The GCD of the scores is 36, so the first player takes yet another turn.</li>
-                <li><em>Example 4</em>: At the end of the first player's turn, the players have scores
-                  of 15 and 0. Swine align only applies when both player scores are positive
-                  (not zero), so the first player does not take another turn due to swine
-                  align.</li>
+                <li><em>示例 1</em>：在第一个玩家回合结束时，两名玩家的得分分别为8和36。得分的最大公约数为4，因此第一个玩家不会因为 Swine Align 规则而再进行一次回合。</li>
+                <li><em>示例 2</em>：在第一个玩家回合结束时，两名玩家的得分分别为20和30。得分的最大公约数为10，因此第一个玩家会再进行一次回合。</li>
+                <li><em>示例
+                    3</em>：在第一个玩家回合结束时，两名玩家的得分分别为24和36。得分的最大公约数为12，因此第一个玩家会再进行一次回合。第一个玩家掷出12点，得分变为36和36。得分的最大公约数为36，因此第一个玩家会再进行一次回合。
+                </li>
+                <li><em>示例 4</em>：在第一个玩家回合结束时，两名玩家的得分分别为15和0。Swine Align 规则仅在两名玩家的得分都为正时适用（不为零），因此第一个玩家不会因为 Swine Align
+                  规则而再进行一次回合。</li>
               </ul>
 
             </div>
@@ -735,156 +718,113 @@ Question 0 &gt; Suite 1 &gt; Case 1
         </ul>
 
         <blockquote>
-          <p><strong>Hint</strong>: The expression <code>n % d == 0</code> is true if and only if <code>n</code> is a
-            multiple
-            of <code>d</code>.</p>
+          <p><strong>提示</strong>：当且仅当 <code>n</code> 是 <code>d</code> 的倍数时,表达式 <code>n % d == 0</code> 的值为真。</p>
         </blockquote>
 
-        <p>Before writing any code, unlock the tests to verify your understanding of the question.</p>
-        <pre><code class="hljs">python3 ok -q 04a -u</code></pre>
-        <p>Once you are done unlocking, begin implementing your solution. You can check your correctness with:</p>
-        <pre><code class="hljs">python3 ok -q 04a</code></pre>
+        <p>在编写代码之前，你需要解锁测试以验证你对问题的理解。</p>
+        <pre><code class="hljs">python3 ok -q 04a -u --local</code></pre>
+        <p>解锁完成后，你可以编写代码，并使用以下命令检查正确性：</p>
+        <pre><code class="hljs">python3 ok -q 04a --local</code></pre>
 
 
         <button id='toggle-13' class='btn btn-outline btn-lg alwaystoggle toggle'>
-          Hint Video<noscript> (enable JavaScript)</noscript>
+          提示视频<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-13">
 
-          <h3 id="problem-4a-hint-video">Problem 4a Hint Video</h3>
+          <h3 id="problem-4a-hint-video">Problem 4a 提示视频</h3>
 
-          <p>This video provides some helpful direction for tackling the problems on this phase of Hog.
+          <p>这个视频为解决 Hog 游戏这一阶段的问题提供了一些有用的指导。
             <br>
 
-            <iframe width="560" height="315" src="https://youtube.com/embed/tCHw2Dn8Ruc" frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315"
+              src="//player.bilibili.com/player.html?isOutside=true&aid=427281261&bvid=BV1s3411G7yM&cid=753493984&p=10&autoplay=0"
+              scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
         </div>
         </p>
 
 
-        <h3 id="problem-4b-1-pt">Problem 4b (1 pt)</h3>
+        <h3 id="problem-4b-1-pt">Problem 4b (1 分)</h3>
 
 
-        <p>Implement <code>pig_pass</code>, which takes the current player and opponent scores and
-          returns whether the current player will take an extra turn due to Pig Pass.</p>
+        <p>实现 <code>pig_pass</code> 函数，该函数接受当前玩家和对手的得分，并返回当前玩家是否会因为 Pig Pass 规则而再进行一次回合。</p>
 
         <blockquote>
-          <p>The Pig Pass rule:</p>
+          <p>Pig Pass 规则:</p>
         </blockquote>
 
         <ul>
           <li>
-            <p><strong>Pig Pass</strong>. After points for the turn are added to the current player's
-              score, if the current player's score is lower than the opponent's score and
-              the difference between them is less than 3, the current player takes another
-              turn.</p>
+            <p><strong>Pig Pass</strong>。在本回合得分加到当前玩家的总分后，如果当前玩家的得分低于对手的得分且两者之间的差值小于3，则当前玩家再进行一次回合。</p>
 
 
             <button id='toggle-14' class='btn btn-outline btn-lg alwaystoggle toggle'>
-              Examples<noscript> (enable JavaScript)</noscript>
+              示例<noscript> (enable JavaScript)</noscript>
             </button>
             <div class="solution toggle-14">
 
               <ul>
-                <li><em>Example 1</em>: At the end of the first player's turn, The opponent has a score
-                  of 10 and the current player has a score of 11. Since 11 > 10, the current
-                  player does not take another turn due to Pig Pass.</li>
-                <li><em>Example 2</em>: At the end of the first player's turn, The opponent has a score
-                  of 10 and the current player has a score of 7. Because <code>10 &#x2d; 7 = 3 &gt;= 3</code>,
-                  the current player does not take another turn due to Pig Passn.</li>
-                <li><em>Example 3</em>: At the end of the first player's turn, The opponent has a score
-                  of 30 and the current player has a score of 28. Because <code>30 &#x2d; 28 = 2 &lt; 3</code>,
-                  the current player takes another turn.</li>
-                <li><em>Example 4</em>: At the end of the first player's turn, The opponent has a score
-                  of 30 and the current player has a score of 28. Like in Example 3, the
-                  current player takes another turn. If the current player then rolls a 1 and
-                  now has a score of 29, Pig Pass activates again and the current player takes
-                  yet another turn.</li>
+                <li><em>示例 1</em>：回合结束时，当前玩家的得分为11，对手的得分为10，。由于11 > 10，当前玩家不会因为 Pig Pass 规则而再进行一次回合。</li>
+                <li><em>示例 2</em>：回合结束时，当前玩家的得分为7，对手的得分为10。因为 <code>10 - 7 = 3 >= 3</code>，当前玩家不会因为 Pig Pass
+                  规则而再进行一次回合。</li>
+                <li><em>示例 3</em>：回合结束时，当前玩家的得分为28，对手的得分为30。因为 <code>30 - 28 = 2 < 3</code>，当前玩家会再进行一次回合。</li>
+                <li><em>示例 4</em>：回合结束时，当前玩家的得分为28，对手的得分为30。与示例3类似，当前玩家会再进行一次回合。如果当前玩家掷出1点，得分变为29，Pig Pass
+                  规则再次生效，当前玩家会再进行一次回合。</li>
               </ul>
 
             </div>
           </li>
         </ul>
 
-        <p>Before writing any code, unlock the tests to verify your understanding of the question.</p>
-        <pre><code class="hljs">python3 ok -q 04b -u</code></pre>
-        <p>Once you are done unlocking, begin implementing your solution. You can check your correctness with:</p>
-        <pre><code class="hljs">python3 ok -q 04b</code></pre>
+        <p>在编写代码之前，你需要解锁测试以验证你对问题的理解。</p>
+        <pre><code class="hljs">python3 ok -q 04b -u --local</code></pre>
+        <p>解锁完成后，你可以编写代码，并使用以下命令检查正确性：</p>
+        <pre><code class="hljs">python3 ok -q 04b --local</code></pre>
 
 
         <button id='toggle-15' class='btn btn-outline btn-lg alwaystoggle toggle'>
-          Hint Video<noscript> (enable JavaScript)</noscript>
+          提示视频<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-15">
 
-          <h3 id="problem-4b-hint-video">Problem 4b Hint Video</h3>
+          <h3 id="problem-4b-hint-video">Problem 4b 提示视频</h3>
 
-          <p>This video provides some helpful direction for tackling the problems on this phase of Hog.
+          <p>这个视频为解决 Hog 游戏这一阶段的问题提供了一些有用的指导。
             <br>
 
-            <iframe width="560" height="315" src="https://youtube.com/embed/oYDbmJvun_M" frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315"
+              src="//player.bilibili.com/player.html?isOutside=true&aid=427281261&bvid=BV1s3411G7yM&cid=753493984&p=10&autoplay=0"
+              scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
         </div>
         </p>
 
 
-        <h3 id="problem-5-3-pt">Problem 5 (3 pt)</h3>
+        <h3 id="problem-5-3-pt">Problem 5 (3 分)</h3>
 
-
-        <p>Implement the <code>play</code> function, which simulates a full game of Hog. Players
-          alternate turns rolling dice until one of the players reaches the <code>goal</code> score.</p>
-
-        <p>To determine how many dice are rolled each turn, each player uses their
-          respective strategy (Player 0 uses <code>strategy0</code> and Player 1 uses <code>strategy1</code>). A
-          <em>strategy</em> is a function that, given a player's score and their opponent's
-          score, returns the number of dice that the current player will roll in the turn.
-          <strong>Only call a strategy function once per turn (or risk breaking the GUI).</strong>
-          Don't worry about implementing strategies yet. You'll do that in Phase 3.
-        </p>
-
-        <p>When the game ends, <code>play</code> returns the final total scores of both players, with
-          Player 0's score first and Player 1's score second.</p>
-
-        <p>Hints:</p>
-
+        <p>实现 <code>play</code> 函数，该函数模拟完整的 Hog 游戏。玩家轮流掷骰子，直到其中一名玩家达到 <code>goal</code> 分数。</p>
+        <p>为了确定每回合掷多少骰子，每个玩家使用他们各自的策略（玩家 0 使用 <code>strategy0</code>，玩家 1 使用 <code>strategy1</code>）。<em>strategy</em>
+          是一个函数，给定玩家的得分和对手的得分，返回当前玩家在该回合中将掷的骰子数量。<strong>每回合只调用一次 strategy 函数（否则可能会破坏 GUI）。</strong> 不用担心 strategy
+          的实现，你将在第三阶段完成它。</p>
+        <p>当游戏结束时，<code>play</code> 返回两名玩家的最终总得分，玩家 0 的得分在前，玩家 1 的得分在后。</p>
+        <p>提示：</p>
         <ul>
-          <li>You should call the functions you have implemented already.</li>
-          <li>Call <code>take_turn</code> with three arguments. Only call <code>take_turn</code> once per turn.</li>
-          <li>Call <code>extra_turn</code> to determine if the current player will take another turn,
-            either due to Swine Align or Pig Pass.</li>
-          <li>You can get the number of the other player (either 0 or 1) by calling the
-            provided function <code>other</code>.</li>
-          <li>You can ignore the <code>say</code> argument to the <code>play</code> function for now. You will use
-            it in Phase 2 of the project.</li>
+          <li>你应该调用你已经实现的函数。</li>
+          <li>调用 <code>take_turn</code> 时传入三个参数。每回合只调用一次 <code>take_turn</code>。</li>
+          <li>调用 <code>extra_turn</code> 来确定当前玩家是否会因为 Swine Align 或 Pig Pass 规则而再进行一次回合。</li>
+          <li>你可以通过调用提供的函数 <code>other</code> 来获取另一名玩家的编号（0 或 1）。</li>
+          <li>你可以暂时忽略 <code>play</code> 函数的 <code>say</code> 参数。你将在项目的第二阶段使用它。</li>
         </ul>
+        <p><strong>规则澄清</strong>：一个玩家可以连续进行超过两次回合。例如，如果他们第一次回合后的得分是 10 比 20，他们会因为 Swine Align 规则再进行一次回合。如果他们得了 8 分，现在得分是
+          18 比 20，他们会因为 Pig Pass 规则再进行第三次回合。如果他们得了 12 分，现在得分是 30 比 20，他们会再进行第四次回合。</p>
+        <p><strong>注意</strong>：Swine Align 和 Pig Pass 规则不可能同时生效。</p>
+        <p>在编写代码之前，你需要解锁测试以验证你对问题的理解。</p>
+        <pre><code class="hljs">python3 ok -q 05 -u --local</code></pre>
+        <p>解锁完成后，你可以编写代码，并使用以下命令检查正确性：</p>
+        <pre><code class="hljs">python3 ok -q 05 --local</code></pre>
 
-        <p><strong>Rules Clarification</strong>: A player can take more than two consecutive turns. For
-          example, if the score after their first turn is 10 vs 20, they go again due to
-          Swine Align. If they score 8 points and now the score is 18 vs 20, they go a
-          third time due to Pig Pass. If they score 12 points and now the score is 30 vs
-          20, they go a fourth time in a row.</p>
-
-        <p><strong>Note</strong>: It's not mathematically possible for Swine Align and Pig Pass to be
-          active simultaneously.</p>
-
-        <p>Before writing any code, unlock the tests to verify your understanding of the question.</p>
-        <pre><code class="hljs">python3 ok -q 05 -u</code></pre>
-        <p>Once you are done unlocking, begin implementing your solution. You can check your correctness with:</p>
-        <pre><code class="hljs">python3 ok -q 05</code></pre>
-
-        <p>Once you are finished, you will be able to play a graphical version of
-          the game. We have provided a file called <code>hog_gui.py</code> that
-          you can run from the terminal:</p>
-
+        <p>完成后，你将能够玩游戏的图形版本。我们提供了一个名为 <code>hog_gui.py</code> 的文件，你可以在终端中运行：</p>
         <pre><code>python3 hog_gui.py</code></pre>
-
-        <p>The GUI relies on your implementation, so if you have any bugs in your
-          code, they will be reflected in the GUI. This means you can also use
-          the GUI as a debugging tool; however, it's better to run the tests
-          first.</p>
-
-        <p><strong>Note:</strong> The hog gui now works! To get an updated version, re-download the zip file from this
-          webpage and drag over the new copies of <code>hog_gui.py</code> and <code>gui_files/</code>.</p>
+        <p>GUI 依赖于你的实现，所以如果你的代码中有任何错误，它们将在 GUI 中反映出来。这意味着你也可以使用 GUI 作为调试工具；然而，最好先运行测试。</p>
 
         <p>Make sure to submit your work so far before the checkpoint deadline:</p>
 
@@ -896,44 +836,36 @@ Question 0 &gt; Suite 1 &gt; Case 1
 
 
         <button id='toggle-16' class='btn btn-outline btn-lg alwaystoggle toggle'>
-          Hint Video<noscript> (enable JavaScript)</noscript>
+          提示视频<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-16">
 
-          <h3 id="problem-5-hint-video">Problem 5 Hint Video</h3>
+          <h3 id="problem-5-hint-video">Problem 5 提示视频</h3>
 
-          <p>This video provides some helpful direction for tackling the problems on this phase of Hog.
+          <p>这个视频为解决 Hog 游戏这一阶段的问题提供了一些有用的指导。
             <br>
 
-            <iframe width="560" height="315" src="https://youtube.com/embed/P2UhBrv-bSM" frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315"
+              src="//player.bilibili.com/player.html?isOutside=true&aid=427281261&bvid=BV1s3411G7yM&cid=753493984&p=10&autoplay=0"
+              scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
         </div>
         </p>
 
-        <p>Congratulations! You have finished Phase 1 of this project!</p>
+        <p>恭喜你！你已经完成了这个项目的Phase 1！</p>
 
+        <h2 id="phase-2-commentary">Phase 2: 评论</h2>
 
-        <h2 id="phase-2-commentary">Phase 2: Commentary</h2>
+        <p>在第二阶段，你将实现评论函数，这些函数会在每个回合后打印关于游戏的评论，例如，<code>"22 分！这是玩家1 迄今为止最大的得分！"</code></p>
 
+        <p>commentary 函数接受两个参数，玩家0 的当前得分和玩家1
+          的当前得分。它可以基于当前得分和其父环境中的任何其他信息打印评论。由于评论可能会根据游戏中的当前得分情况在每个回合中有所不同，commentary
+          函数总是返回另一个 commentary 函数，以便在下一个回合中调用。commentary 函数的唯一副作用应该是打印。
+        </p>
 
-        <p>In the second phase, you will implement commentary functions that print remarks
-          about the game after each turn, such as, <code>&quot;22 points! That&#x27;s the biggest gain yet
-for Player 1.&quot;</code></p>
+        <h3 id="commentary-examples">评论示例</h3>
 
-        <p>A commentary function takes two arguments, Player 0's current score and Player
-          1's current score. It can print out commentary based on either or both current
-          scores and any other information in its parent environment. Since commentary can
-          differ from turn to turn depending on the current point situation in the game, a
-          commentary function always returns another commentary function to be called on
-          the next turn. The only side effect of a commentary function should be to print.</p>
-
-
-        <h3 id="commentary-examples">Commentary examples</h3>
-
-
-        <p>The function <code>say_scores</code> in <code>hog.py</code> is an example of a commentary function
-          that simply announces both players' scores. Note that <code>say_scores</code> returns
-          itself, meaning that the same commentary function will be called each turn.</p>
+        <p><code>hog.py</code> 中的 <code>say_scores</code> 函数是一个 commentary 函数的示例，它宣布两名玩家的得分。注意，<code>say_scores</code>
+          返回它自己，这意味着每个回合都会调用相同的 commentary 函数。</p>
 
         <pre><code>def say_scores(score0, score1):
     &quot;&quot;&quot;A commentary function that announces the score for each player.&quot;&quot;&quot;
@@ -969,11 +901,11 @@ for Player 1.&quot;</code></p>
         return announce_lead_changes(leader)
     return say</code></pre>
 
-        <p>You should also understand the function <code>both</code>, which takes two commentary
-          functions (<code>f</code> and <code>g</code>) and returns a <em>new</em> commentary function. This returned
-          commentary function returns <em>another</em> commentary function which calls the functions
-          returned by calling <code>f</code> and <code>g</code>, in that order.</p>
-
+        <p>你还应该理解 <code>both</code> 函数，它接受两个 commentary 函数（<code>f</code> 和
+          <code>g</code>），并返回一个<em>新的</em> commentary 函数。这个返回的 commentary 函数会返回<em>另一个</em> commentary 函数，该函数按顺序调用
+          <code>f</code> 和 <code>g</code>
+          返回的函数。
+        </p>
         <pre><code>def both(f, g):
     &quot;&quot;&quot;Return a commentary function that says what f says, then what g says.
 
@@ -996,11 +928,11 @@ for Player 1.&quot;</code></p>
 
 
         <button id='toggle-17' class='btn btn-outline btn-lg alwaystoggle toggle'>
-          Hint Video<noscript> (enable JavaScript)</noscript>
+          提示视频<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-17">
 
-          <h3 id="phase-2-hint-video">Phase 2 Hint Video</h3>
+          <h3 id="phase-2-hint-video">Phase 2 提示视频</h3>
 
           <p>This video provides some helpful direction for tackling the problems on this phase of Hog.
             <br>
@@ -1011,103 +943,77 @@ for Player 1.&quot;</code></p>
         </p>
 
 
-        <h3 id="problem-6-2-pt">Problem 6 (2 pt)</h3>
+        <h3 id="problem-6-2-pt">Problem 6 (2 分)</h3>
 
+        <p>更新你的 <code>play</code> 函数，使其在每个回合结束时调用一个 commentary 函数。调用 commentary 函数的返回值将是下一个回合要调用的 commentary 函数。</p>
 
-        <p>Update your <code>play</code> function so that a commentary function is called at the end
-          of each turn. The return value of calling a commentary function gives you the
-          commentary function to call on the next turn.</p>
-
-        <p>For example, <code>say(score0, score1)</code> should be called at the end of the first
-          turn. Its return value (another commentary function) should be called at the end
-          of the second turn. Each consecutive turn, call the function that was returned
-          by the call to the previous turn's commentary function.</p>
-
-        <p>Before writing any code, unlock the tests to verify your understanding of the question.</p>
-        <pre><code class="hljs">python3 ok -q 06 -u</code></pre>
-        <p>Once you are done unlocking, begin implementing your solution. You can check your correctness with:</p>
-        <pre><code class="hljs">python3 ok -q 06</code></pre>
-
-
-        <h3 id="problem-7-3-pt">Problem 7 (3 pt)</h3>
-
-
-        <p>Implement the <code>announce_highest</code> function, which is a higher-order function that
-          returns a commentary function. This commentary function announces whenever a
-          particular player gains more points in a turn than ever before. E.g.,
-          <code>announce_highest(1)</code> ignores Player 0 entirely and just print information about
-          Player 1. (So does its return value; another commentary function about only
-          Player 1.) To compute the gain, it must compare the score from last turn (<code>last_score</code>) to the
-          score from this turn for the player of interest, which is designated by the
-          <code>who</code> argument. This function must also keep track of the highest gain for the
-          player so far, which is store as <code>running_high</code>.
+        <p>例如，<code>say(score0, score1)</code> 应该在第一个回合结束时被调用。它的返回值（另一个评论函数）应该在第二个回合结束时被调用。每个连续的回合，调用前一个回合的 commentary
+          函数返回的函数。
         </p>
+        <p>在编写代码之前，你需要解锁测试以验证你对问题的理解。</p>
+        <pre><code class="hljs">python3 ok -q 06 -u --local</code></pre>
+        <p>解锁完成后，你可以编写代码，并使用以下命令检查正确性：</p>
+        <pre><code class="hljs">python3 ok -q 06 --local</code></pre>
 
-        <p>The way in which <code>announce_highest</code> announces is very specific, and your
-          implementation should match the doctests provided. Don't worry about singular
-          versus plural when announcing point gains; you should simply use "point(s)" for
-          both cases.</p>
+
+        <h3 id="problem-7-3-pt">Problem 7 (3 分)</h3>
+
+        <p>实现 <code>announce_highest</code> 函数，这是一个高阶函数，返回一个 commentary 函数。该 commentary
+          函数会在特定玩家在一轮中获得的分数超过以往任何一轮时进行播报。例如，<code>announce_highest(1)</code> 会完全忽略玩家0，仅打印关于玩家1 的信息。（它的返回值也是如此；另一个仅关于玩家1
+          的评论函数。）为了计算分数的增加，它需要将上一轮的分数（<code>last_score</code>）与当前轮的分数进行比较，感兴趣的玩家由 <code>who</code>
+          参数指定。此函数还必须跟踪该玩家迄今为止的最高分数增加，该值存储为 <code>running_high</code>。</p>
+
+        <p><code>announce_highest</code> 的播报方式非常具体，你的实现应与提供的 doctests 匹配。在播报分数增加时，不必担心单复数问题；你只需在两种情况下都使用“point(s)”。</p>
 
         <blockquote>
-          <p><strong>Hint:</strong> The <code>announce_lead_changes</code> function provided to you is an example of
-            how to keep track of information using commentary functions. If you are stuck,
-            first make sure you understand how <code>announce_lead_changes</code> works.</p>
+          <p><strong>提示：</strong> 提供给您的 <code>announce_lead_changes</code> 函数是一个如何使用 commentary 函数跟踪信息的示例。如果你卡住了，请先确保你理解
+            <code>announce_lead_changes</code> 的工作原理。
+          </p>
         </blockquote>
 
         <br>
 
         <blockquote>
-          <p><strong>Hint.</strong> If you're getting a <code>local variable [var] reference before assignment</code>
-            error:</p>
+          <p><strong>提示。</strong> 如果你遇到 <code>local variable [var] reference before assignment</code> 错误：</p>
 
-          <p>This happens because in Python, you aren't normally allowed to modify
-            variables defined in parent frames. Instead of reassigning <code>[var]</code>, the
-            interpreter thinks you're trying to define a new variable within the current
-            frame. We'll learn about how to work around this in a future lecture, but it
-            is not required for this problem.</p>
+          <p>这是因为在 Python 中，通常不允许修改父帧中定义的变量。解释器认为你试图在当前帧中定义一个新变量，而不是重新赋值
+            <code>[var]</code>。我们将在未来的课程中学习如何解决这个问题，但这个问题并不需要用到这些知识。
+          </p>
 
-          <p>To fix this, you have two options:</p>
+          <p>要解决此问题，你有两种选择：</p>
 
-          <p>1) Rather than reassigning <code>[var]</code> to its new value, create a new variable to
-            hold that new value. Use that new variable in future calculations.</p>
+          <p>1) 与其重新赋值 <code>[var]</code>，不如创建一个新变量来保存新值。在未来的计算中使用该新变量。</p>
 
-          <p>2) For this problem specifically, avoid this issue entirely by not using
-            assignment statements at all. Instead, pass new values in as arguments to
-            a call to <code>announce_highest</code>.</p>
+          <p>2) 对于这个问题，可以通过不使用赋值语句来避免此问题。可以将新值作为参数传递给 <code>announce_highest</code> 函数。</p>
         </blockquote>
+        <p>在编写代码之前，你需要解锁测试以验证你对问题的理解。</p>
+        <pre><code class="hljs">python3 ok -q 07 -u --local</code></pre>
+        <p>解锁完成后，你可以编写代码，并使用以下命令检查正确性：</p>
+        <pre><code class="hljs">python3 ok -q 07 --local</code></pre>
 
-        <p>Before writing any code, unlock the tests to verify your understanding of the question.</p>
-        <pre><code class="hljs">python3 ok -q 07 -u</code></pre>
-        <p>Once you are done unlocking, begin implementing your solution. You can check your correctness with:</p>
-        <pre><code class="hljs">python3 ok -q 07</code></pre>
-
-        <p>When you are done, you will see commentary in the GUI:</p>
+        <p>完成后，你将在 GUI 中看到评论：</p>
 
         <pre><code>python3 hog_gui.py</code></pre>
 
-        <p>The commentary in the GUI is generated by passing the following function as the
-          <code>say</code> argument to <code>play</code>.
-        </p>
+        <p>GUI 中的评论是通过将以下函数作为 <code>play</code> 的 <code>say</code> 参数传递生成的。</p>
 
         <pre><code>both(announce_highest(0), both(announce_highest(1), announce_lead_changes()))</code></pre>
 
-        <p>Great work! You just finished Phase 2 of the project!</p>
+        <p>恭喜你！你已经完成了这个项目的Phase 2！</p>
 
 
-        <h2 id="phase-3-strategies">Phase 3: Strategies</h2>
+        <h2 id="phase-3-strategies">Phase 3: 策略</h2>
 
 
-        <p>In the third phase, you will experiment with ways to improve upon the basic
-          strategy of always rolling a fixed number of dice. First, you need to develop
-          some tools to evaluate strategies.</p>
+        <p>在第三阶段，你将尝试在总是投掷固定数量骰子的策略之上开发更好的策略。首先，你需要开发一些工具来评估策略的好坏。</p>
 
 
         <button id='toggle-18' class='btn btn-outline btn-lg alwaystoggle toggle'>
-          Hint Video<noscript> (enable JavaScript)</noscript>
+          提示视频<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-18">
 
-          <h3 id="phase-3-hint-video">Phase 3 Hint Video</h3>
+          <h3 id="phase-3-hint-video">Phase 3 提示视频</h3>
 
           <p>This video provides some helpful direction for tackling the problems on this phase of Hog.
             <br>
@@ -1118,28 +1024,18 @@ for Player 1.&quot;</code></p>
         </p>
 
 
-        <h3 id="problem-8-2-pt">Problem 8 (2 pt)</h3>
+        <h3 id="problem-8-2-pt">Problem 8 (2 分)</h3>
 
 
-        <p>Implement the <code>make_averaged</code> function, which is a higher-order function that
-          takes a function <code>original_function</code> as an argument. It returns another function that takes
-          the same number of arguments as <code>original_function</code> (the function originally passed into
-          <code>make_averaged</code>). This returned function differs from the input function in that
-          it returns the average value of repeatedly calling <code>original_function</code> on the same arguments.
-          This function should call <code>original_function</code> a total of <code>trials_count</code> times and return
-          the
-          average of the results.
+        <p>实现 <code>make_averaged</code> 函数，这是一个高阶函数，它接受一个函数 <code>original_function</code> 作为参数。它返回另一个函数，该函数接受与
+          <code>original_function</code> 相同数量的参数（即最初传递给 <code>make_averaged</code>
+          的函数）。返回的函数与输入函数的不同之处在于，它返回的是在相同参数下重复调用 <code>original_function</code> 的平均值。该函数应总共调用
+          <code>original_function</code> <code>trials_count</code> 次，并返回结果的平均值。
         </p>
 
-        <p>To implement this function, you need a new piece of Python syntax! You
-          must write a function that accepts an arbitrary number of arguments,
-          then calls another function using exactly those arguments. Here's how
-          it works.</p>
+        <p>为了实现这个函数，你需要使用一个新的 Python 语法！你需要编写一个函数，该函数接受任意数量的参数，然后使用这些参数调用另一个函数。以下是它的工作原理。</p>
 
-        <p>Instead of listing formal parameters for a function, you can write <code>*args</code>. To
-          call another function using exactly those arguments, you call it again with
-          <code>*args</code>. For example,
-        </p>
+        <p>你可以使用 <code>*args</code> 来代替列出函数的形参。要使用这些参数调用另一个函数，你可以再次使用 <code>*args</code> 调用它。例如：</p>
 
         <pre><code>&gt;&gt;&gt; def printed(f):
 ...     def print_and_return(*args):
@@ -1155,130 +1051,97 @@ Result: 256
 &gt;&gt;&gt; printed_abs(&#x2d;10)
 Result: 10
 10</code></pre>
-
-        <p>Read the docstring for <code>make_averaged</code> carefully to understand how it
-          is meant to work.</p>
-
-        <p>Before writing any code, unlock the tests to verify your understanding of the question.</p>
-        <pre><code class="hljs">python3 ok -q 08 -u</code></pre>
-        <p>Once you are done unlocking, begin implementing your solution. You can check your correctness with:</p>
-        <pre><code class="hljs">python3 ok -q 08</code></pre>
+        <p>请仔细阅读 <code>make_averaged</code> 的 docstring，并理解它应该如何工作的。</p>
+        <p>在编写代码之前，你需要解锁测试以验证你对问题的理解。</p>
+        <pre><code class="hljs">python3 ok -q 08 -u --local</code></pre>
+        <p>解锁完成后，你可以编写代码，并使用以下命令检查正确性：</p>
+        <pre><code class="hljs">python3 ok -q 08 --local</code></pre>
 
 
-        <h3 id="problem-9-2-pt">Problem 9 (2 pt)</h3>
+        <h3 id="problem-9-2-pt">Problem 9 (2 分)</h3>
 
-
-        <p>Implement the <code>max_scoring_num_rolls</code> function, which runs an experiment to
-          determine the number of rolls (from 1 to 10) that gives the maximum average
-          score for a turn. Your implementation should use <code>make_averaged</code> and
-          <code>roll_dice</code>.
+        实现 <code>max_scoring_num_rolls</code> 函数，该函数通过实验来确定在1到10次掷骰中，哪一种次数能使一个回合的平均得分最大化。你的实现应使用
+        <code>make_averaged</code> 和 <code>roll_dice</code> 函数。
         </p>
+        <p>如果有两种掷骰次数获得相同的最大平均得分，则返回较小的次数。例如，如果3次和6次掷骰都达到了最大平均得分，则返回3。</p>
 
-        <p>If two numbers of rolls are tied for the maximum average score, return the
-          lower number. For example, if both 3 and 6 achieve a maximum average score,
-          return 3.</p>
+        <p>在编写代码之前，你需要解锁测试以验证你对问题的理解。</p>
+        <pre><code class="hljs">python3 ok -q 09 -u --local</code></pre>
+        <p>解锁完成后，你可以编写代码，并使用以下命令检查正确性：</p>
+        <pre><code class="hljs">python3 ok -q 09 --local</code></pre>
 
-        <p>Before writing any code, unlock the tests to verify your understanding of the question.</p>
-        <pre><code class="hljs">python3 ok -q 09 -u</code></pre>
-        <p>Once you are done unlocking, begin implementing your solution. You can check your correctness with:</p>
-        <pre><code class="hljs">python3 ok -q 09</code></pre>
-
-        <p>To run this experiment on randomized dice, call <code>run_experiments</code> using
-          the <code>&#x2d;r</code> option:</p>
+        <p>要在随机骰子上运行此实验，请使用 <code>&#x2d;r</code> 选项调用 <code>run_experiments</code>：</p>
 
         <pre><code>python3 hog.py &#x2d;r</code></pre>
 
-        <p><strong>Running experiments</strong> For the remainder of this project, you can change the
-          implementation of <code>run_experiments</code> as you wish. By calling
-          <code>average_win_rate</code>, you can evaluate various Hog strategies. For example,
-          change the first <code>if False:</code> to <code>if True:</code> in order to evaluate
-          <code>always_roll(8)</code> against the baseline strategy of <code>always_roll(6)</code>.
+        <p><strong>运行实验</strong>
+          在本项目的剩余部分，你可以根据需要更改 <code>run_experiments</code> 的实现。通过调用 <code>average_win_rate</code>，你可以评估各种Hog策略。例如，将第一个
+          <code>if False:</code> 更改为 <code>if True:</code>，以评估 <code>always_roll(8)</code> 与基础策略
+          <code>always_roll(6)</code>。
         </p>
 
-        <p>Some of the experiments may take up to a minute to run. You can always reduce
-          the number of trials in your call to <code>make_averaged</code> to speed up experiments.</p>
+        <p>某些实验可能需要长达几分钟的时间才能完成。你可以通过减少<code>make_averaged</code>中调用试验的次数来加快实验速度。</p>
 
-        <p>Running experiments won't affect your score on the project.</p>
-
-
-        <h3 id="problem-10-1-pt">Problem 10 (1 pt)</h3>
+        <p>运行实验不会影响你在项目中的得分。</p>
 
 
-        <p>A strategy can try to take advantage of the <em>Free Bacon</em> rule by rolling 0 when
-          it is most beneficial to do so. Implement <code>bacon_strategy</code>, which returns 0
-          whenever rolling 0 would give <strong>at least</strong> <code>cutoff</code> points and returns
-          <code>num_rolls</code> otherwise.
+        <h3 id="problem-10-1-pt">Problem 10 (1 分)</h3>
+
+
+        <p>一种策略可以通过在最有利时掷 0 次骰子来利用 <em>Free Bacon</em> 规则。请实现 <code>bacon_strategy</code> 函数，当掷 0
+          次骰子能够获得<strong>至少</strong>
+          <code>cutoff</code> 分时返回 0，否则返回 <code>num_rolls</code>。
         </p>
 
-        <p>Before writing any code, unlock the tests to verify your understanding of the question.</p>
-        <pre><code class="hljs">python3 ok -q 10 -u</code></pre>
-        <p>Once you are done unlocking, begin implementing your solution. You can check your correctness with:</p>
-        <pre><code class="hljs">python3 ok -q 10</code></pre>
+        <p>在编写代码之前，你需要解锁测试以验证你对问题的理解。</p>
+        <pre><code class="hljs">python3 ok -q 10 -u --local</code></pre>
+        <p>解锁完成后，你可以编写代码，并使用以下命令检查正确性：</p>
+        <pre><code class="hljs">python3 ok -q 10 --local</code></pre>
 
         <p>Once you have implemented this strategy, change <code>run_experiments</code> to evaluate
           your new strategy against the baseline. Is it better than just rolling 4?</p>
+        <p>实现了这个策略后，修改 <code>run_experiments</code> 以评估你的新策略与基础策略。它是否比仅仅掷 4 次骰子更好？</p>
+
+        <h3 id="problem-11-2-pt">Problem 11 (2 分)</h3>
 
 
-        <h3 id="problem-11-2-pt">Problem 11 (2 pt)</h3>
-
-
-        <p>A strategy can also take advantage of the <em>Pig Pass</em> and <em>Swine Align</em> rules.
-          The extra turn strategy always rolls 0 if doing so triggers an extra turn. In
-          other cases, it rolls 0 if rolling 0 would give <strong>at least</strong> <code>cutoff</code> points.
-          Otherwise, the strategy rolls <code>num_rolls</code>.</p>
+        <p>一种策略还可以利用 <em>Pig Pass</em> 和 <em>Swine Align</em> 规则。在可以触发额外回合时，这种额外回合策略总是选择掷 0 次骰子。在其他情况下，如果掷 0
+          次骰子能够获得<strong>至少</strong> <code>cutoff</code> 分，则掷 0 次骰子。否则，该策略掷 <code>num_rolls</code> 次骰子。</p>
 
         <blockquote>
-          <p><strong>Hint</strong>: You can use the function <code>bacon_strategy</code> you defined in Problem 10</p>
+          <p><strong>提示</strong>: 你可以使用在 Problem 10 中定义的 <code>bacon_strategy</code> 函数</p>
         </blockquote>
 
-        <p>Before writing any code, unlock the tests to verify your understanding of the question.</p>
-        <pre><code class="hljs">python3 ok -q 11 -u</code></pre>
-        <p>Once you are done unlocking, begin implementing your solution. You can check your correctness with:</p>
-        <pre><code class="hljs">python3 ok -q 11</code></pre>
+        <p>在编写代码之前，你需要解锁测试以验证你对问题的理解。</p>
+        <pre><code class="hljs">python3 ok -q 11 -u --local</code></pre>
+        <p>解锁完成后，你可以编写代码，并使用以下命令检查正确性：</p>
+        <pre><code class="hljs">python3 ok -q 11 --local</code></pre>
 
         <p>Once you have implemented this strategy, update <code>run_experiments</code> to evaluate
           your new strategy against the baseline. You should find that it gives a
           significant edge over <code>always_roll(4)</code>.</p>
+        <p>实现了这个策略之后，修改 <code>run_experiments</code> 以评估你的新策略与基础策略。你会发现它比 <code>always_roll(4)</code> 策略有显著的优势。</p>
 
+        <h3 id="optional-problem-12-0-pt">可选: Problem 12 (0 分)</h3>
 
-        <h3 id="optional-problem-12-0-pt">Optional: Problem 12 (0 pt)</h3>
-
-
-        <p>Implement <code>final_strategy</code>, which combines these ideas and any other ideas you
-          have to achieve a high win rate against the <code>always_roll(4)</code> strategy. Some
-          suggestions:</p>
 
         <ul>
-          <li><code>extra_turn_strategy</code> is a good default strategy to start with.</li>
-          <li>There's no point in scoring more than 100. Check whether you can win by
-            rolling 0, 1 or 2 dice. If you are in the lead, you might take fewer risks.</li>
-          <li>Try to force extra turns.</li>
-          <li>Choose the <code>num_rolls</code> and <code>cutoff</code> arguments carefully.</li>
-          <li>Take the action that is most likely to win the game.</li>
+          <li><code>extra_turn_strategy</code> 是一个很好的默认策略。</li>
+          <li>得分超过 100 分没有意义。检查你是否可以通过掷 0、1 或 2 次骰子获胜。如果你处于领先地位，你可能需要降低风险。</li>
+          <li>尝试总是触发额外回合。</li>
+          <li>仔细选择 <code>num_rolls</code> 和 <code>cutoff</code> 参数。</li>
+          <li>选择最有可能赢得游戏的操作。</li>
         </ul>
 
-        <p>You can check that your final strategy is valid by running Ok.</p>
+        <p>你可以通过运行 Ok 来检查你的最终策略是否有效。</p>
+        <pre><code class="hljs">python3 ok -q 12 --local</code></pre>
 
-        <pre><code class="hljs">python3 ok -q 12</code></pre>
-
-        <blockquote>
-          <p>Note: <code>calc.py</code> does not currently work. We're fixing a bug with the server and
-            will make it work soon.</p>
-        </blockquote>
-
-        <p>You will also eventually be able to check your exact final win rate by running</p>
-
+        <p>你最终还可以通过运行以下命令来检查你的最终胜率：</p>
         <pre><code>python3 calc.py</code></pre>
-
-        <p>This should pop up a window asking for you to confirm your identity, and then
-          it will print out a win rate for your final strategy.</p>
-
-        <p>At this point, run the entire autograder to see if there are any tests
-          that don't pass.</p>
-
-        <pre><code>python3 ok</code></pre>
-
-        <p>Once you are satisfied, submit to Ok to complete the project.</p>
+        <p>这将弹出一个窗口，要求你确认身份，然后它会打印出你的最终策略的胜率。</p>
+        <p>此时，运行整个自动评分器，查看是否有任何测试未通过。</p>
+        <pre><code>python3 ok &#x2d;&#x2d;local</code></pre>
+        <p>一旦你满意了，提交到 Ok 以完成项目。</p>
 
         <pre><code>python3 ok &#x2d;&#x2d;submit</code></pre>
 
@@ -1401,46 +1264,46 @@ Result: 10
       <div class='col-md-3 sticky'>
         <nav class='hidden-print hidden-sm hidden-xs sidebar'>
           <ul>
-            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#introduction">介绍</a></li>
             <ul>
-              <li><a href="#rules">Rules</a></li>
+              <li><a href="#rules">规则</a></li>
             </ul>
-            <li><a href="#final-product">Final Product</a></li>
-            <li><a href="#download-starter-files">Download starter files</a></li>
-            <li><a href="#logistics">Logistics</a></li>
-            <li><a href="#graphical-user-interface">Graphical User Interface</a></li>
-            <li><a href="#phase-1-simulator">Phase 1: Simulator</a></li>
+            <li><a href="#final-product">最终成果</a></li>
+            <li><a href="#download-starter-files">下载初始文件</a></li>
+            <li><a href="#logistics">项目安排与提交</a></li>
+            <li><a href="#graphical-user-interface">图形用户界面</a></li>
+            <li><a href="#phase-1-simulator">Phase 1: 模拟器</a></li>
             <ul>
-              <li><a href="#problem-0-0-pt">Problem 0 (0 pt)</a></li>
-              <li><a href="#problem-0-hint-video">Problem 0 Hint Video</a></li>
-              <li><a href="#problem-1-2-pt">Problem 1 (2 pt)</a></li>
-              <li><a href="#problem-1-hint-video">Problem 1 Hint Video</a></li>
-              <li><a href="#problem-2-1-pt">Problem 2 (1 pt)</a></li>
-              <li><a href="#problem-2-hint-video">Problem 2 Hint Video</a></li>
-              <li><a href="#problem-3-2-pt">Problem 3 (2 pt)</a></li>
-              <li><a href="#problem-3-hint-video">Problem 3 Hint Video</a></li>
-              <li><a href="#problem-4a-1-pt">Problem 4a (1 pt)</a></li>
-              <li><a href="#problem-4a-hint-video">Problem 4a Hint Video</a></li>
-              <li><a href="#problem-4b-1-pt">Problem 4b (1 pt)</a></li>
-              <li><a href="#problem-4b-hint-video">Problem 4b Hint Video</a></li>
-              <li><a href="#problem-5-3-pt">Problem 5 (3 pt)</a></li>
-              <li><a href="#problem-5-hint-video">Problem 5 Hint Video</a></li>
+              <li><a href="#problem-0-0-pt">Problem 0 (0 分)</a></li>
+              <li><a href="#problem-0-hint-video">Problem 0 提示视频</a></li>
+              <li><a href="#problem-1-2-pt">Problem 1 (2 分)</a></li>
+              <li><a href="#problem-1-hint-video">Problem 1 提示视频</a></li>
+              <li><a href="#problem-2-1-pt">Problem 2 (1 分)</a></li>
+              <li><a href="#problem-2-hint-video">Problem 2 提示视频</a></li>
+              <li><a href="#problem-3-2-pt">Problem 3 (2 分)</a></li>
+              <li><a href="#problem-3-hint-video">Problem 3 提示视频</a></li>
+              <li><a href="#problem-4a-1-pt">Problem 4a (1 分)</a></li>
+              <li><a href="#problem-4a-hint-video">Problem 4a 提示视频</a></li>
+              <li><a href="#problem-4b-1-pt">Problem 4b (1 分)</a></li>
+              <li><a href="#problem-4b-hint-video">Problem 4b 提示视频</a></li>
+              <li><a href="#problem-5-3-pt">Problem 5 (3 分)</a></li>
+              <li><a href="#problem-5-hint-video">Problem 5 提示视频</a></li>
             </ul>
-            <li><a href="#phase-2-commentary">Phase 2: Commentary</a></li>
+            <li><a href="#phase-2-commentary">Phase 2: 评论</a></li>
             <ul>
-              <li><a href="#commentary-examples">Commentary examples</a></li>
-              <li><a href="#phase-2-hint-video">Phase 2 Hint Video</a></li>
-              <li><a href="#problem-6-2-pt">Problem 6 (2 pt)</a></li>
-              <li><a href="#problem-7-3-pt">Problem 7 (3 pt)</a></li>
+              <li><a href="#commentary-examples">评论示例</a></li>
+              <li><a href="#phase-2-hint-video">Phase 2 提示视频</a></li>
+              <li><a href="#problem-6-2-pt">Problem 6 (2 分)</a></li>
+              <li><a href="#problem-7-3-pt">Problem 7 (3 分)</a></li>
             </ul>
-            <li><a href="#phase-3-strategies">Phase 3: Strategies</a></li>
+            <li><a href="#phase-3-strategies">Phase 3: 策略</a></li>
             <ul>
-              <li><a href="#phase-3-hint-video">Phase 3 Hint Video</a></li>
-              <li><a href="#problem-8-2-pt">Problem 8 (2 pt)</a></li>
-              <li><a href="#problem-9-2-pt">Problem 9 (2 pt)</a></li>
-              <li><a href="#problem-10-1-pt">Problem 10 (1 pt)</a></li>
-              <li><a href="#problem-11-2-pt">Problem 11 (2 pt)</a></li>
-              <li><a href="#optional-problem-12-0-pt">Optional: Problem 12 (0 pt)</a></li>
+              <li><a href="#phase-3-hint-video">Phase 3 提示视频</a></li>
+              <li><a href="#problem-8-2-pt">Problem 8 (2 分)</a></li>
+              <li><a href="#problem-9-2-pt">Problem 9 (2 分)</a></li>
+              <li><a href="#problem-10-1-pt">Problem 10 (1 分)</a></li>
+              <li><a href="#problem-11-2-pt">Problem 11 (2 分)</a></li>
+              <li><a href="#optional-problem-12-0-pt">可选: Problem 12 (0 分)</a></li>
             </ul>
             <li><a href="#hog-strategy-contest">Hog Strategy Contest</a></li>
           </ul>
