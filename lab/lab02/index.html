@@ -650,7 +650,7 @@ i)</code>。<code>count_cond</code> 返回一个单参数函数，该函数接�
 
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q count_cond</code></pre>
+        <pre><code class="nohighlight">python3 ok -q count_cond --local</code></pre>
 
 
         <h2 id="environment-diagram-practice">环境图练习题</h2>
@@ -668,44 +668,34 @@ def make_adder(n):
 add_ten = make_adder(n+1)
 result = add_ten(n)</code></pre>
 
-        <p>There are 3 frames total (including the Global frame). In addition, consider
-          the following questions:</p>
+        <p>一共有 3 个框架（包括全局框架）。此外，请思考以下问题：</p>
 
         <ol>
-          <li>In the Global frame, the name <code>add_ten</code> points to a function object. What is
-            the intrinsic name of that function object, and what frame is its parent?</li>
-          <li>What name is frame <code>f2</code> labeled with (<code>add_ten</code> or &lambda;)?
-            Which frame is the parent of <code>f2</code>?</li>
-          <li>What value is the variable <code>result</code> bound to in the Global frame?</li>
+          <li>在全局框架中，名称 <code>add_ten</code> 指向一个函数对象。该函数对象的内在名称是什么，它的父框架是什么？</li>
+          <li>框架 <code>f2</code> 标记的名称是什么（<code>add_ten</code> 或 &lambda;）？<code>f2</code> 的父框架是什么？</li>
+          <li>在全局框架中，变量 <code>result</code> 绑定的值是什么？</li>
         </ol>
-
         <solution>
 
-          <p>You can try out the environment diagram at <a href="http://tutor.cs61a.org">tutor.cs61a.org</a>.
-            To see the environment diagram for this question, click <a href="https://goo.gl/axdNj5">here</a>.</p>
+          <p>你可以在 <a href="http://tutor.cs61a.org">tutor.cs61a.org</a> 上尝试环境图。要查看此问题的环境图，请点击 <a
+              href="https://goo.gl/axdNj5">这里</a>。</p>
 
           <ol>
-            <li>The intrinsic name of the function object that <code>add_ten</code> points to is
-              &lambda; (specifically, the lambda whose parameter is <code>k</code>). The parent frame
-              of this lambda is <code>f1</code>.</li>
-            <li><code>f2</code> is labeled with the name &lambda; the parent frame of <code>f2</code> is
-              <code>f1</code>,
-              since that is where &lambda; is defined.
+            <li>名称 <code>add_ten</code> 指向的函数对象的内在名称是 &lambda;（具体来说，是参数为 <code>k</code> 的 lambda）。这个 lambda 的父框架是
+              <code>f1</code>。
             </li>
-            <li>The variable <code>result</code> is bound to 19.</li>
+            <li><code>f2</code> 标记的名称是 &lambda;，<code>f2</code> 的父框架是 <code>f1</code>，因为 &lambda; 是在 <code>f1</code>
+              中定义的。</li>
+            <li>变量 <code>result</code> 绑定的值是 19。</li>
           </ol>
-
         </solution>
 
-        <h3 class="question" id="q6">Q6: Lambda the Environment Diagram</h3>
+        <h3 class="question" id="q6">Q6: Lambda 环境图解析</h3>
 
-        <p>Try drawing an environment diagram for the following code and predict what
-          Python will output.</p>
+        <p>尝试为以下代码绘制环境图，并预测 Python 将输出什么。</p>
 
-        <p><strong>You do not need to submit or unlock this question through Ok.</strong>
-          Instead, you can check your work with the <a href="http://tutor.cs61a.org">Online Python
-            Tutor</a>, but try drawing it yourself first!</p>
-
+        <p><strong>你不需要通过 Ok 提交或解锁这个问题。</strong> 不过，你可以使用 <a href="http://tutor.cs61a.org">Online Python Tutor</a>
+          检查你的工作，但请先自己尝试绘制！</p>
         <pre><code>&gt;&gt;&gt; a = lambda x: x * 2 + 1
 &gt;&gt;&gt; def b(b, x):
 ...     return b(x + a(x))
@@ -726,17 +716,14 @@ result = add_ten(n)</code></pre>
         <pre><code>python3 ok &#x2d;&#x2d;submit</code></pre>
 
 
-        <h1 id="optional-questions">Optional Questions</h1>
+        <h1 id="optional-questions">选做题</h1>
 
+        <h3 class="question" id="q7">Q7: 复合恒等函数</h3>
 
-        <h3 class="question" id="q7">Q7: Composite Identity Function</h3>
-
-        <p>Write a function that takes in two single-argument functions, <code>f</code> and <code>g</code>, and
-          returns another <strong>function</strong> that has a single parameter <code>x</code>. The returned
-          function should return <code>True</code> if <code>f(g(x))</code> is equal to <code>g(f(x))</code>. You can
-          assume the output of <code>g(x)</code> is a valid input for <code>f</code> and vice versa.
-          Try to use the <code>compose1</code> function defined below for more HOF practice.</p>
-
+        <p>编写一个函数，该函数接收两个单参数函数 <code>f</code> 和 <code>g</code>，并返回另一个<strong>函数</strong>，该函数接受一个参数 <code>x</code>。
+          如果 <code>f(g(x))</code> 等于 <code>g(f(x))</code>，则返回函数应返回 <code>True</code>。
+          可以假设 <code>g(x)</code> 的输出是 <code>f</code> 的有效输入，反之亦然。
+          请尝试使用下面定义的 <code>compose1</code> 函数来练习更多高阶函数。</p>
         <solution>
 
           <pre><code>def compose1(f, g):
@@ -778,38 +765,32 @@ def composite_identity(f, g):
 
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q composite_identity</code></pre>
+        <pre><code class="nohighlight">python3 ok -q composite_identity --local</code></pre>
 
-        <h3 class="question" id="q8">Q8: I Heard You Liked Functions...</h3>
+        <h3 class="question" id="q8">Q8: 我听说你喜欢函数……</h3>
 
-        <p>Define a function <code>cycle</code> that takes in three functions <code>f1</code>, <code>f2</code>,
-          <code>f3</code>, as arguments. <code>cycle</code> will return another function that should
-          take in an integer argument <code>n</code> and return another function. That
-          final function should take in an argument <code>x</code> and cycle through
-          applying <code>f1</code>, <code>f2</code>, and <code>f3</code> to <code>x</code>, depending on what
-          <code>n</code>
-          was. Here's what the final function should do to <code>x</code> for a few
-          values of <code>n</code>:
+        <p>定义一个函数 <code>cycle</code>，该函数接收三个函数 <code>f1</code>、<code>f2</code> 和 <code>f3</code> 作为参数。
+          <code>cycle</code> 将返回另一个函数，该函数接受一个整数参数 <code>n</code>，并返回最终的函数。
+          这个最终函数接受一个参数 <code>x</code>，并根据 <code>n</code> 的值循环对 <code>x</code> 应用 <code>f1</code>、<code>f2</code> 和
+          <code>f3</code>。
+          以下是不同 <code>n</code> 值时，最终函数对 <code>x</code> 的操作方式：
         </p>
 
         <ul>
-          <li><code>n = 0</code>, return <code>x</code></li>
-          <li><code>n = 1</code>, apply <code>f1</code> to <code>x</code>, or return <code>f1(x)</code></li>
-          <li><code>n = 2</code>, apply <code>f1</code> to <code>x</code> and then <code>f2</code> to the result of
-            that, or
-            return <code>f2(f1(x))</code></li>
-          <li><code>n = 3</code>, apply <code>f1</code> to <code>x</code>, <code>f2</code> to the result of applying
-            <code>f1</code>,
-            and then <code>f3</code> to the result of applying <code>f2</code>, or <code>f3(f2(f1(x)))</code>
+          <li><code>n = 0</code>，返回 <code>x</code></li>
+          <li><code>n = 1</code>，对 <code>x</code> 应用 <code>f1</code>，即返回 <code>f1(x)</code></li>
+          <li><code>n = 2</code>，先对 <code>x</code> 应用 <code>f1</code>，再对结果应用 <code>f2</code>，即返回 <code>f2(f1(x))</code>
           </li>
-          <li><code>n = 4</code>, start the cycle again applying <code>f1</code>, then <code>f2</code>, then
-            <code>f3</code>,
-            then <code>f1</code> again, or <code>f1(f3(f2(f1(x))))</code>
+          <li><code>n = 3</code>，依次对 <code>x</code> 应用 <code>f1</code>、<code>f2</code> 和 <code>f3</code>，即返回
+            <code>f3(f2(f1(x)))</code>
           </li>
-          <li>And so forth.</li>
+          <li><code>n = 4</code>，重新开始循环，依次应用 <code>f1</code>、<code>f2</code>、<code>f3</code>，然后再次应用 <code>f1</code>，即返回
+            <code>f1(f3(f2(f1(x))))</code>
+          </li>
+          <li>以此类推。</li>
         </ul>
 
-        <p><em>Hint</em>: most of the work goes inside the most nested function.</p>
+        <p><em>提示</em>: 主要的逻辑应放在最内层的函数中。</p>
 
         <solution>
 
@@ -847,7 +828,7 @@ def composite_identity(f, g):
 
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q cycle</code></pre>
+        <pre><code class="nohighlight">python3 ok -q cycle --local</code></pre>
         <script>
           $('.alwaystoggle').css('display', 'inline-block');
           $('.alwaystoggle').click(function () {
@@ -861,7 +842,7 @@ def composite_identity(f, g):
       <div class='col-md-3 sticky'>
         <nav class='hidden-print hidden-sm hidden-xs sidebar'>
           <ul>
-            <li><a href="#topics">Topics</a></li>
+            <li><a href="#topics">主要内容</a></li>
             <ul>
               <li><a href="#lambda-expressions">Lambda Expressions</a></li>
               <li><a href="#environment-diagrams">Environment Diagrams</a></li>
@@ -872,29 +853,29 @@ def composite_identity(f, g):
                 <li><a href="#lambdas">Lambdas</a></li>
               </ul>
             </ul>
-            <li><a href="#required-questions">Required Questions</a></li>
+            <li><a href="#required-questions">必答题</a></li>
             <ul>
-              <li><a href="#what-would-python-display">What Would Python Display?</a></li>
+              <li><a href="#what-would-python-display">Python会输出什么？</a></li>
               <ul>
                 <li><a href="#q1">Q1: WWPD: Lambda the Free</a></li>
-                <li><a href="#q2">Q2: WWPD: Higher Order Functions</a></li>
+                <li><a href="#q2">Q2: WWPD: 高阶函数</a></li>
               </ul>
-              <li><a href="#coding-practice">Coding Practice</a></li>
+              <li><a href="#coding-practice">编程练习</a></li>
               <ul>
-                <li><a href="#q3">Q3: Lambdas and Currying</a></li>
-                <li><a href="#q4">Q4: Count van Count</a></li>
+                <li><a href="#q3">Q3: Lambda 和柯里化</a></li>
+                <li><a href="#q4">Q4: 数数伯爵 (Count van Count)</a></li>
               </ul>
-              <li><a href="#environment-diagram-practice">Environment Diagram Practice</a></li>
+              <li><a href="#environment-diagram-practice">环境图练习题</a></li>
               <ul>
                 <li><a href="#q5">Q5: Make Adder</a></li>
-                <li><a href="#q6">Q6: Lambda the Environment Diagram</a></li>
+                <li><a href="#q6">Q6: Lambda 环境图解析</a></li>
               </ul>
               <li><a href="#submit">Submit</a></li>
             </ul>
-            <li><a href="#optional-questions">Optional Questions</a></li>
+            <li><a href="#optional-questions">选做题</a></li>
             <ul>
-              <li><a href="#q7">Q7: Composite Identity Function</a></li>
-              <li><a href="#q8">Q8: I Heard You Liked Functions...</a></li>
+              <li><a href="#q7">Q7: 复合恒等函数</a></li>
+              <li><a href="#q8">Q8: 我听说你喜欢函数……</a></li>
             </ul>
           </ul>
         </nav>
