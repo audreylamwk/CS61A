@@ -56,6 +56,8 @@
 
       <div class="collapse navbar-collapse" id="navbar-collapse-section">
         <ul class="nav navbar-nav navbar-right">
+          <li><a href="../../weekly.html">Weekly Schedule</a></li>
+          <li><a href="../../office-hours.html">Office Hours</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
@@ -65,20 +67,18 @@
               <li><a href="../../instructor.html">Instructors</a></li>
               <li><a href="../../TAs.html">TAs</a></li>
               <li><a href="../../tutors.html">Tutors</a></li>
+              <!-- <li><a href="../../academic-interns.html">Academic Interns</a></li> -->
             </ul>
           </li>
           <li><a href="../../resources.html">Resources</a></li>
           <li><a href="../../articles/about.html">Syllabus</a></li>
+          <li><a href="https://piazza.com/berkeley/fall2020/cs61a" target="_blank">Piazza</a></li>
+          <li><a href="https://denero.org/feedback.html" target="_blank">Feedback</a></li>
+          <!--             <li><a href="https://edge.edx.org/courses/course-v1:BerkeleyX+CSW61A+2020_SP">EdX</a></li> -->
+          <!-- <li><a href="https://scheme.cs61a.org">Scheme</a></li> -->
+          <!-- <li><a href="https://sql.cs61a.org">SQL</a></li> -->
           <li><a href="https://code.cs61a.org">Code</a></li>
-          <li><a href="http://tutor.cs61a.org" target="_blank">Tutor</a></li>
-          <li>
-            <a style="color:white; font-size: 15px;vertical-align: middle" href="https://github.com/ChillyHigh/CS61A-CN"
-              title="前往仓库" target="_blank">
-              <img height="21px" src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub"
-                style="filter: invert(1) brightness(1000%);">
-              <span style="vertical-align: middle;padding-left: 0.5rem;"> CS61A-CN</span>
-            </a>
-          </li>
+          <li><a href="http://tutor.cs61a.org">Tutor</a></li>
         </ul>
       </div>
     </div>
@@ -91,10 +91,9 @@
         <header>
           <h1>
 
-            作业2: 递归
-            <br>
-            <small>Homework 2: Recursion</small>
-            <br>
+            Homework 2: Recursion
+
+
 
             <ul class="inline-block list-inline">
               <li><a href="hw02.zip" class="label label-outline">hw02.zip</a></li>
@@ -110,40 +109,52 @@
 
 
 
-        <h3><a href="EN.html">查看英文原文</a></h3>
 
-        <h2>说明</h2>
+        <h2>Instructions</h2>
 
-        <p>下载 <a href="hw02.zip">hw02.zip</a>。在压缩包中，你会找到一个名为 <a href="hw02.py">hw02.py</a> 的文件，以及一份 <code>ok</code>
-          自动评分器。</p>
+        <p>Download <a href="hw02.zip">hw02.zip</a>. Inside the archive, you will find a file called
+          <a href="hw02.py">hw02.py</a>, along with a copy of the <code>ok</code> autograder.
+        </p>
 
-        <p><strong>提交：</strong>完成后使用<code>python3 ok
-            --submit</code>来提交代码。你可以在截止日期前多次提交；只有最后一次提交会被评分。请检查你是否成功提交了代码到<a
-            href="https://okpy.org/">okpy.org</a>。更多提交作业的说明请参见<a
-            href="../../lab/lab00#submitting-the-assignment">Lab0</a>。</p>
-        <p><strong>使用Ok:</strong>如果你对使用Ok有任何疑问，请参考<a href="../../articles/using-ok.html">本指南</a>。</p>
+        <p><strong>Submission:</strong> When you are done, submit with <code>python3 ok
+  --submit</code>. You may submit more than once before the deadline; only the
+          final submission will be scored. Check that you have successfully submitted
+          your code on <a href="https://okpy.org/">okpy.org</a>. See <a
+            href="../../lab/lab00#submitting-the-assignment">Lab
+            0</a> for more instructions on
+          submitting assignments.</p>
 
-        <p><strong>阅读材料：</strong>以下阅读材料可能对你有帮助</p>
+        <p><strong>Using Ok:</strong> If you have any questions about using Ok, please
+          refer to <a href="../../articles/using-ok.html">this guide.</a>
+
+
+        <p><strong>Readings:</strong> You might find the following references
+          useful:</p>
         <ul>
-          <li><a href="https://composingprograms.netlify.app/1/7">Section 1.7</a></li>
-          <li><a href="https://composingprograms.netlify.app/2/3">Section 2.3</a></li>
+          <li><a href="http://composingprograms.com/pages/17-recursive-functions.html">Section 1.7</a></li>
+          <li><a href="http://composingprograms.com/pages/23-sequences.html">Section 2.3</a></li>
         </ul>
 
 
-        <p><strong>评分：</strong>作业评分基于正确性。每个错误的问题将使总分减少一分。课程大纲中有作业恢复政策。
-          <strong>本次作业满分为2分。</strong>
+        <p><strong>Grading:</strong> Homework is graded based on
+          correctness. Each incorrect problem will decrease the total score by one point. There is a homework recovery
+          policy as stated in the syllabus.
+          <strong>This homework is out of 2 points.</strong>
+
+
+
+
+
+        <h1 id="required-questions">Required questions</h1>
+
+
+        <h3 class="question" id="q1">Q1: Num eights</h3>
+
+        <p>Write a recursive function <code>num_eights</code> that takes a positive integer <code>x</code> and
+          returns the number of times the digit 8 appears in <code>x</code>.
+          <em>Use recursion - the tests will fail if you use any assignment statements.</em>
         </p>
 
-
-
-
-
-        <h1 id="required-questions">必答题</h1>
-
-        <h3 class="question" id="q1">Q1: 数字8的个数</h3>
-
-        <p>编写一个递归函数 <code>num_eights</code>，该函数接受一个正整数 <code>x</code> 并返回数字 8 在 <code>x</code> 中出现的次数。<em>请使用递归实现 ——
-            如果使用了赋值语句，测试将无法通过。</em></p>
         <solution>
 
           <pre><code>def num_eights(x):
@@ -174,23 +185,28 @@
 
         <br />
 
-        <p>观看下面的提示视频来获得一些初步的指导
+        <p>Watch the hints video below for somewhere to start:
 
-          <iframe width="560" height="315"
-            src="//player.bilibili.com/player.html?isOutside=true&aid=427281261&bvid=BV1s3411G7yM&cid=760037229&p=23&autoplay=0"
-            scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" autoplay=0></iframe>
+          <iframe width="560" height="315" src="https://youtube.com/embed/j34yCDO1ASQ" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </p>
 
         <br />
 
-        <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q num_eights --local</code></pre>
+        <p>Use Ok to test your code:</p>
+        <pre><code class="nohighlight">python3 ok -q num_eights</code></pre>
 
-        <h3 class="question" id="q2">Q2: 乒乓数列</h3>
 
-        <p>乒乓数列从 1 开始计数，并且始终在递增或递减。
-          在第 <code>k</code> 个元素处，如果 <code>k</code> 是 8 的倍数或包含数字 8，则改变计数方向。
-          下列是乒乓数列的前 30 个元素，其中在第 8、16、18、24 和 28 个元素处使用括号标记了计数方向的切换：</p>
+
+        <h3 class="question" id="q2">Q2: Ping-pong</h3>
+
+        <p>The ping-pong sequence counts up starting from 1 and is always either counting
+          up or counting down. At element <code>k</code>, the direction switches if <code>k</code> is a
+          multiple of 8 or contains the digit 8. The first 30 elements of the ping-pong
+          sequence are listed below, with direction swaps marked using brackets at the
+          8th, 16th, 18th, 24th, and 28th elements:</p>
+
+
 
 
         <div class="table-responsive">
@@ -286,17 +302,21 @@
         </div>
 
 
-        <p>实现一个函数 <code>pingpong</code>，返回乒乓数列的第 n 个元素，<em>且不得使用任何赋值语句</em>。</p>
 
-        <p>你可以使用在上一题中定义的函数 <code>num_eights</code>。</p>
 
-        <p><em>请使用递归实现 —— 如果使用了赋值语句，测试将无法通过。</em></p>
+        <p>Implement a function <code>pingpong</code> that returns the nth element of the ping-pong
+          sequence <em>without using any assignment statements</em>.</p>
+
+        <p>You may use the function <code>num_eights</code>, which you defined in the previous question.</p>
+
+        <p><em>Use recursion - the tests will fail if you use any assignment statements.</em></p>
 
         <blockquote>
-          <p><em>提示</em>：如果卡住了，可以先尝试使用赋值语句和 <code>while</code> 循环来实现 <code>pingpong</code>。
-            然后，为了将其转换为递归的解法，可以编写一个辅助函数，让它的参数涵盖 <code>while</code> 循环中所有会变化的变量。</p>
+          <p><em>Hint</em>: If you're stuck, first try implementing <code>pingpong</code> using assignment
+            statements and a <code>while</code> statement. Then, to convert this into a recursive
+            solution, write a helper function that has a parameter for each variable that
+            changes values in the body of the while loop.</p>
         </blockquote>
-
 
         <solution>
 
@@ -339,11 +359,10 @@
 
         <br />
 
-        <p>观看下面的提示视频来获得一些初步的指导
+        <p>Watch the hints video below for somewhere to start:
 
-          <iframe width="560" height="315"
-            src="//player.bilibili.com/player.html?isOutside=true&aid=427281261&bvid=BV1s3411G7yM&cid=760037229&p=23&autoplay=0&t=459"
-            scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" autoplay=0></iframe>
+          <iframe width="560" height="315" src="https://youtube.com/embed/5PAfXcB_EoU" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </p>
 
         <br />
@@ -375,16 +394,18 @@
 
 -->
 
-        <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q pingpong --local</code></pre>
+        <p>Use Ok to test your code:</p>
+        <pre><code class="nohighlight">python3 ok -q pingpong</code></pre>
 
 
-        <h3 class="question" id="q3">Q3: 缺失的数字</h3>
 
-        <p>编写一个递归函数 <code>missing_digits</code>，该函数接受一个按递增顺序排列的数字 <code>n</code>
-          （例如，<code>12289</code> 是有效的，但 <code>15362</code> 和 <code>98764</code> 不是）。
-          它返回 <code>n</code> 中缺失的数字个数。缺失数字指的是在 <code>n</code> 的首位和末位数字之间但未出现在 <code>n</code> 中的数字。
-          <em>请使用递归实现 —— 如果使用了 while 或 for 循环，测试将无法通过。</em>
+        <h3 class="question" id="q3">Q3: Missing Digits</h3>
+
+        <p>Write the recursive function <code>missing_digits</code> that takes a number <code>n</code> that is sorted in
+          increasing order (for example, <code>12289</code> is valid but <code>15362</code> and <code>98764</code> are
+          not). It returns the number of missing digits in <code>n</code>. A missing digit is a number between the first
+          and last digit of <code>n</code> of a that is not in <code>n</code>.
+          <em>Use recursion - the tests will fail if you use while or for loops.</em>
         </p>
 
         <solution>
@@ -423,49 +444,50 @@
 
         <br />
 
-        <p>观看下面的提示视频来获得一些初步的指导
+        <p>Watch the hints video below for somewhere to start:
 
-          <iframe width="560" height="315"
-            src="//player.bilibili.com/player.html?isOutside=true&aid=427281261&bvid=BV1s3411G7yM&cid=760037229&p=23&autoplay=0&t=1151"
-            scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" autoplay=0></iframe>
+          <iframe width="560" height="315" src="https://youtube.com/embed/xcd2jTROLSs" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </p>
 
         <br />
 
-        <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q missing_digits --local</code></pre>
+        <p>Use Ok to test your code:</p>
+        <pre><code class="nohighlight">python3 ok -q missing_digits</code></pre>
 
 
 
-        <h3 class="question" id="q4">Q4: 计算硬币组合</h3>
+        <h3 class="question" id="q4">Q4: Count coins</h3>
 
-        <p>给定一个正整数 <code>total</code>，如果一组硬币的总面值等于 <code>total</code>，则该组硬币可以用于找零。
-          这里我们使用标准的美国硬币面值：1、5、10、25。
-          例如，以下几种硬币组合可以凑成 <code>15</code>：</p>
+        <p>Given a positive integer <code>total</code>, a set of coins makes change for <code>total</code> if
+          the sum of the values of the coins is <code>total</code>. Here we will use standard US Coin values: 1, 5, 10,
+          25 For example, the following
+          sets make change for <code>15</code>:</p>
 
         <ul>
-          <li>15 枚 1 美分硬币</li>
-          <li>10 枚 1 美分硬币，1 枚 5 美分硬币</li>
-          <li>5 枚 1 美分硬币，2 枚 5 美分硬币</li>
-          <li>5 枚 1 美分硬币，1 枚 10 美分硬币</li>
-          <li>3 枚 5 美分硬币</li>
-          <li>1 枚 5 美分硬币，1 枚 10 美分硬币</li>
+          <li>15 1-cent coins</li>
+          <li>10 1-cent, 1 5-cent coins</li>
+          <li>5 1-cent, 2 5-cent coins</li>
+          <li>5 1-cent, 1 10-cent coins</li>
+          <li>3 5-cent coins</li>
+          <li>1 5-cent, 1 10-cent coin</li>
         </ul>
 
-        <p>因此，总共有 6 种方法可以凑出 <code>15</code>。
-          请编写一个递归函数 <code>count_coins</code>，它接受一个正整数 <code>total</code>，并返回使用硬币凑出 <code>total</code> 的不同组合数。
-          请使用提供的 <code>next_largest_coin</code> 函数来计算当前硬币面值的下一个更大面值。例如：
-          <code>next_largest_coin(5)</code> = <code>10</code>。
+        <p>Thus, there are 6 ways to make change for <code>15</code>. Write a recursive function
+          <code>count_coins</code> that takes a positive integer <code>total</code> and returns the number of
+          ways to make change for <code>total</code> using coins. Use the <code>next_largest_coin</code> function given
+          to you to calculate the next largest coin denomination given your current coin. I.e.
+          <code>next_largest_coin(5)</code> = <code>10</code>.
         </p>
 
         <blockquote>
-          <p><em>提示：</em>
-            参考 <a
-              href="https://composingprograms.netlify.app/1/7#_1-7-5-%E7%A4%BA%E4%BE%8B-%E5%88%86%E5%89%B2%E6%95%B0">分割数</a>
-            的实现，该函数展示了如何使用较小的部分来计算总和的不同方式。
-            如果在递归调用中需要跟踪多个值，可以考虑编写一个辅助函数。</p>
+          <p><em>Hint:</em> Refer the <a
+              href="http://composingprograms.com/pages/17-recursive-functions.html#example-partitions">implementation</a>
+            of <code>count_partitions</code> for an
+            example of how to count the ways to sum up to a total with smaller parts.
+            If you need to keep track of more than one value across recursive calls,
+            consider writing a helper function.</p>
         </blockquote>
-
 
         <solution>
 
@@ -508,17 +530,16 @@ def count_coins(total):
 
         <br />
 
-        <p>观看下面的提示视频来获得一些初步的指导
+        <p>Watch the hints video below for somewhere to start:
 
-          <iframe width="560" height="315"
-            src="//player.bilibili.com/player.html?isOutside=true&aid=427281261&bvid=BV1s3411G7yM&cid=760037229&p=23&autoplay=0"
-            scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" autoplay=0></iframe>
+          <iframe width="560" height="315" src="https://youtube.com/embed/QUeWZaDM-XA" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </p>
 
         <br />
 
-        <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q count_coins --local</code></pre>
+        <p>Use Ok to test your code:</p>
+        <pre><code class="nohighlight">python3 ok -q count_coins</code></pre>
 
 
 
@@ -535,35 +556,40 @@ def count_coins(total):
         <!-- <include topics/lists/immutable/medium/flatten.md> -->
 
 
-        <h1 id="just-for-fun-questions">趣味问题</h1>
+        <h1 id="just-for-fun-questions">Just for Fun Questions</h1>
+
 
         <blockquote>
-          <p>这个问题展示了如何在全局框架(Global Frame) 中，不使用函数名称来编写递归函数。</p>
+          <p>This question demonstrates that it's possible to write recursive functions without assigning them a name in
+            the global frame.</p>
         </blockquote>
 
-        <h3 class="question" id="q5">Q5: 匿名阶乘</h3>
+        <!--<include topics/recursion/medium/towers-of-hanoi.md>-->
+        <h3 class="question" id="q5">Q5: Anonymous factorial</h3>
 
-        <p>递归实现的阶乘函数可以通过使用
-          <a href="https://docs.python.org/zh-cn/3/reference/expressions.html#conditional-expressions">条件表达式</a>
-          将其写成一个单一的表达式。
-        </p>
-
+        <p>The recursive factorial function can be written as a single expression
+          by using a <a
+            href="http://docs.python.org/py3k/reference/expressions.html#conditional-expressions">conditional
+            expression</a>.</p>
 
         <pre><code>&gt;&gt;&gt; fact = lambda n: 1 if n == 1 else mul(n, fact(sub(n, 1)))
 &gt;&gt;&gt; fact(5)
 120</code></pre>
 
-        <p>然而，这个实现依赖于 <code>fact</code> 的名字。在上面的例子中，
-          <code>fact</code> 有一个名字，我们在 <code>fact</code> 的主体中引用了这个名字。为了编写递归函数，我们通常会使用 <code>def</code>
-          或赋值语句为函数命名，以便我们可以在函数体内引用它。在这个问题中，你的任务是递归地定义<code>fact</code>，而不为它命名！
+        <p>However, this implementation relies on the fact (no pun intended) that
+          <code>fact</code> has a name, to which we refer in the body of <code>fact</code>. To write a
+          recursive function, we have always given it a name using a <code>def</code> or
+          assignment statement so that we can refer to the function within its
+          own body. In this question, your job is to define fact recursively
+          without giving it a name!
         </p>
 
-        <p>
-          写一个表达式，计算 <code>n</code> 的阶乘，仅使用调用表达式、条件表达式和lambda表达式（不使用赋值或 <code>def</code> 语句）。<em>特别注意，你不允许在返回表达式中使用
-            <code>make_anonymous_factorial</code>。</em>
-          <code>operator</code> 模块中的 <code>sub</code> 和 <code>mul</code> 函数是解决这个问题所需的唯一内置函数：
-        </p>
-
+        <p>Write an expression that computes <code>n</code> factorial using only call
+          expressions, conditional expressions, and lambda expressions (no
+          assignment or def statements). <em>Note in particular that you are not
+            allowed to use <code>make_anonymous_factorial</code> in your return expression.</em>
+          The <code>sub</code> and <code>mul</code> functions from the <code>operator</code> module are the only
+          built-in functions required to solve this problem:</p>
 
         <solution>
 
@@ -584,8 +610,8 @@ def make_anonymous_factorial():
 
         </solution>
 
-        <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q make_anonymous_factorial --local</code></pre>
+        <p>Use Ok to test your code:</p>
+        <pre><code class="nohighlight">python3 ok -q make_anonymous_factorial</code></pre>
 
         <script>
           $('.alwaystoggle').css('display', 'inline-block');
@@ -601,19 +627,19 @@ def make_anonymous_factorial():
       <div class='col-md-3 sticky'>
         <nav class='hidden-print hidden-sm hidden-xs sidebar'>
           <ul>
-            <li><a href="#required-questions">必答题</a></li>
+            <li><a href="#required-questions">Required questions</a></li>
             <ul>
-              <li><a href="#q1">Q1: 数字8的个数</a></li>
-              <li><a href="#q2">Q2: 乒乓数列</a></li>
-              <li><a href="#q3">Q3: 缺失的数字</a></li>
-              <li><a href="#q4">Q4: 计算硬币组合</a></li>
+              <li><a href="#q1">Q1: Num eights</a></li>
+              <li><a href="#q2">Q2: Ping-pong</a></li>
+              <li><a href="#q3">Q3: Missing Digits</a></li>
+              <li><a href="#q4">Q4: Count coins</a></li>
             </ul>
             <ul>
               <li><a href="#submit">Submit</a></li>
             </ul>
-            <li><a href="#just-for-fun-questions">趣味问题</a></li>
+            <li><a href="#just-for-fun-questions">Just for Fun Questions</a></li>
             <ul>
-              <li><a href="#q5">Q5: 匿名阶乘</a></li>
+              <li><a href="#q5">Q5: Anonymous factorial</a></li>
             </ul>
           </ul>
         </nav>
