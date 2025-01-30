@@ -56,6 +56,8 @@
 
       <div class="collapse navbar-collapse" id="navbar-collapse-section">
         <ul class="nav navbar-nav navbar-right">
+          <li><a href="../../weekly.html">Weekly Schedule</a></li>
+          <li><a href="../../office-hours.html">Office Hours</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
@@ -65,20 +67,18 @@
               <li><a href="../../instructor.html">Instructors</a></li>
               <li><a href="../../TAs.html">TAs</a></li>
               <li><a href="../../tutors.html">Tutors</a></li>
+              <!-- <li><a href="../../academic-interns.html">Academic Interns</a></li> -->
             </ul>
           </li>
           <li><a href="../../resources.html">Resources</a></li>
           <li><a href="../../articles/about.html">Syllabus</a></li>
+          <li><a href="https://piazza.com/berkeley/fall2020/cs61a" target="_blank">Piazza</a></li>
+          <li><a href="https://denero.org/feedback.html" target="_blank">Feedback</a></li>
+          <!--             <li><a href="https://edge.edx.org/courses/course-v1:BerkeleyX+CSW61A+2020_SP">EdX</a></li> -->
+          <!-- <li><a href="https://scheme.cs61a.org">Scheme</a></li> -->
+          <!-- <li><a href="https://sql.cs61a.org">SQL</a></li> -->
           <li><a href="https://code.cs61a.org">Code</a></li>
-          <li><a href="http://tutor.cs61a.org" target="_blank">Tutor</a></li>
-          <li>
-            <a style="color:white; font-size: 15px;vertical-align: middle" href="https://github.com/ChillyHigh/CS61A-CN"
-              title="前往仓库" target="_blank">
-              <img height="21px" src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub"
-                style="filter: invert(1) brightness(1000%);">
-              <span style="vertical-align: middle;padding-left: 0.5rem;"> CS61A-CN</span>
-            </a>
-          </li>
+          <li><a href="http://tutor.cs61a.org">Tutor</a></li>
         </ul>
       </div>
     </div>
@@ -91,13 +91,10 @@
         <header>
           <h1>
 
-            作业3: 树, 数据抽象
-            <br>
-            <small>
-              Homework 3: Trees, Data Abstraction
-            </small>
+            Homework 3: Trees, Data Abstraction
 
-            <br>
+
+
             <ul class="inline-block list-inline">
               <li><a href="hw03.zip" class="label label-outline">hw03.zip</a></li>
             </ul>
@@ -111,73 +108,100 @@
 
 
 
-        <h3><a href="EN.html">查看英文原文</a></h3>
+        <h3><a href="./">查看汉语翻译</a></h3>
 
-        <h2>说明</h2>
 
-        <p>下载 <a href="hw03.zip">hw03.zip</a>。在压缩包中，你会找到一个名为 <a href="hw02.py">hw02.py</a> 的文件，以及一份 <code>ok</code>
-          自动评分器。</p>
+        <h2>Instructions</h2>
 
-        <p><strong>提交：</strong>完成后使用<code>python3 ok
-            --submit</code>来提交代码。你可以在截止日期前多次提交；只有最后一次提交会被评分。请检查你是否成功提交了代码到<a
-            href="https://okpy.org/">okpy.org</a>。更多提交作业的说明请参见<a
-            href="../../lab/lab00#submitting-the-assignment">Lab0</a>。</p>
-        <p><strong>使用Ok:</strong>如果你对使用Ok有任何疑问，请参考<a href="../../articles/using-ok.html">本指南</a>。</p>
+        <p>Download <a href="hw03.zip">hw03.zip</a>. Inside the archive, you will find a file called
+          <a href="hw03.py">hw03.py</a>, along with a copy of the <code>ok</code> autograder.
+        </p>
 
-        <p><strong>阅读材料：</strong>以下阅读材料可能对你有帮助</p>
+        <p><strong>Submission:</strong> When you are done, submit with <code>python3 ok
+  --submit</code>. You may submit more than once before the deadline; only the
+          final submission will be scored. Check that you have successfully submitted
+          your code on <a href="https://okpy.org/">okpy.org</a>. See <a
+            href="../../lab/lab00#submitting-the-assignment">Lab
+            0</a> for more instructions on
+          submitting assignments.</p>
+
+        <p><strong>Using Ok:</strong> If you have any questions about using Ok, please
+          refer to <a href="../../articles/using-ok.html">this guide.</a>
+
+
+        <p><strong>Readings:</strong> You might find the following references
+          useful:</p>
         <ul>
-          <li><a href="https://composingprograms.netlify.app/1/7">Section 1.7</a></li>
-          <li><a href="https://composingprograms.netlify.app/2/3">Section 2.3</a></li>
+          <li><a href="http://composingprograms.com/pages/22-data-abstraction.html">Section 2.2</a></li>
+          <li><a href="http://composingprograms.com/pages/23-sequences.html">Section 2.3</a></li>
         </ul>
 
 
-        <p><strong>评分：</strong>作业评分基于正确性。每个错误的问题将使总分减少一分。课程大纲中有作业恢复政策。
-          <strong>本次作业满分为2分。</strong>
-        </p>
+        <p><strong>Grading:</strong> Homework is graded based on
+          correctness. Each incorrect problem will decrease the total score by one point. There is a homework recovery
+          policy as stated in the syllabus.
+          <strong>This homework is out of 2 points.</strong>
 
-        <h1 id="required-questions">必答题</h1>
+
+
+
+
+        <h1 id="required-questions">Required questions</h1>
 
 
         <br />
 
-        <p>观看下面的提示视频来获得一些初步的指导:
+        <p>Watch the hints video below for somewhere to start:
 
-          <iframe width="560" height="315"
-            src="//player.bilibili.com/player.html?isOutside=true&aid=427281261&bvid=BV1s3411G7yM&cid=760052457&p=37&autoplay=0"
-            scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" autoplay=0></iframe>
+          <iframe width="560" height="315" src="https://youtube.com/embed/uEbwMToQ45M" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </p>
+
         <br />
 
 
-        <h2 id="abstraction">抽象</h2>
+        <h2 id="abstraction">Abstraction</h2>
 
-        <h2 id="mobiles">悬挂模型</h2>
 
-        <p><strong>致谢。</strong> 这个悬挂模型示例来自 MIT 经典教材《计算机程序的构造和解释》中的一个经典问题，详见
-          <a href="https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-15.html#%_sec_2.2.2">第
-            2.2.2 节</a>。
+        <h2 id="mobiles">Mobiles</h2>
+
+
+        <p><strong>Acknowledgements.</strong> This mobile example is based on
+          a classic problem from MIT Structure and Interpretation of Computer Programs,
+          <a href="https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-15.html#%_sec_2.2.2">Section
+            2.2.2</a>.
         </p>
 
-        <p><img class="img-responsive center-block" src="assets/mobile-planet.png" alt="悬挂模型示例"></p>
+        <!-- > <strong>Hint:</strong> for more information on this problem (with more pictures!) please refer to <a href="assets/mobiles.pdf">this document</a> -->
 
-        <p>我们正在制作一个天文馆的悬挂模型。一个<a
-            href="https://images.zanui.com.au/unsafe/1600x/filters:sharpen(1,0.2,1):quality(80)/production-static.aws.zanui.com.au/p/authentic-models-0459-1.jpg">悬挂模型</a>
-          是一种悬挂式雕塑。二叉悬挂模型由两条悬臂组成。每条悬臂是一根具有特定长度的杆子，其末端悬挂着一个行星或另一个悬挂模型。例如，下图展示了悬挂模型 A 的左臂和右臂，以及它们各自末端所悬挂的内容。</p>
+        <p><img class="img-responsive center-block" src="assets/mobile-planet.png" alt="Mobile example"></p>
 
-        <p><img class="img-responsive center-block" src="assets/mobile-planet-labeled.png" alt="标注的悬挂模型示例"></p>
+        <p>We are making a planetarium mobile. A <a
+            href="https://images.zanui.com.au/unsafe/1600x/filters:sharpen(1,0.2,1):quality(80)/production-static.aws.zanui.com.au/p/authentic-models-0459-1.jpg">mobile</a>
+          is a type of hanging sculpture. A binary mobile consists of two
+          arms. Each arm is a rod of a certain length, from which hangs either a planet
+          or another mobile. For example, the below diagram shows the left and right arms of Mobile A,
+          and what hangs at the ends of each of those arms.</p>
 
-        <p>我们将使用以下数据抽象来表示二叉悬挂模型：</p>
+        <p><img class="img-responsive center-block" src="assets/mobile-planet-labeled.png" alt="Labeled Mobile example">
+        </p>
+
+        <p>We will represent a binary mobile using the data abstractions below.</p>
 
         <ul>
-          <li>一个 <code>mobile</code>（悬挂模型）必须具有左 <code>arm</code>（悬臂）和右 <code>arm</code>（悬臂）。</li>
-          <li>一个 <code>arm</code>（悬臂）具有正长度，并且必须在末端悬挂某物，可以是另一个 <code>mobile</code>（悬挂模型）或 <code>planet</code>（行星）。</li>
-          <li>一个 <code>planet</code>（行星）具有正大小，并且没有任何其他物体悬挂在其上。</li>
+          <li>A <code>mobile</code> must have both a left <code>arm</code> and a right <code>arm</code>.</li>
+          <li>An <code>arm</code> has a positive length and must have something hanging at the end, either a
+            <code>mobile</code> or <code>planet</code>.
+          </li>
+          <li>A <code>planet</code> has a positive size, and nothing hanging from it.</li>
         </ul>
 
-        <h3 id="arms-length-recursion-sidenote">悬臂长度递归（附注）</h3>
 
-        <p>在开始之前，先对树形数据结构的递归做一个简要说明。请考虑以下函数。</p>
+        <h3 id="arms-length-recursion-sidenote">Arms-length recursion (sidenote)</h3>
 
+
+        <p>Before we get started, a quick comment on recursion with tree data structures. Consider the following
+          function.</p>
 
         <pre><code>def min_depth(t):
     &quot;&quot;&quot;A simple function to return the distance between t&#x27;s root and its closest leaf&quot;&quot;&quot;
@@ -189,9 +213,10 @@
         h = min(h, 1 + min_depth(b))
     return h</code></pre>
 
-        <p>标注有 <code>!!!</code> 的那一行违反了“悬臂长度”递归原则。虽然这段代码在存在该行时仍然能够正确运行，但实际上，我们在这里执行的检查应该由递归的下一级来完成。我们已经在
-          <code>min_depth</code> 函数中使用了 if 语句来处理叶子节点的输入，因此不应该再包含这行代码，以避免代码的冗余。
-        </p>
+        <p>The line flagged with <code>!!!</code> is an "arms-length" recursion violation. Although our code works
+          correctly when it is present, by performing this check we are doing work that should be done by the next level
+          of recursion—we already have an if-statement that handles any inputs to <code>min_depth</code> that are
+          leaves, so we should not include this line to eliminate redundancy in our code.</p>
 
         <pre><code>def min_depth(t):
     &quot;&quot;&quot;A simple function to return the distance between t&#x27;s root and its closest leaf&quot;&quot;&quot;
@@ -203,16 +228,18 @@
         h = min(h, 1 + min_depth(b))
     return h</code></pre>
 
-        <p>
-          “悬臂长度”递归不仅会导致代码冗余，还会使代码更加复杂，并掩盖递归函数的实际功能，从而增加编写递归函数的难度。我们希望递归情况仅处理一个递归层级，而不是进行额外的检查。我们可能会在某些情况下检查你的代码是否存在类似问题。
-        </p>
+        <p>Arms-length recursion is not only redundant but often complicates our code and obscures the functionality of
+          recursive functions, making writing recursive functions much more difficult. We always want our recursive case
+          to be handling one and only one recursive level. We may or may not be checking your code periodically for
+          things like this.</p>
 
-        <h3 class="question" id="q1">Q1：重量</h3>
+        <h3 class="question" id="q1">Q1: Weights</h3>
 
-        <p>通过完成 <code>planet</code> 构造函数和 <code>size</code> 选择器来实现 <code>planet</code>
-          数据抽象，使得一个行星可以用一个包含两个元素的列表表示，其中第一个元素是字符串 <code>&#x27;planet&#x27;</code>，第二个元素是它的大小。
-          <code>total_weight</code> 示例展示了如何使用悬挂模型、悬臂和行星的抽象。
-        </p>
+        <p>Implement the <code>planet</code> data abstraction by completing the <code>planet</code> constructor
+          and the <code>size</code> selector so that a planet is represented using a two-element list
+          where the first element is the string <code>&#x27;planet&#x27;</code> and the second element is its size.
+          The <code>total_weight</code> example is provided to demonstrate use of the mobile, arm,
+          and planet abstractions.</p>
 
         <pre><code>def mobile(left, right):
     &quot;&quot;&quot;Construct a mobile from a left arm and a right arm.&quot;&quot;&quot;
@@ -294,7 +321,7 @@ def is_planet(w):
         assert is_mobile(m), &quot;must get total weight of a mobile or a planet&quot;
         return total_weight(end(left(m))) + total_weight(end(right(m)))</code></pre>
 
-        <p>使用 Ok 来测试你的代码：</p>
+        <p>Use Ok to test your code:</p>
         <pre><code class="nohighlight">python3 ok -q total_weight</code></pre>
 
         <h3 class="question" id="q2">Q2: Balanced</h3>
@@ -339,7 +366,7 @@ def is_planet(w):
     "*** YOUR CODE HERE ***"
 </code></pre>
 
-        <p>使用 Ok 来测试你的代码：</p>
+        <p>Use Ok to test your code:</p>
         <pre><code class="nohighlight">python3 ok -q balanced</code></pre>
 
 
@@ -386,7 +413,7 @@ def is_planet(w):
     "*** YOUR CODE HERE ***"
 </code></pre>
 
-        <p>使用 Ok 来测试你的代码：</p>
+        <p>Use Ok to test your code:</p>
         <pre><code class="nohighlight">python3 ok -q totals_tree</code></pre>
 
 
@@ -449,7 +476,7 @@ def is_planet(w):
 <br />
 -->
 
-        <p>使用 Ok 来测试你的代码：</p>
+        <p>Use Ok to test your code:</p>
         <pre><code class="nohighlight">python3 ok -q replace_leaf</code></pre>
 
         <!--
@@ -501,7 +528,7 @@ def is_planet(w):
 <br />
 -->
 
-        <p>使用 Ok 来测试你的代码：</p>
+        <p>Use Ok to test your code:</p>
         <pre><code class="nohighlight">python3 ok -q preorder</code></pre>
 
         <h3 class="question" id="q6">Q6: Has Path</h3>
@@ -560,7 +587,7 @@ def is_planet(w):
 <br />
 -->
 
-        <p>使用 Ok 来测试你的代码：</p>
+        <p>Use Ok to test your code:</p>
         <pre><code class="nohighlight">python3 ok -q has_path</code></pre>
 
 
@@ -709,7 +736,7 @@ def par2(r1, r2):
     r2 = interval(1, 1) # Replace this line!
     return r1, r2</code></pre>
 
-        <p>使用 Ok 来测试你的代码：</p>
+        <p>Use Ok to test your code:</p>
         <pre><code class="nohighlight">python3 ok -q check_par</code></pre>
 
 
@@ -768,7 +795,7 @@ def par2(r1, r2):
     "*** YOUR CODE HERE ***"
 </code></pre>
 
-        <p>使用 Ok 来测试你的代码：</p>
+        <p>Use Ok to test your code:</p>
         <pre><code class="nohighlight">python3 ok -q quadratic</code></pre>
 
 
