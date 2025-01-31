@@ -91,10 +91,13 @@
         <header>
           <h1>
 
-            Homework 4: Nonlocal, Iterators
+            作业4: 非局部, 迭代器
+            <br>
+            <small>
+              Homework 4: Nonlocal, Iterators
+            </small>
 
-
-
+            <br>
             <ul class="inline-block list-inline">
               <li><a href="hw04.zip" class="label label-outline">hw04.zip</a></li>
             </ul>
@@ -107,65 +110,53 @@
         <p><em>Due by 11:59pm on Thursday, October 15</em></p>
 
 
+        <h3><a href="EN.html">查看英文原文</a></h3>
 
+        <h2>说明</h2>
 
+        <p>下载 <a href="hw04.zip">hw04.zip</a>。在压缩包中，你会找到一个名为 <a href="hw04.py">hw04.py</a> 的文件，以及一份 <code>ok</code>
+          自动评分器。</p>
 
-        <h2>Instructions</h2>
+        <p><strong>提交：</strong>完成后使用<code>python3 ok
+              --submit</code>来提交代码。你可以在截止日期前多次提交；只有最后一次提交会被评分。请检查你是否成功提交了代码到<a
+            href="https://okpy.org/">okpy.org</a>。更多提交作业的说明请参见<a
+            href="../../lab/lab00#submitting-the-assignment">Lab0</a>。</p>
+        <p><strong>使用Ok:</strong>如果你对使用Ok有任何疑问，请参考<a href="../../articles/using-ok.html">本指南</a>。</p>
 
-        <p>Download <a href="hw04.zip">hw04.zip</a>. Inside the archive, you will find a file called
-          <a href="hw04.py">hw04.py</a>, along with a copy of the <code>ok</code> autograder.
-        </p>
-
-        <p><strong>Submission:</strong> When you are done, submit with <code>python3 ok
-  --submit</code>. You may submit more than once before the deadline; only the
-          final submission will be scored. Check that you have successfully submitted
-          your code on <a href="https://okpy.org/">okpy.org</a>. See <a
-            href="../../lab/lab00#submitting-the-assignment">Lab
-            0</a> for more instructions on
-          submitting assignments.</p>
-
-        <p><strong>Using Ok:</strong> If you have any questions about using Ok, please
-          refer to <a href="../../articles/using-ok.html">this guide.</a>
-
-
-        <p><strong>Readings:</strong> You might find the following references
-          useful:</p>
+        <p><strong>阅读材料：</strong>以下阅读材料可能对你有帮助</p>
         <ul>
-          <li><a href="http://composingprograms.com/pages/24-mutable-data.html">Section 2.4</a></li>
-          <li><a href="http://composingprograms.com/pages/42-implicit-sequences.html">Section 4.2</a></li>
+          <li><a href="https://composingprograms.netlify.app/2/4">Section 2.4</a></li>
+          <li><a href="https://composingprograms.netlify.app/4/2">Section 4.2</a></li>
         </ul>
 
 
-        <p><strong>Grading:</strong> Homework is graded based on
-          correctness. Each incorrect problem will decrease the total score by one point. There is a homework recovery
-          policy as stated in the syllabus.
-          <strong>This homework is out of 2 points.</strong>
+        <p><strong>评分：</strong>作业评分基于正确性。每个错误的问题将使总分减少一分。课程大纲中有作业恢复政策。
+          <strong>本次作业满分为2分。</strong>
+        </p>
 
 
 
-
-
-        <h1 id="required-questions">Required Questions</h1>
+        <h1 id="required-questions">必答题</h1>
 
 
 
         <button id='toggle-1' class='btn btn-outline btn-lg alwaystoggle toggle'>
-          Hint Video<noscript> (enable JavaScript)</noscript>
+          提示视频<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-1">
 
-          <h3 id="hint-video">Hint Video</h3>
+          <h3 id="hint-video">提示视频</h3>
 
-          <p>Check out this video for some helpful hints on how to tackle the problems on this assignment.
+          <p>观看此视频来获取一些解决本作业问题的提示。
             <br>
-
-            <iframe width="560" height="315" src="https://youtube.com/embed/k3RY89WaBSM" frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315"
+              src="//player.bilibili.com/player.html?isOutside=true&aid=427281261&bvid=BV1s3411G7yM&cid=760053089&p=44&autoplay=0"
+              scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
         </div>
         </p>
 
 
-        <h2 id="nonlocal">Nonlocal</h2>
+        <h2 id="nonlocal">非局部 (Nonlocal)</h2>
 
 
         <h3 class="question" id="q1">Q1: Make Bank</h3>
