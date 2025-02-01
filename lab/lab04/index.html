@@ -87,11 +87,12 @@
       <div class='col-md-9'>
         <header>
           <h1>
-
-            Lab 4: Recursion, Tree Recursion, Python Lists
-
-
-
+            实验4: 递归, 树递归, Python 列表
+            <br>
+            <small>
+              Lab 4: Recursion, Tree Recursion, Python Lists
+            </small>
+            <br>
             <ul class="inline-block list-inline">
               <li><a href="lab04.zip" class="label label-outline">lab04.zip</a></li>
             </ul>
@@ -104,26 +105,15 @@
         <p><i>Due by 11:59pm on Tuesday, September 22.</i></p>
 
 
+        <h3><a href="EN.html">查看英文原文</a></h3>
+        <h2 id='starter-files'>初始文件</h2>
 
+        <p>下载 <a href="lab04.zip">lab04.zip</a>。
+          在压缩包中，你可以找到本实验问题的初始文件，以及一份 <a href="ok">Ok</a> 自动评分器。</p>
 
-        <h2 id='starter-files'>Starter Files</h2>
+        <h1 id="topics">主要内容</h1>
 
-        <p>Download <a href="lab04.zip">lab04.zip</a>.
-          Inside the archive, you will find starter files for the questions in this lab,
-          along with a copy of the <a href="ok">Ok</a> autograder.</p>
-
-
-
-
-
-
-
-        <h1 id="topics">Topics</h1>
-
-
-        <p>Consult this section if you need a refresher on the material for this lab. It's
-          okay to skip directly to <a href="#required-questions">the questions</a> and refer back
-          here should you get stuck.</p>
+        <p>如果你需要复习本实验的材料，请参考本节。你可以直接跳到<a href="#required-questions">问题部分</a>，遇到困难再回到这里。</p>
 
 
         <button id='toggle-1' class='btn btn-outline btn-lg alwaystoggle toggle'>
@@ -352,54 +342,38 @@ n * (n&#x2d;1)!</code>.</p>
 
 
 
-        <h2 id="lists-practice">Lists Practice</h2>
+        <h2 id="lists-practice">列表练习</h2>
 
-
-        <h3 class="question" id="q1">Q1: List Indexing</h3>
+        <h3 class="question" id="q1">Q1: 列表索引</h3>
 
         <blockquote>
-          <p>Use Ok to test your knowledge with the following "List Indexing"
-            questions:</p>
+          <p>使用 Ok 测试你对以下“列表索引”问题的理解：</p>
 
-          <pre><code>python3 ok &#x2d;q list&#x2d;indexing &#x2d;u</code></pre>
+          <pre><code>python3 ok &#x2d;q list&#x2d;indexing &#x2d;u &#x2d;&#x2d;local</code></pre>
         </blockquote>
 
-        <p>For each of the following lists, what is the list indexing expression that evaluates to
-          <code>7</code>? For example, if <code>x = [7]</code>, then the answer would be <code>x[0]</code>. You can use
-          the
-          interpreter or Python Tutor to experiment with your answers. If the code would cause an error, type
-          <code>Error</code>.
-        </p>
+        <p>对于以下每个列表，哪个列表索引表达式的结果是 <code>7</code>？例如，如果 <code>x = [7]</code>，那么答案就是 <code>x[0]</code>。你可以使用解释器或 Python
+          Tutor 来实验你的答案。如果代码会导致错误，请输入 <code>Error</code>。</p>
 
         <pre><code>&gt;&gt;&gt; x = [1, 3, [5, 7], 9]
 <div class="alt prompt-1">______</div><div class="solution prompt-1">&#x78;&#x5b;&#x32;&#x5d;&#x5b;&#x31;&#x5d;</div>
 &gt;&gt;&gt; x = [[3, [5, 7], 9]]
 <div class="alt prompt-1">______</div><div class="solution prompt-1">&#x78;&#x5b;&#x30;&#x5d;&#x5b;&#x31;&#x5d;&#x5b;&#x31;&#x5d;</div></code></pre>
-        <button id='prompt-1' class='btn btn-outline btn-lg solutiontoggle prompt'>
-          Toggle Solution<noscript> (enable JavaScript)</noscript>
-        </button>
 
-
-        <p>What would Python display? If you get stuck, try it out in the Python interpreter!</p>
+        <p>Python 会输出什么？如果遇到困难，可以在 Python 解释器中尝试运行！</p>
 
         <pre><code>&gt;&gt;&gt; lst = [3, 2, 7, [84, 83, 82]]
 &gt;&gt;&gt; lst[4]
 <div class="alt prompt-2">______</div><div class="solution prompt-2">&#x45;&#x72;&#x72;&#x6f;&#x72;</div>
 &gt;&gt;&gt; lst[3][0]
 <div class="alt prompt-2">______</div><div class="solution prompt-2">&#x38;&#x34;</div></code></pre>
-        <button id='prompt-2' class='btn btn-outline btn-lg solutiontoggle prompt'>
-          Toggle Solution<noscript> (enable JavaScript)</noscript>
-        </button>
 
+        <h2 id="recursion">递归</h2>
 
+        <h3 class="question" id="q2">Q2: 跳跃相加</h3>
 
-        <h2 id="recursion">Recursion</h2>
-
-
-        <h3 class="question" id="q2">Q2: Skip Add</h3>
-
-        <p>Write a function <code>skip_add</code> that takes a single argument <code>n</code> and computes the
-          sum of every other integer between <code>0</code> and <code>n</code>. Assume <code>n</code> is non-negative.
+        <p>编写一个函数 <code>skip_add</code>，它接受一个参数 <code>n</code>，并计算从 <code>0</code> 到 <code>n</code> 之隔一个数相加的和。假设
+          <code>n</code> 是非负数。
         </p>
 
         <solution>
@@ -426,14 +400,12 @@ def skip_add(n):
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q skip_add</code></pre>
+        <pre><code class="nohighlight">python3 ok -q skip_add --local</code></pre>
 
-        <h3 class="question" id="q3">Q3: Summation</h3>
+        <h3 class="question" id="q3">Q3: 求和</h3>
 
-        <p>Now, write a recursive implementation of <code>summation</code>, which takes a positive
-          integer <code>n</code> and a function <code>term</code>. It applies <code>term</code> to every number from
-          <code>1</code>
-          to <code>n</code> including <code>n</code> and returns the sum of the results.
+        <p>现在，请编写一个递归实现的 <code>summation</code> 函数，该函数接受一个正整数 <code>n</code> 和一个函数 <code>term</code>。它将
+          <code>term</code> 应用于从 <code>1</code> 到 <code>n</code>（包括 <code>n</code>）的每个数，并返回结果的总和。
         </p>
 
         <solution>
@@ -463,28 +435,20 @@ def skip_add(n):
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q summation</code></pre>
+        <pre><code class="nohighlight">python3 ok -q summation --local</code></pre>
 
 
-        <h2 id="tree-recursion">Tree Recursion</h2>
+        <h2 id="tree-recursion">树递归</h2>
 
+        <h3 class="question" id="q4">Q4: 昆虫路径</h3>
 
-        <h3 class="question" id="q4">Q4: Insect Combinatorics</h3>
-
-        <p>Consider an insect in an <em>M</em> by <em>N</em> grid. The insect starts at the
-          bottom left corner, <em>(0, 0)</em>, and wants to end up at the top right
-          corner, <em>(M-1, N-1)</em>. The insect is only capable of moving right or
-          up. Write a function <code>paths</code> that takes a grid length and width
-          and returns the number of different paths the insect can take from the
-          start to the goal. (There is a <a href="https://en.wikipedia.org/wiki/Closed-form_expression">closed-form
-            solution</a> to this problem,
-          but try to answer it procedurally using recursion.)</p>
+        <p>考虑一个 <em>M</em> x <em>N</em> 的网格中的昆虫。昆虫从左下角 <em>(0, 0)</em> 出发，希望到达右上角 <em>(M-1,
+            N-1)</em>。昆虫只能向右或向上移动。请编写一个函数 <code>paths</code>，该函数接受网格的长度和宽度，并返回昆虫从起点到目标点可以采取的不同路径的数量。（此问题有一个 <a
+            href="https://en.wikipedia.org/wiki/Closed-form_expression">封闭形式解</a>，但请尝试使用递归的方法来解决。）</p>
 
         <p><img class="img-responsive center-block" src="assets/grid.jpg" alt="grid"></p>
 
-        <p>For example, the 2 by 2 grid has a total of two ways for the insect to
-          move from the start to the goal. For the 3 by 3 grid, the insect has 6
-          diferent paths (only 3 are shown above).</p>
+        <p>例如，对于 2 x 2 的网格，昆虫总共有 2 种方式从起点移动到目标点。对于 3 x 3 的网格，昆虫有 6 种不同的路径（上图仅显示了其中 3 种）。</p>
 
         <solution>
 
@@ -507,13 +471,11 @@ def skip_add(n):
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q paths</code></pre>
+        <pre><code class="nohighlight">python3 ok -q paths --local</code></pre>
 
-        <h3 class="question" id="q5">Q5: Maximum Subsequence</h3>
+        <h3 class="question" id="q5">Q5: 最大子序列</h3>
 
-        <p>A subsequence of a number is a series of (not necessarily contiguous) digits of the number.
-          For example, 12345 has subsequences that include 123, 234, 124, 245, etc. Your task is to get
-          the maximum subsequence below a certain length.</p>
+        <p>一个数字的子序列是该数字的一系列（不一定连续的）数字。例如，12345 的子序列包括 123、234、124、245 等。你的任务是获取长度不超过特定值的最大子序列。</p>
 
         <solution>
 
@@ -564,20 +526,17 @@ def skip_add(n):
     "*** YOUR CODE HERE ***"
 </code></pre>
 
-          <p>There are two key insights for this problem:</p>
+          <p>解决这个问题有两个关键点：</p>
 
           <ul>
-            <li>You need to split into the cases where the ones digit is used and the one where it is not. In the case
-              where it is, we want to reduce <code>t</code> since we used one of the digits, and in the case where it
-              isn't we do not.</li>
-            <li>In the case where we are using the ones digit, you need to put the digit back onto the end, and the way
-              to attach a digit <code>d</code> to the end of a number <code>n</code> is <code>10 * n + d</code>.
+            <li>你需要区分两种情况：使用个位数和不使用个位数的情况。如果使用了个位数，我们需要减少 <code>t</code>，因为我们已经用掉了一个数字；如果不使用，则保持 <code>t</code> 不变。</li>
+            <li>在使用个位数的情况下，需要将该数字重新添加到末尾。将一个数字 <code>d</code> 附加到数字 <code>n</code> 的末尾的方法是 <code>10 * n + d</code>。
         </solution>
         </li>
         </ul>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q max_subseq</code></pre>
+        <pre><code class="nohighlight">python3 ok -q max_subseq --local</code></pre>
 
 
         <h2 id="submit">Submit</h2>
@@ -588,43 +547,34 @@ def skip_add(n):
         <pre><code>python3 ok &#x2d;&#x2d;submit</code></pre>
 
 
-        <h1 id="optional-questions">Optional Questions</h1>
+        <h1 id="optional-questions">选做题</h1>
 
 
         <blockquote>
-          <p>While "Add Characters" is optional, it is good practice for the Cats project and is
-            thus highly recommended!</p>
+          <p>虽然“添加字符”是可选的，但它对于 Cats 项目提供了良好练习，因此强烈推荐完成！</p>
         </blockquote>
 
-        <h3 class="question" id="q6">Q6: Add Characters</h3>
+        <h3 class="question" id="q6">Q6: 添加字符</h3>
 
-        <p>Given two words, <code>w1</code> and <code>w2</code>, we say <code>w1</code> is a subsequence of
-          <code>w2</code>
-          if all the letters in <code>w1</code> appear in <code>w2</code> in the same order (but
-          not necessarily all together). That is, you can add letters to any position in
-          <code>w1</code> to get <code>w2</code>.
-          For example, "sing" is a substring of "ab<strong>s</strong>orb<strong>ing</strong>" and "cat" is a substring
-          of
-          "<strong>c</strong>ontr<strong>a</strong>s<strong>t</strong>".
+        <p>给定两个单词 <code>w1</code> 和 <code>w2</code>，如果 <code>w1</code> 是 <code>w2</code> 的子序列，
+          则表示 <code>w1</code> 中的所有字母都按相同的顺序出现在 <code>w2</code> 中（但不一定是连续的）。
+          换句话说，你可以在 <code>w1</code> 的任意位置添加字母，以得到 <code>w2</code>。
+          例如，"sing" 是 "ab<strong>s</strong>orb<strong>ing</strong>" 的子序列，
+          而 "cat" 是 "<strong>c</strong>ontr<strong>a</strong>s<strong>t</strong>" 的子序列。</p>
+
+        <p>实现 <code>add_chars</code> 函数，该函数接收 <code>w1</code> 和 <code>w2</code> 两个参数，
+          其中 <code>w1</code> 是 <code>w2</code> 的子序列。这意味着 <code>w1</code> 的长度短于 <code>w2</code>。
+          该函数应返回一个字符串，其中包含需要添加到 <code>w1</code> 以得到 <code>w2</code> 的字符。
+          <strong>你的解决方案必须使用递归</strong>。
         </p>
 
-        <p>Implement <code>add_chars</code>, which takes in <code>w1</code> and <code>w2</code>, where <code>w1</code>
-          is a substring of <code>w2</code>. This means that <code>w1</code> is shorter than <code>w2</code>. It should
-          return a string containing the characters you need to add to <code>w1</code> to get <code>w2</code>.
-          <strong>Your solution
-            must use recursion</strong>.
-        </p>
+        <p>在上述示例中，你需要向 "sing" 添加 "aborb" 以得到 "absorbing"，
+          并需要向 "cat" 添加 "ontrs" 以得到 "contrast"。</p>
 
-        <p>In the example above, you need to add the characters "aborb" to "sing" to get "absorbing",
-          and you need to add "ontrs" to "cat" to get "contrast".</p>
-
-        <p>The letters in the string you return should be in the order you have to add them from left to right.
-          If there are multiple characters in the <code>w2</code> that could correspond to characters in
-          <code>w1</code>, use the
-          leftmost one. For example, <code>add_words(&quot;coy&quot;, &quot;cacophony&quot;)</code> should return
-          "acphon", not "caphon"
-          because the first "c" in "coy" corresponds to the first "c" in
-          "<strong>c</strong>ac<strong>o</strong>phon<strong>y</strong>".
+        <p>你返回的字符串中的字母顺序应该按照从左到右依次添加的顺序。
+          如果 <code>w2</code> 中有多个字符可以与 <code>w1</code> 中的字符匹配，则使用最左侧的字符。
+          例如，<code>add_chars("coy", "cacophony")</code> 应返回 "acphon"，而不是 "caphon"，
+          因为 "coy" 中的 "c" 对应于 "<strong>c</strong>ac<strong>o</strong>phon<strong>y</strong>" 中的第一个 "c"。
         </p>
 
         <solution>
@@ -661,7 +611,7 @@ def skip_add(n):
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q add_chars</code></pre>
+        <pre><code class="nohighlight">python3 ok -q add_chars --local</code></pre>
         <script>
           $('.alwaystoggle').css('display', 'inline-block');
           $('.alwaystoggle').click(function () {
@@ -675,7 +625,7 @@ def skip_add(n):
       <div class='col-md-3 sticky'>
         <nav class='hidden-print hidden-sm hidden-xs sidebar'>
           <ul>
-            <li><a href="#topics">Topics</a></li>
+            <li><a href="#topics">主要内容</a></li>
             <ul>
               <li><a href="#recursion">Recursion</a></li>
               <li><a href="#tree-recursion">Tree Recursion</a></li>
@@ -683,25 +633,25 @@ def skip_add(n):
             </ul>
             <li><a href="#required-questions">必答题</a></li>
             <ul>
-              <li><a href="#lists-practice">Lists Practice</a></li>
+              <li><a href="#lists-practice">列表练习</a></li>
               <ul>
-                <li><a href="#q1">Q1: List Indexing</a></li>
+                <li><a href="#q1">Q1: 列表索引</a></li>
               </ul>
-              <li><a href="#recursion">Recursion</a></li>
+              <li><a href="#recursion">递归</a></li>
               <ul>
-                <li><a href="#q2">Q2: Skip Add</a></li>
-                <li><a href="#q3">Q3: Summation</a></li>
+                <li><a href="#q2">Q2: 跳跃相加</a></li>
+                <li><a href="#q3">Q3: 求和</a></li>
               </ul>
-              <li><a href="#tree-recursion">Tree Recursion</a></li>
+              <li><a href="#tree-recursion">树递归</a></li>
               <ul>
-                <li><a href="#q4">Q4: Insect Combinatorics</a></li>
-                <li><a href="#q5">Q5: Maximum Subsequence</a></li>
+                <li><a href="#q4">Q4: 昆虫路径</a></li>
+                <li><a href="#q5">Q5: 最大子序列</a></li>
               </ul>
               <li><a href="#submit">Submit</a></li>
             </ul>
-            <li><a href="#optional-questions">Optional Questions</a></li>
+            <li><a href="#optional-questions">选做题</a></li>
             <ul>
-              <li><a href="#q6">Q6: Add Characters</a></li>
+              <li><a href="#q6">Q6: 添加字符</a></li>
             </ul>
           </ul>
         </nav>
