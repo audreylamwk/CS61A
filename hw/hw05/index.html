@@ -128,8 +128,8 @@
 
         <p><strong>阅读材料：</strong>以下阅读材料可能对你有帮助</p>
         <ul>
-          <li><a href="http://composingprograms.com/pages/25-object-oriented-programming.html">Section 2.5</a></li>
-          <li><a href="http://composingprograms.com/pages/29-recursive-objects.html">Section 2.9</a></li>
+          <li><a href="https://composingprograms.netlify.app/2/5">Section 2.5</a></li>
+          <li><a href="https://composingprograms.netlify.app/2/9">Section 2.9</a></li>
         </ul>
 
 
@@ -145,17 +145,17 @@
 
 
 
-        <h2 id="oop">OOP</h2>
+        <h2 id="oop">面向对象编程 (OOP)</h2>
 
 
-        <h3 class="question" id="q1">Q1: Vending Machine</h3>
+        <h3 class="question" id="q1">Q1: 自动售货机</h3>
 
-        <p>Create a class called <code>VendingMachine</code> that represents a vending
-          machine for some product. A <code>VendingMachine</code> object returns strings
-          describing its interactions.</p>
+        <p>创建一个名为 <code>VendingMachine</code> 的类，它表示一个用于售卖某些商品的自动售货机。
+          <code>VendingMachine</code> 对象应返回描述其交互过程的字符串。
+        </p>
 
-        <p>Fill in the <code>VendingMachine</code> class, adding attributes and methods as
-          appropriate, such that its behavior matches the following doctests:</p>
+        <p>请补全 <code>VendingMachine</code> 类，添加适当的属性和方法，使其行为符合以下的 doctests：</p>
+
 
         <solution>
 
@@ -202,48 +202,44 @@
         </solution>
 
         <blockquote>
-          <p>You may find <a href="https://docs.python.org/2/library/stdtypes.html#str.format">Python string formatting
-              syntax</a> useful.
-            A quick example:</p>
+          <p><a href="https://docs.python.org/zh-cn/3/library/stdtypes.html#str.format">Python 字符串格式化语法</a> 可能对你有用。
+            下面是一个示例：</p>
         </blockquote>
-
         <pre><code>&gt;&gt;&gt; ten, twenty, thirty = 10, &#x27;twenty&#x27;, [30]
 &gt;&gt;&gt; &#x27;{0} plus {1} is {2}&#x27;.format(ten, twenty, thirty)
 &#x27;10 plus twenty is [30]&#x27;</code></pre>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q VendingMachine</code></pre>
+        <pre><code class="nohighlight">python3 ok -q VendingMachine --local</code></pre>
 
 
 
 
         <button id='toggle-1' class='btn btn-outline btn-lg alwaystoggle toggle'>
-          Hint Video<noscript> (enable JavaScript)</noscript>
+          提示视频<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-1">
 
-          <iframe width="560" height="315" src="https://youtube.com/embed/Mm4JYM7ce14" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="560" height="315"
+            src="//player.bilibili.com/player.html?isOutside=true&aid=427281261&bvid=BV1s3411G7yM&cid=765985411&p=52&autoplay=0"
+            scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
         </div>
 
-        <h3 class="question" id="q2">Q2: Mint</h3>
+        <h3 class="question" id="q2">Q2: 铸币</h3>
 
-        <p>Complete the <code>Mint</code> and <code>Coin</code> classes so that the coins created by a mint have
-          the correct year and worth.</p>
+        <p>完成 <code>Mint</code> 和 <code>Coin</code> 类，使铸币厂创建的硬币具有正确的年份和价值。</p>
 
         <ul>
-          <li>Each <code>Mint</code> instance has a <code>year</code> stamp. The <code>update</code> method sets the
-            <code>year</code> stamp to the <code>current_year</code> class attribute of the <code>Mint</code> class.
+          <li>每个 <code>Mint</code> 实例都有一个 <code>year</code> 标记。<code>update</code> 方法将 <code>year</code> 标记设置为
+            <code>Mint</code> 类中的
+            <code>current_year</code> 类属性的值。
           </li>
-          <li>The <code>create</code> method takes a subclass of <code>Coin</code> and returns an instance of
-            that class stamped with the <code>mint</code>'s year (which may be different from
-            <code>Mint.current_year</code> if it has not been updated.)
-          </li>
-          <li>A <code>Coin</code>'s <code>worth</code> method returns the <code>cents</code> value of the coin plus one
-            extra cent for each year of age beyond 50. A coin's age can be determined
-            by subtracting the coin's year from the <code>current_year</code> class attribute of
-            the <code>Mint</code> class.</li>
+          <li><code>create</code> 方法接受 <code>Coin</code> 的子类，并返回该类的一个实例，该实例的年份标记为当前铸币厂 <code>mint</code> 的年份
+            （如果 <code>mint</code> 未调用 <code>update</code> 方法，其年份可能不同于 <code>Mint.current_year</code>）。</li>
+          <li><code>Coin</code> 类的 <code>worth</code> 方法返回硬币的面值 <code>cents</code>，并且对于超过 50 年的硬币，
+            每多一年增加 1 cent。硬币的年龄可以通过用 <code>Mint</code> 类的 <code>current_year</code> 类属性减去硬币的年份来计算。</li>
         </ul>
+
 
         <solution>
 
@@ -303,30 +299,31 @@ class Dime(Coin):
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q Mint</code></pre>
+        <pre><code class="nohighlight">python3 ok -q Mint --local</code></pre>
 
 
         <button id='toggle-2' class='btn btn-outline btn-lg alwaystoggle toggle'>
-          Hint Video<noscript> (enable JavaScript)</noscript>
+          提示视频<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-2">
 
-          <iframe width="560" height="315" src="https://youtube.com/embed/Rr7vccA2QGs" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="560" height="315"
+            src="//player.bilibili.com/player.html?isOutside=true&aid=427281261&bvid=BV1s3411G7yM&cid=765985411&p=52&autoplay=0&t=334"
+            scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
         </div>
 
 
-        <h2 id="linked-lists">Linked Lists</h2>
+        <h2 id="linked-lists">链表</h2>
 
+        <h3 class="question" id="q3">Q3: 存储数位</h3>
 
-        <h3 class="question" id="q3">Q3: Store Digits</h3>
-
-        <p>Write a function <code>store_digits</code> that takes in an integer <code>n</code> and returns
-          a linked list where each element of the list is a digit of <code>n</code>.</p>
+        <p>编写一个函数 <code>store_digits</code>，它接收一个整数 <code>n</code>，并返回一个链表，
+          该链表的每个元素都是 <code>n</code> 的一个数位。</p>
 
         <blockquote>
-          <p>Note: do not use any string manipulation functions like <code>str</code> and <code>reversed</code></p>
+          <p>注意：不要使用任何字符串操作函数，如 <code>str</code> 和 <code>reversed</code>。</p>
         </blockquote>
+
 
         <solution>
 
@@ -351,52 +348,50 @@ class Dime(Coin):
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q store_digits</code></pre>
+        <pre><code class="nohighlight">python3 ok -q store_digits --local</code></pre>
 
 
         <button id='toggle-3' class='btn btn-outline btn-lg alwaystoggle toggle'>
-          Hint Video<noscript> (enable JavaScript)</noscript>
+          提示视频<noscript> (enable JavaScript)</noscript>
         </button>
         <div class="solution toggle-3">
 
-          <iframe width="560" height="315" src="https://youtube.com/embed/tTIC2oiyQPA" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="560" height="315"
+            src="//player.bilibili.com/player.html?isOutside=true&aid=427281261&bvid=BV1s3411G7yM&cid=765985411&p=52&autoplay=0&t=722"
+            scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
         </div>
 
 
-        <h1 id="extra-questions">Extra Questions</h1>
+        <h1 id="extra-questions">附加题</h1>
 
 
 
-        <h2 id="trees">Trees</h2>
+        <h2 id="trees">树</h2>
 
+        <h3 class="question" id="q4">Q4: 判断二叉搜索树</h3>
 
-        <h3 class="question" id="q4">Q4: Is BST</h3>
-
-        <p>Write a function <code>is_bst</code>, which takes a Tree <code>t</code> and returns <code>True</code> if, and
-          only if, <code>t</code> is a valid binary search tree, which means that:</p>
+        <p>编写一个函数 <code>is_bst</code>，它接收一棵树 <code>t</code>，并在且仅在 <code>t</code> 是一棵有效的二叉搜索树时返回
+          <code>True</code>。二叉搜索树需满足以下条件：
+        </p>
 
         <ul>
-          <li>Each node has at most two children (a leaf is automatically a valid binary
-            search tree)</li>
-          <li>The children are valid binary search trees</li>
-          <li>For every node, the entries in that node's left child are less than or equal
-            to the label of the node</li>
-          <li>For every node, the entries in that node's right child are greater than the
-            label of the node</li>
+          <li>每个节点最多有两个子节点（叶子节点自动视为有效的二叉搜索树）。</li>
+          <li>所有子树本身也是有效的二叉搜索树。</li>
+          <li>对于每个节点，该节点左子树中的所有值小于等于该节点的标签。</li>
+          <li>对于每个节点，该节点右子树中的所有值大于该节点的标签。</li>
         </ul>
 
-        <p>An example of a BST is:</p>
+        <p>以下是一个二叉搜索树的示例：</p>
+
 
         <p><img class="img-responsive center-block" src="https://miro.medium.com/max/1424/1*F8MmBnUQyOA8-Rajg69nSQ.png"
             alt="bst"></p>
 
-        <p>Note that, if a node has only one child, that child could be considered either
-          the left or right child. You should take this into consideration.</p>
+        <p>请注意，如果一个节点只有一个子节点，该子节点可以被视为左子节点或右子节点。你需要将这一点考虑在内。</p>
 
-        <p><em>Hint:</em> It may be helpful to write helper functions <code>bst_min</code> and <code>bst_max</code> that
-          return the minimum and maximum, respectively, of a Tree if it is a valid binary
-          search tree.</p>
+        <p><em>提示：</em> 编写辅助函数 <code>bst_min</code> 和 <code>bst_max</code> 可能会有所帮助，它们分别返回一棵树的最小值和最大值（前提是该树是有效的二叉搜索树）。
+        </p>
+
 
         <solution>
 
@@ -430,35 +425,19 @@ class Dime(Coin):
 
         </solution>
 
-        <!--
-<br />
-
-<p>Watch the hints video below for somewhere to start:
-
-            <iframe width="560" height="315" src="https://youtube.com/embed/doxVXOrn4AQ"
-                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe></p>
-
-<br />
--->
-
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q is_bst</code></pre>
+        <pre><code class="nohighlight">python3 ok -q is_bst --local</code></pre>
 
-        <h3 class="question" id="q5">Q5: Preorder</h3>
+        <h3 class="question" id="q5">Q5: 前序遍历</h3>
 
-        <p>Define the function <code>preorder</code>, which takes in a tree as an argument and
-          returns a list of all the entries in the tree in the order that
-          <code>print_tree</code> would print them.
-        </p>
+        <p>定义函数 <code>preorder</code>，该函数接受一棵树作为参数，并返回一个列表，包含树中所有的元素，顺序与 <code>print_tree</code> 打印它们的顺序相同。</p>
 
-        <p>The following diagram shows the order that the nodes would get printed,
-          with the arrows representing function calls.</p>
+        <p>下图展示了节点的打印顺序，箭头表示函数调用的顺序。</p>
 
-        <p><img class="img-responsive center-block" src="assets/preorder.png" alt="preorder"></p>
+        <p><img class="img-responsive center-block" src="assets/preorder.png" alt="前序遍历"></p>
 
         <blockquote>
-          <p><em>Note</em>: This ordering of the nodes in a tree is called a preorder traversal.</p>
+          <p><em>注意</em>：这种节点的遍历顺序称为前序遍历（preorder traversal）。</p>
         </blockquote>
 
         <solution>
@@ -479,27 +458,22 @@ class Dime(Coin):
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q preorder</code></pre>
+        <pre><code class="nohighlight">python3 ok -q preorder --local</code></pre>
 
+        <h2 id="generators-trees">生成器/树</h2>
 
-        <h2 id="generators-trees">Generators/Trees</h2>
+        <h3 class="question" id="q6">Q6: 生成路径</h3>
 
-
-        <h3 class="question" id="q6">Q6: Yield Paths</h3>
-
-        <p>Define a generator function <code>path_yielder</code> which takes in a Tree <code>t</code>, a value
-          <code>value</code>, and returns a generator object which yields each path from the root of <code>t</code>
-          to a node that has label <code>value</code>.
+        <p>定义一个生成器函数 <code>path_yielder</code>，它接受一棵树 <code>t</code> 和一个值 <code>value</code>，返回一个生成器对象，该生成器会生成从
+          <code>t</code> 的根节点到标签为 <code>value</code> 的节点的所有路径。
         </p>
 
-        <p><code>t</code> is implemented with a class, not as the function-based ADT.</p>
+        <p><code>t</code> 是使用类实现的，而不是基于函数的ADT（抽象数据类型）。</p>
 
-        <p>Each path should be represented as a list of the labels along that path in the
-          tree. You may yield the paths in any order.</p>
+        <p>每条路径应该以列表的形式表示，其中包含树中沿路径的所有标签。路径的生成顺序可以是任意的。</p>
 
-        <p>We have provided a (partial) skeleton for you. You do not need to use this skeleton,
-          but if your implementation diverges significantly from it, you might
-          want to think about how you can get it to fit the skeleton.</p>
+        <p>我们已经为你提供了一个（部分）代码框架。你不一定要使用这个框架，但如果你的实现与其有较大不同，你可能需要思考如何调整你的代码以适配该框架。</p>
+
 
         <pre><code>def path_yielder(t, value):
     &quot;&quot;&quot;Yields all possible paths from the root of t to a node with the label value
@@ -545,25 +519,12 @@ class Dime(Coin):
 </code></pre>
 
         <blockquote>
-          <p>Hint: If you're having trouble getting started, think about how you'd approach this
-            problem if it wasn't a generator function. What would your recursive calls be?
-            With a generator function, what happens if you make a "recursive call" within its body?</p>
+          <p><strong>提示：</strong>如果你不知道如何开始，可以思考如果这不是一个生成器函数，你会如何解决这个问题？你的递归调用会是什么样的？在一个生成器函数中，如果你在函数体内进行“递归调用”，会发生什么？
+          </p>
         </blockquote>
 
-        <!-- 
-<br />
-
-<p>Watch the hints video below for somewhere to start:
-
-            <iframe width="560" height="315" src="https://youtube.com/embed/43rVEl9ev7M"
-                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe></p>
-
-<br />
--->
-
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q path_yielder</code></pre>
+        <pre><code class="nohighlight">python3 ok -q path_yielder --local</code></pre>
 
 
 
@@ -584,26 +545,26 @@ class Dime(Coin):
             <li><a href="#instructions">说明</a></li>
             <li><a href="#required-questions">必答题</a></li>
             <ul>
-              <li><a href="#oop">OOP</a></li>
+              <li><a href="#oop">面向对象编程 (OOP)</a></li>
               <ul>
-                <li><a href="#q1">Q1: Vending Machine</a></li>
-                <li><a href="#q2">Q2: Mint</a></li>
+                <li><a href="#q1">Q1: 自动售货机</a></li>
+                <li><a href="#q2">Q2: 铸币</a></li>
               </ul>
-              <li><a href="#linked-lists">Linked Lists</a></li>
+              <li><a href="#linked-lists">链表</a></li>
               <ul>
-                <li><a href="#q3">Q3: Store Digits</a></li>
+                <li><a href="#q3">Q3: 存储数位</a></li>
               </ul>
             </ul>
             <li><a href="#extra-questions">附加题</a></li>
             <ul>
-              <li><a href="#trees">Trees</a></li>
+              <li><a href="#trees">树</a></li>
               <ul>
-                <li><a href="#q4">Q4: Is BST</a></li>
-                <li><a href="#q5">Q5: Preorder</a></li>
+                <li><a href="#q4">Q4: 判断二叉搜索树</a></li>
+                <li><a href="#q5">Q5: 前序遍历</a></li>
               </ul>
-              <li><a href="#generators-trees">Generators/Trees</a></li>
+              <li><a href="#generators-trees">生成器/树</a></li>
               <ul>
-                <li><a href="#q6">Q6: Yield Paths</a></li>
+                <li><a href="#q6">Q6: 生成路径</a></li>
               </ul>
             </ul>
           </ul>
