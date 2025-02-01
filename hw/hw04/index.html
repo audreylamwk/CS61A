@@ -159,11 +159,11 @@
         <h2 id="nonlocal">非局部 (Nonlocal)</h2>
 
 
-        <h3 class="question" id="q1">Q1: Make Bank</h3>
+        <h3 class="question" id="q1">Q1: 创建银行</h3>
 
-        <p>In lecture, we saw how to use functions to create mutable objects.
-          Here, for example, is the function <code>make_withdraw</code> which produces a
-          function that can withdraw money from an account:</p>
+        <p>在讲座中，我们学习了如何使用函数来创建可变对象。例如，下面的函数
+          <code>make_withdraw</code>，可以生成一个从账户中取款的函数：
+        </p>
 
         <pre><code>def make_withdraw(balance):
     &quot;&quot;&quot;Return a withdraw function with BALANCE as its starting balance.
@@ -183,17 +183,12 @@
         return balance
     return withdraw</code></pre>
 
-        <p>Write a new function <code>make_bank</code>, which should create a bank account
-          with value <code>balance</code> and should also return another function. This
-          new function should be able to withdraw and deposit money. The
-          second function will take in two arguments: <code>message</code> and
-          <code>amount</code>. When the message passed in is <code>&#x27;deposit&#x27;</code>, the bank will
-          deposit <code>amount</code> into the account. When the message passed in is
-          <code>&#x27;withdraw&#x27;</code>, the bank will attempt to withdraw <code>amount</code> from the
-          account. If the account does not have enough money for a withdrawal,
-          the string <code>&#x27;Insufficient funds&#x27;</code> will be returned. If the <code>message</code>
-          passed in is neither of the two commands, the function should return
-          <code>&#x27;Invalid message&#x27;</code> Examples are shown in the doctests.
+        <p>编写一个新的函数 <code>make_bank</code>，它可以创建一个初始余额为 <code>balance</code>
+          的银行账户，并返回另一个函数。这个新函数能够进行取款和存款操作。新函数接受两个参数：<code>message</code> 和 <code>amount</code>。当传入的 message 是
+          <code>&#x27;deposit&#x27;</code> 时，银行会将 <code>amount</code> 存入账户。当传入的 message 是
+          <code>&#x27;withdraw&#x27;</code>
+          时，银行会尝试从账户中取出 <code>amount</code>。如果账户中没有足够的资金进行取款，函数将返回字符串 <code>&#x27;Insufficient funds&#x27;</code>。如果传入的
+          <code>message</code> 不是这两个命令之一，函数应返回 <code>&#x27;Invalid message&#x27;</code>。示例可以在 doctests 中查看。
         </p>
 
         <solution>
@@ -225,41 +220,33 @@
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q make_bank</code></pre>
+        <pre><code class="nohighlight">python3 ok -q make_bank --local</code></pre>
 
-        <h3 class="question" id="q2">Q2: Password Protected Account</h3>
+        <h3 class="question" id="q2">Q2: 密码保护</h3>
 
-        <p>Write a version of the <code>make_withdraw</code> function shown in the previous question
-          that returns password-protected withdraw functions. That is, <code>make_withdraw</code> should
-          take a password argument (a string) in addition to an initial balance.
-          The returned function should take two arguments: an amount to withdraw
-          and a password.</p>
+        <p>编写一个基于上一题中 <code>make_withdraw</code> 函数的新版本，该版本返回受密码保护的取款函数。也就是说，<code>make_withdraw</code>
+          除了接受初始余额外，还应接受一个密码参数（字符串）。返回的函数应接受两个参数：取款金额和密码。</p>
 
-        <p>A password-protected <code>withdraw</code> function should only process
-          withdrawals that include a password that matches the original. Upon
-          receiving an incorrect password, the function should:</p>
+        <p>受密码保护的 <code>withdraw</code> 函数应仅在密码正确时进行取款操作。当收到错误密码时，函数应：</p>
 
         <ol>
-          <li>Store that incorrect password in a list, and</li>
-          <li>Return the string 'Incorrect password'.</li>
+          <li>将该错误密码存储在一个列表中，并且</li>
+          <li>返回字符串 <code>'Incorrect password'</code>。</li>
         </ol>
 
-        <p>If a withdraw function has been called three times with incorrect
-          passwords <code>&lt;p1&gt;</code>, <code>&lt;p2&gt;</code>, and <code>&lt;p3&gt;</code>, then it is frozen.
-          All subsequent
-          calls to the function should return:</p>
+        <p>如果取款函数被调用了三次并提供了错误的密码 <code>&lt;p1&gt;</code>、<code>&lt;p2&gt;</code> 和
+          <code>&lt;p3&gt;</code>，则该账户将被冻结。之后所有对该函数的调用都应返回：
+        </p>
 
         <pre><code>&quot;Frozen account. Attempts: [&lt;p1&gt;, &lt;p2&gt;, &lt;p3&gt;]&quot;</code></pre>
 
         <blockquote>
-          <p><em>Hint:</em> You can use the <code>str</code> function to turn a list into a string. For example,
-            for a list <code>s = [1, 2, 3]</code>, the expression <code>&quot;The list s is: &quot; + str(s)</code>
-            simplifies to
-            <code>&quot;The list s is: [1, 2, 3]&quot;</code>.
+          <p><em>提示：</em> 你可以使用 <code>str</code> 函数将列表转换为字符串。例如，对于列表 <code>s = [1, 2, 3]</code>，表达式
+            <code>&quot;The list s is: &quot; + str(s)</code> 会转换为 <code>&quot;The list s is: [1, 2, 3]&quot;</code>。
           </p>
         </blockquote>
 
-        <p>The incorrect passwords may be the same or different:</p>
+        <p>错误的密码可以相同或不同：</p>
 
         <solution>
 
@@ -297,25 +284,18 @@
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q make_withdraw</code></pre>
+        <pre><code class="nohighlight">python3 ok -q make_withdraw --local</code></pre>
 
 
 
 
-        <h2 id="iterators-and-generators">Iterators and Generators</h2>
+        <h2 id="iterators-and-generators">迭代器和生成器</h2>
 
+        <h3 class="question" id="q3">Q3: 重复值</h3>
 
-        <h3 class="question" id="q3">Q3: Repeated</h3>
-
-        <p>Implement a function (not a generator function) that returns the first value in
-          the iterator <code>t</code> that appears <code>k</code> times in a row. As described in lecture, iterators
-          can provide values using either the <code>next(t)</code> function or with a for-loop. Do not worry
-          about cases where the function reaches the end of the iterator without finding a suitable
-          value, all lists passed in for the tests will have a value that should be returned. If you
-          are receiving an error where the iterator has completed then the program is not identifying
-          the correct value. Iterate through the items such that if the same iterator is passed into
-          <code>repeated</code> twice, it continues in the second call at the point it left off in the first. An
-          example of this behavior is shown in the doctests.
+        <p>实现一个函数（不是生成器函数），该函数返回迭代器 <code>t</code> 中第一个连续出现 <code>k</code> 次的值。正如讲座中提到的，迭代器可以通过 <code>next(t)</code> 函数或
+          for 循环来获取值。测试数据保证在迭代完成前有符合条件的结果。如果你遇到迭代器已完成并报错的情况，说明程序未能正确识别目标值。遍历这些项时，如果同一个迭代器被传入
+          <code>repeated</code> 函数两次，第二次调用应从第一次调用结束的位置继续。doctests 中有该行为的一个示例。
         </p>
 
         <solution>
@@ -347,31 +327,25 @@
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q repeated</code></pre>
+        <pre><code class="nohighlight">python3 ok -q repeated --local</code></pre>
 
-        <h3 class="question" id="q4">Q4: Generate Permutations</h3>
+        <h3 class="question" id="q4">Q4: 生成排列</h3>
 
-        <p>Given a sequence of unique elements, a <em>permutation</em> of the sequence is a list
-          containing the elements of the sequence in some arbitrary order. For example,
-          <code>[2, 1, 3]</code>, <code>[1, 3, 2]</code>, and <code>[3, 2, 1]</code> are some of the permutations of the
-          sequence <code>[1, 2, 3]</code>.
+        <p>给定一个由互异元素组成的序列，序列的<em>排列</em>是指将序列中的元素以任意顺序排成一列组成的列表。例如，<code>[2, 1, 3]</code>、<code>[1, 3, 2]</code> 和
+          <code>[3, 2, 1]</code> 都是序列 <code>[1, 2, 3]</code> 的一些排列。
         </p>
 
-        <p>Implement <code>permutations</code>, a generator function that takes in a sequence <code>seq</code>
-          and returns a generator that yields all permutations of <code>seq</code>.</p>
+        <p>实现 <code>permutations</code> 函数，这是一个生成器函数，它接受一个序列 <code>seq</code> 并返回一个生成器，该生成器会通过yield返回 <code>seq</code>
+          的所有排列。
+        </p>
 
-        <p>Permutations may be yielded in any order. Note that the doctests test whether
-          you are yielding all possible permutations, but not in any particular order.
-          The built-in <code>sorted</code> function takes in an iterable object and returns a list
-          containing the elements of the iterable in non-decreasing order.</p>
+        <p>排列可以按任何顺序生成。请注意，doctests 测试的是你是否生成了所有可能的排列，而不用考虑特定的顺序。内置的 <code>sorted</code>
+          函数接受一个可迭代对象，并返回一个包含该可迭代对象中元素的非递减顺序列表。</p>
 
         <blockquote>
-          <p><em>Hint:</em> If you had the permutations of all the elements in <code>seq</code> not
-            including the first element, how could you use that to generate the
-            permutations of the full <code>seq</code>?</p>
+          <p><em>提示：</em> 如果你已经有了不包含第一个元素的 <code>seq</code> 的所有排列，你如何利用这些排列来生成 <code>seq</code> 所有的排列？</p>
 
-          <p><em>Hint:</em> If you're having trouble getting started, see the hints video
-            for this question for tips on how to approach this question.</p>
+          <p><em>提示：</em> 如果你遇到困难，可以观看本问题的提示视频，了解如何解决这个问题。</p>
         </blockquote>
 
         <solution>
@@ -404,7 +378,7 @@
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q permutations</code></pre>
+        <pre><code class="nohighlight">python3 ok -q permutations --local</code></pre>
 
 
         <h2 id="submit">Submit</h2>
@@ -415,35 +389,27 @@
         <pre><code>python3 ok &#x2d;&#x2d;submit</code></pre>
 
 
-        <h1 id="extra-questions">Extra Questions</h1>
+        <h1 id="extra-questions">附加题</h1>
 
 
-        <h3 class="question" id="q5">Q5: Joint Account</h3>
+        <h3 class="question" id="q5">Q5: 联合账户</h3>
 
-        <p>Suppose that our banking system requires the ability to make joint
-          accounts. Define a function <code>make_joint</code> that takes three arguments.</p>
+        <p>假设我们的银行系统需要支持创建联合账户。定义一个函数 <code>make_joint</code>，它接受三个参数：</p>
 
         <ol>
-          <li>A password-protected <code>withdraw</code> function,</li>
-          <li>The password with which that <code>withdraw</code> function was defined, and</li>
-          <li>A new password that can also access the original account.</li>
+          <li>一个受密码保护的 <code>withdraw</code> 函数，</li>
+          <li>定义该 <code>withdraw</code> 函数时使用的原始密码，</li>
+          <li>一个也可以访问原始账户的新密码。</li>
         </ol>
 
-        <p>If the password is incorrect or cannot be verified because the underlying
-          account is locked, the <code>make_joint</code> should propagate the error.
-          Otherwise, it returns a <code>withdraw</code> function that provides
-          additional access to the original account using <em>either</em> the new or old
-          password. Both functions draw from the same balance. Incorrect
-          passwords provided to either function will be stored and cause the
-          functions to be locked after three wrong attempts.</p>
+        <p>如果密码错误或由于底层账户被锁定而无法验证，<code>make_joint</code> 应错误。否则，它返回一个 <code>withdraw</code>
+          函数，该函数可以使用<em>新密码或旧密码</em>提供对原始账户的额外访问。这两个函数从同一余额中取款。提供给任一函数的不正确密码将被存储，并在三次错误尝试后导致函数被锁定。</p>
 
-        <p><em>Hint</em>: The solution is short (less than 10 lines) and contains no string
-          literals! The key is to call <code>withdraw</code> with the right password and amount,
-          then interpret the result. You may assume that all failed attempts to withdraw
-          will return some string (for incorrect passwords, locked accounts, or
-          insufficient funds), while successful withdrawals will return a number.</p>
+        <p><em>提示</em>：解决方案很短（少于 10 行），并且不包含任何字符串字面量（直接写的字符串）！关键是用正确的密码和金额调用
+          <code>withdraw</code>，然后解析返回结果。你可以假设所有取款失败的情况（如密码错误、账户被锁定或余额不足）都会返回一个字符串，而成功的取款操作将返回一个数字。
+        </p>
 
-        <p>Use <code>type(value) == str</code> to test if some <code>value</code> is a string:</p>
+        <p>使用 <code>type(value) == str</code> 来测试某个 <code>value</code> 是否为字符串：</p>
 
         <solution>
 
@@ -491,38 +457,30 @@
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q make_joint</code></pre>
+        <pre><code class="nohighlight">python3 ok -q make_joint --local</code></pre>
 
 
 
-        <h3 class="question" id="q6">Q6: Remainder Generator</h3>
-        Like functions, generators can also be <em>higher-order</em>. For this problem, we
-        will be writing <code>remainders_generator</code>, which yields a series of generator
-        objects.
+        <h3 class="question" id="q6">Q6: 余数生成器</h3>
+        <p>与函数类似，生成器也可以是<em>高阶的</em>。对于这个问题，我们将编写 <code>remainders_generator</code> 函数，它会生成一系列生成器对象。</p>
 
-        <p><code>remainders_generator</code> takes in an integer <code>m</code>, and yields <code>m</code> different
-          generators. The first generator is a generator of multiples of <code>m</code>, i.e.
-          numbers where the remainder is 0. The second is a generator of natural numbers
-          with remainder 1 when divided by <code>m</code>. The last generator yields natural numbers
-          with remainder <code>m &#x2d; 1</code> when divided by <code>m</code>.</p>
+        <p><code>remainders_generator</code> 函数接受一个整数 <code>m</code>，并生成 <code>m</code> 个不同的生成器。第一个生成器会生成 <code>m</code>
+          的倍数（即除以 <code>m</code> 余数为 0 的数）。第二个生成器会生成除以 <code>m</code> 余数为 1 的自然数。最后一个生成器会生成除以 <code>m</code> 余数为
+          <code>m &#x2d; 1</code> 的自然数。
+        </p>
 
         <blockquote>
-          <p><em>Hint</em>: You can call the <code>naturals</code> function to create a generator of
-            infinite natural numbers.</p>
+          <p><em>提示：</em> 你可以调用 <code>naturals</code> 函数来创建无限自然数的生成器。</p>
         </blockquote>
 
-        <!- ->
+        <blockquote>
+          <p><em>提示：</em> 考虑定义一个内部生成器函数（在函数内部定义的生成器）。生成的不同生成器之间的唯一区别在于：不同的生成器的元素在除以 <code>m</code>
+            时具有特定的余数。这告诉你内部函数应该接受哪些参数呢？</p>
+        </blockquote>
 
-          <blockquote>
-            <p><em>Hint</em>: Consider defining an inner generator function. Each yielded generator
-              varies only in that the elements of each generator have a particular
-              remainder when divided by <code>m</code>. What does that tell you about the argument(s)
-              that the inner function should take in?</p>
-          </blockquote>
+        <solution>
 
-          <solution>
-
-            <pre><code>def remainders_generator(m):
+          <pre><code>def remainders_generator(m):
     &quot;&quot;&quot;
     Yields m generators. The ith yielded generator yields natural numbers whose
     remainder is i when divided by m.
@@ -556,24 +514,23 @@
     "*** YOUR CODE HERE ***"
 </code></pre>
 
-          </solution>
+        </solution>
 
-          <p>Note that if you have implemented this correctly, each of the
-            generators yielded by <code>remainder_generator</code> will be <em>infinite</em> - you
-            can keep calling <code>next</code> on them forever without running into a
-            <code>StopIteration</code> exception.
-          </p>
+        <p>注意：如果你的实现是正确的，那么 <code>remainder_generator</code> 生成的每个 <em>生成器</em> 都是 <em>无限的</em> —— 你可以无限次调用
+          <code>next</code>，而不会遇到 <code>StopIteration</code> 异常。
+        </p>
 
-          <p>使用 Ok 来测试你的代码：</p>
-          <pre><code class="nohighlight">python3 ok -q remainders_generator</code></pre>
 
-          <script>
-            $('.alwaystoggle').css('display', 'inline-block');
-            $('.alwaystoggle').click(function () {
-              var solution_id = $(this).attr('id');
-              $('div.' + solution_id).slideToggle(600);
-            });
-          </script>
+        <p>使用 Ok 来测试你的代码：</p>
+        <pre><code class="nohighlight">python3 ok -q remainders_generator --local</code></pre>
+
+        <script>
+          $('.alwaystoggle').css('display', 'inline-block');
+          $('.alwaystoggle').click(function () {
+            var solution_id = $(this).attr('id');
+            $('div.' + solution_id).slideToggle(600);
+          });
+        </script>
 
 
       </div>
@@ -581,28 +538,28 @@
       <div class='col-md-3 sticky'>
         <nav class='hidden-print hidden-sm hidden-xs sidebar'>
           <ul>
-            <li><a href="#instructions">Instructions</a></li>
-            <li><a href="#required-questions">Required Questions</a></li>
+            <li><a href="#instructions">说明</a></li>
+            <li><a href="#required-questions">必答题</a></li>
             <ul>
-              <li><a href="#hint-video">Hint Video</a></li>
+              <li><a href="#hint-video">提示视频</a></li>
             </ul>
             <ul>
-              <li><a href="#nonlocal">Nonlocal</a></li>
+              <li><a href="#nonlocal">非局部 (Nonlocal)</a></li>
               <ul>
-                <li><a href="#q1">Q1: Make Bank</a></li>
-                <li><a href="#q2">Q2: Password Protected Account</a></li>
+                <li><a href="#q1">Q1: 创建银行</a></li>
+                <li><a href="#q2">Q2: 密码保护</a></li>
               </ul>
-              <li><a href="#iterators-and-generators">Iterators and Generators</a></li>
+              <li><a href="#iterators-and-generators">迭代器和生成器</a></li>
               <ul>
-                <li><a href="#q3">Q3: Repeated</a></li>
-                <li><a href="#q4">Q4: Generate Permutations</a></li>
+                <li><a href="#q3">Q3: 重复值</a></li>
+                <li><a href="#q4">Q4: 生成排列</a></li>
               </ul>
               <li><a href="#submit">Submit</a></li>
             </ul>
-            <li><a href="#extra-questions">Extra Questions</a></li>
+            <li><a href="#extra-questions">附加题</a></li>
             <ul>
-              <li><a href="#q5">Q5: Joint Account</a></li>
-              <li><a href="#q6">Q6: Remainder Generator</a></li>
+              <li><a href="#q5">Q5: 联合账户</a></li>
+              <li><a href="#q6">Q6: 余数生成器</a></li>
             </ul>
           </ul>
         </nav>
