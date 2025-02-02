@@ -113,12 +113,6 @@
         <p>下载 <a href="lab05.zip">lab05.zip</a>。
           在压缩包中，你可以找到本实验问题的初始文件，以及一份 <a href="ok">Ok</a> 自动评分器。</p>
 
-
-
-
-
-
-
         <h1 id="topics">主要内容</h1>
 
         <p>如果你需要复习本实验的材料，请参考本节。你可以直接跳到<a href="#required-questions">问题部分</a>，遇到困难再回到这里。</p>
@@ -334,20 +328,18 @@
 
 
 
-        <h2 id="list-comprehensions">List Comprehensions</h2>
+        <h2 id="list-comprehensions-1">列表推导式</h2>
 
+        <h3 class="question" id="q1">Q1: 配对</h3>
 
-        <h3 class="question" id="q1">Q1: Couple</h3>
-
-        <p>Implement the function <code>couple</code>, which takes in two lists and returns a list
-          that contains lists with i-th elements of two sequences coupled together. You
-          can assume the lengths of two sequences are the same. Try using a list
-          comprehension.</p>
+        <p>实现 <code>couple</code> 函数，该函数接收两个列表，并返回一个包含嵌套列表的列表，
+          其中每个嵌套列表包含两个输入序列中相同索引位置的元素配对在一起。
+          你可以假设两个序列的长度相同。尝试使用列表推导式 (list comprehension) 来实现。</p>
 
         <blockquote>
-          <p><em>Hint</em>: You may find the built in <a
-              href="https://www.w3schools.com/python/ref_func_range.asp">range</a> function helpful.</p>
+          <p><em>提示</em>：内置的 <a href="https://www.w3schools.com/python/ref_func_range.asp">range</a> 函数可能对你有帮助。</p>
         </blockquote>
+
 
         <solution>
 
@@ -370,32 +362,29 @@
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q couple</code></pre>
+        <pre><code class="nohighlight">python3 ok -q couple --local</code></pre>
 
 
-        <h2 id="data-abstraction">Data Abstraction</h2>
+        <h2 id="data-abstraction-1">数据抽象</h2>
 
+        <p>假设我们有一个表示城市的抽象数据类型（ADT）。一个城市具有名称、纬度坐标和经度坐标。</p>
 
-        <p>Say we have an abstract data type for cities. A city has a name, a latitude
-          coordinate, and a longitude coordinate.</p>
-
-        <p>Our ADT has one <strong>constructor</strong>:</p>
+        <p>我们的 ADT 有一个<strong>构造函数 (Constructor)</strong>：</p>
 
         <ul>
-          <li><code>make_city(name, lat, lon)</code>: Creates a city object with the given name, latitude,
-            and longitude.</li>
+          <li><code>make_city(name, lat, lon)</code>：创建一个具有指定名称、纬度和经度的城市对象。</li>
         </ul>
 
-        <p>We also have the following <strong>selectors</strong> in order to get the information for each city:</p>
+        <p>此外，我们还有以下<strong>选择器函数 (Selector)</strong>，用于获取城市的信息：</p>
 
         <ul>
-          <li><code>get_name(city)</code>: Returns the city's name</li>
-          <li><code>get_lat(city)</code>: Returns the city's latitude</li>
-          <li><code>get_lon(city)</code>: Returns the city's longitude</li>
+          <li><code>get_name(city)</code>：返回城市的名称</li>
+          <li><code>get_lat(city)</code>：返回城市的纬度</li>
+          <li><code>get_lon(city)</code>：返回城市的经度</li>
         </ul>
 
-        <p>Here is how we would use the constructor and selectors to create cities and
-          extract their information:</p>
+        <p>以下是如何使用构造函数和选择器来创建城市并提取其信息的示例：</p>
+
 
         <pre><code>&gt;&gt;&gt; berkeley = make_city(&#x27;Berkeley&#x27;, 122, 37)
 &gt;&gt;&gt; get_name(berkeley)
@@ -406,20 +395,13 @@
 &gt;&gt;&gt; get_lon(new_york)
 40</code></pre>
 
-        <p>All of the selector and constructor functions can be found in the lab file, if you
-          are curious to see how they are implemented. However, the point of data
-          abstraction is that we do not need to know how an abstract data type is
-          implemented, but rather just how we can interact with and use the data type.</p>
+        <p>所有的选择器和构造函数都可以在实验文件中找到，如果你对它们的实现方式感兴趣，可以查看文件。然而，数据抽象的关键在于，我们不需要知道一个抽象数据类型是如何实现的，而只需要知道如何与其交互并使用它。</p>
 
-        <h3 class="question" id="q2">Q2: Distance</h3>
+        <h3 class="question" id="q2">Q2: 距离计算</h3>
 
-        <p>We will now implement the function <code>distance</code>, which computes the
-          distance between two city objects. Recall that the distance between two
-          coordinate pairs <code>(x1, y1)</code> and <code>(x2, y2)</code> can be found by calculating
-          the <code>sqrt</code> of <code>(x1 &#x2d; x2)**2 + (y1 &#x2d; y2)**2</code>. We have already imported
-          <code>sqrt</code> for your convenience. Use the latitude and longitude of a city as
-          its coordinates; you'll need to use the selectors to access this info!
-        </p>
+        <p>实现 <code>distance</code> 函数，用于计算两个城市对象之间的距离。回顾一下，两个坐标点 <code>(x1, y1)</code> 和 <code>(x2, y2)</code>
+          之间的距离可以通过计算 <code>sqrt</code> of <code>(x1 - x2)**2 + (y1 - y2)**2</code> 来得到。我们已经为你导入了 <code>sqrt</code>
+          以方便使用。请使用城市的纬度和经度作为其坐标，并使用选择器函数来访问这些信息！</p>
 
         <solution>
 
@@ -441,24 +423,19 @@ def distance(city_a, city_b):
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q distance</code></pre>
+        <pre><code class="nohighlight">python3 ok -q distance --local</code></pre>
 
 
+        <h3 class="question" id="q3">Q3: 更近的城市</h3>
 
-        <h3 class="question" id="q3">Q3: Closer city</h3>
+        <p>接下来，实现 <code>closer_city</code> 函数。该函数接收一个纬度、一个经度以及两个城市，并返回相对更接近提供的纬度和经度的城市名称。</p>
 
-        <p>Next, implement <code>closer_city</code>, a function that takes a latitude,
-          longitude, and two cities, and returns the name of the city that is
-          relatively closer to the provided latitude and longitude.</p>
-
-        <p>You may only use the selectors and constructors introduced above and the
-          <code>distance</code> function you just defined for this question.
-        </p>
+        <p>你只能使用上面介绍的选择器、构造器以及刚刚定义的 <code>distance</code> 函数来完成此问题。</p>
 
         <blockquote>
-          <p><strong>Hint</strong>: How can you use your <code>distance</code> function to find the distance between
-            the given location and each of the given cities?</p>
+          <p><strong>提示</strong>：你如何利用 <code>distance</code> 函数来计算给定位置与两个城市之间的距离呢？</p>
         </blockquote>
+
 
         <solution>
 
@@ -483,60 +460,37 @@ def distance(city_a, city_b):
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q closer_city</code></pre>
+        <pre><code class="nohighlight">python3 ok -q closer_city --local</code></pre>
 
-
-
-        <h3 class="question" id="q4">Q4: Don't violate the abstraction barrier!</h3>
+        <h3 class="question" id="q4">Q4: 不要违反抽象屏障！</h3>
 
         <blockquote>
-          <p>Note: this question has no code-writing component (if you implemented <code>distance</code>
-            and <code>closer_city</code> correctly!)</p>
+          <p>注意：如果你正确实现了 <code>distance</code> 和 <code>closer_city</code>，此问题无需编写代码！</p>
         </blockquote>
 
-        <p>When writing functions that use an ADT, we should use the constructor(s) and
-          selector(s) whenever possible instead of assuming the ADT's implementation.
-          Relying on a data abstraction's underlying implementation is known as
-          <em>violating the abstraction barrier</em>, and we never want to do this!
-        </p>
+        <p>在编写使用抽象数据类型（ADT）的函数时，应尽可能使用构造器和选择器，而不是假设 ADT 的具体实现。依赖数据抽象的底层实现被称为<em>违反抽象屏障</em>，我们应当尽量避免这样做！</p>
 
-        <p>It's possible that you passed the doctests for <code>distance</code> and <code>closer_city</code>
-          even if you violated the abstraction barrier. To check whether or not you
-          did so, run the following command:</p>
+        <p>即使你违反了抽象屏障，你的 <code>distance</code> 和 <code>closer_city</code> 代码仍可能通过 doctest。要检查是否存在此问题，请运行以下命令：</p>
 
         <p>使用 Ok 来测试你的代码：</p>
         <pre><code class="nohighlight">python3 ok -q check_city_abstraction</code></pre>
 
-        <p>The <code>check_city_abstraction</code> function exists only for the doctest, which swaps
-          out the implementations of the <code>city</code> abstraction with something else, runs
-          the tests from the previous two parts, then restores the original abstraction.</p>
+        <p><code>check_city_abstraction</code> 函数仅用于 doctest，它会将 <code>city</code> 抽象的实现替换为另一种方式，运行前两部分的测试，然后恢复原始实现。</p>
 
-        <p>The nature of the abstraction barrier guarantees that changing the implementation of an ADT
-          shouldn't affect the functionality of any programs that use that ADT, as long
-          as the constructors and selectors were used properly.</p>
+        <p>抽象屏障的性质保证了，只要正确使用构造器和选择器，更改 ADT 的实现就不会影响任何依赖该 ADT 的程序的功能。</p>
 
-        <p>If you passed the Ok tests for the previous questions but not this one,
-          the fix is simple! Just replace any code that violates the abstraction
-          barrier, i.e. creating a city with a new list object or indexing into a city,
-          with the appropriate constructor or selector.</p>
+        <p>如果你通过了前面问题的 Ok 测试但未通过本测试，修复方法很简单！只需将任何违反抽象屏障的代码（例如直接创建列表表示城市或对城市对象进行索引）替换为合适的构造器或选择器。</p>
 
-        <p>Make sure that your functions pass the tests with both the first and the second
-          implementations of the City ADT and that you understand why they should work
-          for both before moving on.</p>
+        <p>确保你的函数在第一种和第二种 City ADT 实现下都能通过测试，并理解为什么它们应该对两者都有效，然后再继续。</p>
 
+        <h2 id="trees">树</h2>
 
-        <h2 id="trees">Trees</h2>
+        <h3 class="question" id="q5">Q5: 寻找浆果！</h3>
 
+        <p>校园里的松鼠需要你的帮助！校园里有很多树，松鼠们想知道哪些树上有浆果。定义函数 <code>berry_finder</code>，该函数接受一棵树作为输入，如果树中包含值为 <code>'berry'</code>
+          的节点，则返回 <code>True</code>，否则返回 <code>False</code>。</p>
 
-        <h3 class="question" id="q5">Q5: Finding Berries!</h3>
-
-        <p>The squirrels on campus need your help! There are a lot of trees on campus and
-          the squirrels would like to know which ones contain berries. Define the function
-          <code>berry_finder</code>, which takes in a tree and returns <code>True</code> if the tree contains a
-          node with the value <code>&#x27;berry&#x27;</code> and <code>False</code> otherwise.
-        </p>
-
-        <p><em>Hint:</em> Considering using a for loop to iterate through each of the branches recursively!</p>
+        <p><em>提示：</em>考虑使用 <code>for</code> 循环递归遍历每个分支！</p>
 
         <solution>
 
@@ -564,15 +518,15 @@ def distance(city_a, city_b):
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q berry_finder</code></pre>
+        <pre><code class="nohighlight">python3 ok -q berry_finder --local</code></pre>
 
-        <h3 class="question" id="q6">Q6: Sprout leaves</h3>
+        <h3 class="question" id="q6">Q6: 萌发新叶</h3>
 
-        <p>Define a function <code>sprout_leaves</code> that takes in a tree, <code>t</code>, and a list of
-          leaves, <code>leaves</code>. It produces a new tree that is identical to <code>t</code>, but where each
-          old leaf node has new branches, one for each leaf in <code>leaves</code>.</p>
+        <p>定义一个函数 <code>sprout_leaves</code>，它接受一棵树 <code>t</code> 和一个叶子列表 <code>leaves</code>。该函数返回一棵新的树，该树与
+          <code>t</code> 相同，但所有原始叶子节点都会新增分支，每个分支对应 <code>leaves</code> 中的一个元素。
+        </p>
 
-        <p>For example, say we have the tree <code>t = tree(1, [tree(2), tree(3, [tree(4)])])</code>:</p>
+        <p>例如，假设我们有以下树 <code>t = tree(1, [tree(2), tree(3, [tree(4)])])</code>：</p>
 
         <pre><code>  1
  / \
@@ -580,7 +534,7 @@ def distance(city_a, city_b):
     |
     4</code></pre>
 
-        <p>If we call <code>sprout_leaves(t, [5, 6])</code>, the result is the following tree:</p>
+        <p>如果我们调用 <code>sprout_leaves(t, [5, 6])</code>，结果将是以下树：</p>
 
         <pre><code>       1
      /   \
@@ -631,44 +585,33 @@ def distance(city_a, city_b):
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q sprout_leaves</code></pre>
+        <pre><code class="nohighlight">python3 ok -q sprout_leaves --local</code></pre>
 
-        <h3 class="question" id="q7">Q7: Don't violate the abstraction barrier!</h3>
+        <h3 class="question" id="q7">Q7: 不要违反抽象屏障！</h3>
 
         <blockquote>
-          <p>Note: this question has no code-writing component (if you implemented <code>berry_finder</code>
-            and <code>sprout_leaves</code> correctly!)</p>
+          <p>注意：如果你正确实现了 <code>berry_finder</code> 和 <code>sprout_leaves</code>，那么这个问题不需要编写任何代码！</p>
         </blockquote>
 
-        <p>When writing functions that use an ADT, we should use the constructor(s) and
-          selector(s) whenever possible instead of assuming the ADT's implementation.
-          Relying on a data abstraction's underlying implementation is known as
-          <em>violating the abstraction barrier</em>, and we never want to do this!
-        </p>
+        <p>在编写使用 ADT（抽象数据类型）的函数时，我们应尽可能使用构造函数和选择器，而不是假设 ADT 的具体实现。
+          依赖数据抽象的底层实现被称为<em>违反抽象屏障</em>，而我们应当避免这样做！</p>
 
-        <p>It's possible that you passed the doctests for <code>berry_finder</code> and <code>sprout_leaves</code>
-          even if you violated the abstraction barrier. To check whether or not you
-          did so, run the following command:</p>
+        <p>即使你违反了抽象屏障，你仍然可能通过 <code>berry_finder</code> 和 <code>sprout_leaves</code> 的 doctest 测试。
+          要检查你是否违反了抽象屏障，请运行以下命令：</p>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q check_abstraction</code></pre>
+        <pre><code class="nohighlight">python3 ok -q check_abstraction --local</code></pre>
 
-        <p>The <code>check_abstraction</code> function exists only for the doctest, which swaps
-          out the implementations of the <code>tree</code> abstraction with something else, runs
-          the tests from the previous two parts, then restores the original abstraction.</p>
+        <p><code>check_abstraction</code> 仅用于 doctest，它会替换 <code>tree</code> 抽象的实现，运行前面两个部分的测试，
+          然后恢复原始抽象。</p>
 
-        <p>The nature of the abstraction barrier guarantees that changing the implementation of an ADT
-          shouldn't affect the functionality of any programs that use that ADT, as long
-          as the constructors and selectors were used properly.</p>
+        <p>抽象屏障的核心思想是，即使更改 ADT 的实现，任何正确使用构造函数和选择器的程序都不应受到影响。</p>
 
-        <p>If you passed the Ok tests for the previous questions but not this one,
-          the fix is simple! Just replace any code that violates the abstraction
-          barrier, i.e. creating a tree with a new list object or indexing into a tree,
-          with the appropriate constructor or selector.</p>
+        <p>如果你通过了前面问题的 Ok 测试但未通过本测试，修复方法很简单！
+          只需替换任何违反抽象屏障的代码，例如直接创建一个新的列表对象表示树，或直接索引树的数据结构，
+          改为使用正确的构造函数或选择器。</p>
 
-        <p>Make sure that your functions pass the tests with both the first and the second
-          implementations of the Tree ADT and that you understand why they should work
-          for both before moving on.</p>
+        <p>确保你的函数能够通过树 ADT 的两种不同实现的测试，并理解为什么它们应该适用于两者，然后再继续下一部分。</p>
 
 
         <h2 id="submit">Submit</h2>
@@ -682,24 +625,21 @@ def distance(city_a, city_b):
         <h1 id="optional-questions">选做题</h1>
 
 
-        <h3 class="question" id="q8">Q8: Coordinates</h3>
+        <h3 class="question" id="q8">Q8: 坐标</h3>
 
-        <p>Implement a function <code>coords</code> that takes a function <code>fn</code>, a sequence <code>seq</code>,
-          and a <code>lower</code> and <code>upper</code> bound on the output of the function. <code>coords</code> then
-          returns a list of coordinate pairs (lists) such that:</p>
+        <p>实现一个函数 <code>coords</code>，它接受一个函数 <code>fn</code>，一个序列 <code>seq</code>，
+          以及该函数输出的 <code>lower</code>（下界）和 <code>upper</code>（上界）。<code>coords</code> 返回一个包含坐标对（列表）的列表，使得：</p>
 
         <ul>
-          <li>Each (x, y) pair is represented as <code>[x, fn(x)]</code></li>
-          <li>The x-coordinates are elements in the sequence</li>
-          <li>The result contains only pairs whose y-coordinate is within the upper and
-            lower bounds (inclusive)</li>
+          <li>每个 (x, y) 对应的坐标对表示为 <code>[x, fn(x)]</code></li>
+          <li>x 坐标来自给定的序列</li>
+          <li>结果仅包含那些 y 坐标在给定上界和下界范围内（包含边界）的坐标对</li>
         </ul>
 
-        <p>See the doctest for examples.</p>
+        <p>请查看 doctest 以获取示例。</p>
 
         <blockquote>
-          <p><em>Note</em>: your answer can only be <em>one line long</em>. You should make use of list
-            comprehensions!</p>
+          <p><em>注意</em>：你的答案必须<strong>只有一行代码</strong>。你应该使用列表推导式！</p>
         </blockquote>
 
         <solution>
@@ -718,23 +658,17 @@ def distance(city_a, city_b):
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q coords</code></pre>
+        <pre><code class="nohighlight">python3 ok -q coords --local</code></pre>
 
-        <h3 class="question" id="q9">Q9: Riffle Shuffle</h3>
+        <h3 class="question" id="q9">Q9: 交错洗牌</h3>
 
-        <p>The familiar <a href="https://fredhohman.com/card-shuffling/static/images/riffle.gif">riffle shuffle</a>
-          of a deck of cards (or in our case, of a sequence
-          of things) results in a new configuration of cards in which the top
-          card is followed by the middle card, then by the second
-          card, then the card after the middle, and so forth. Assuming the deck
-          (sequence) contains an even number of cards, write a list comprehension that
-          produces the shuffled sequence.</p>
+        <p>常见的 <a href="https://fredhohman.com/card-shuffling/static/images/riffle.gif">交错洗牌（riffle shuffle）</a>
+          方法用于洗一副牌（或者在我们的情况下，是一个序列）。洗牌后的新排列方式是：
+          顶部的牌后面接着中间的牌，然后是第二张牌，再接着是中间的下一张牌，以此类推。
+          假设序列的元素数量为偶数，请编写一个使用列表推导式的表达式来生成洗牌后的序列。</p>
 
-        <p><em>Hint:</em> To write this as a single comprehension, you may find the expression
-          <code>k%2</code>, which evaluates to 0 on even numbers and 1 on odd numbers, to be useful.
-          Consider how you can use the 0 or 1 returned by <code>k%2</code> to alternatively access the
-          beginning and the middle of the list.
-        </p>
+        <p><em>提示：</em> 要将此操作写成单行列表推导式，表达式 <code>k%2</code> 可能对你有用。
+          该表达式在偶数时返回 0，在奇数时返回 1。考虑如何利用 <code>k%2</code> 的值交替访问列表的前半部分和后半部分。</p>
 
         <solution>
 
@@ -754,24 +688,20 @@ def distance(city_a, city_b):
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q riffle</code></pre>
+        <pre><code class="nohighlight">python3 ok -q riffle --local</code></pre>
 
-        <h3 class="question" id="q10">Q10: Add trees</h3>
+        <h3 class="question" id="q10">Q10: 添加树</h3>
 
-        <p>Define the function <code>add_trees</code>, which takes in two trees and returns a new
-          tree where each corresponding node from the first tree is added with the node
-          from the second tree. If a node at any particular position is present in one
-          tree but not the other, it should be present in the new tree as well.</p>
+        <p>定义
+          <code>add_trees</code> 函数，该函数接收两棵树作为输入，返回一棵新的树，其中每个对应位置的节点来自两棵树相加的结果。如果某个位置的节点只在一棵树中存在，而在另一棵树中不存在，该节点也应出现在新树中。
+        </p>
 
         <blockquote>
-          <p><em>Hint</em>: You may want to use the built-in zip function to iterate over
-            multiple sequences at once.</p>
+          <p><em>提示</em>: 你可能想要使用内置的 <code>zip</code> 函数来同时遍历多个序列。</p>
 
-          <p><em>Note</em>: If you feel that this one's a lot harder than the previous tree
-            problems, that's totally fine! This is a pretty difficult problem, but you
-            can do it! Talk about it with other students, and come back to it if you need
-            to.</p>
+          <p><em>注意</em>: 如果你觉得这个问题比之前的树问题要难很多，那是完全可以理解的！这个问题确实挺难的，但是你可以做到的！可以和其他同学讨论，再来考虑这个问题。</p>
         </blockquote>
+
 
         <solution>
 
@@ -816,46 +746,31 @@ def distance(city_a, city_b):
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q add_trees</code></pre>
+        <pre><code class="nohighlight">python3 ok -q add_trees --local</code></pre>
 
 
-        <h2 id="fun-question">Fun Question!</h2>
+        <h2 id="fun-question">趣味问题！</h2>
 
+        <h2 id="shakespeare-and-dictionaries">莎士比亚与字典</h2>
 
+        <p>我们将使用字典来近似莎士比亚的全部作品！我们要使用一个二元语法（bigram）语言模型。基本思想如下：我们从某个单词开始——例如 "The"。然后，我们遍历莎士比亚所有的文本，记录每次 "The"
+          出现后紧随的单词，并将其添加到一个列表中，这个列表被称为 "The" 的 <em>后继者（successors）</em>。假设我们对莎士比亚曾经使用过的每一个单词都做了这样的处理。</p>
 
-        <h2 id="shakespeare-and-dictionaries">Shakespeare and Dictionaries</h2>
+        <p>回到 "The"。现在，我们可以从这个列表中随机选择一个单词，比如 "cat"。接着，我们查找 "cat"
+          的后继者，并从中随机选择一个单词，如此往复。最终，这个过程会以一个句号（"."）终止，我们就生成了一句莎士比亚风格的句子！</p>
 
+        <p>我们用于查找单词后继者的对象被称为 "后继表（successor table）"，本质上它就是一个字典（dictionary）。这个字典的键是单词，值是该单词的后继单词列表。</p>
 
-        <p>We will use dictionaries to approximate the entire works of
-          Shakespeare! We're going to use a bigram language model. Here's the
-          idea: We start with some word -- we'll use "The" as an example. Then we
-          look through all of the texts of Shakespeare and for every instance of
-          "The" we record the word that follows "The" and add it to a list, known
-          as the <em>successors</em> of "The". Now suppose we've done this for every
-          word Shakespeare has used, ever.</p>
+        <h3 class="question" id="q11">Q11: 后继表</h3>
 
-        <p>Let's go back to "The". Now, we randomly choose a word from this list,
-          say "cat". Then we look up the successors of "cat" and randomly choose
-          a word from that list, and we continue this process. This eventually
-          will terminate in a period (".") and we will have generated a
-          Shakespearean sentence!</p>
-
-        <p>The object that we'll be looking things up in is called a "successor
-          table", although really it's just a dictionary. The keys in this
-          dictionary are words, and the values are lists of successors to those
-          words.</p>
-
-        <h3 class="question" id="q11">Q11: Successor Tables</h3>
-        Here's an incomplete definition of the <code>build_successors_table</code>
-        function. The input is a list of words (corresponding to a
-        Shakespearean text), and the output is a successors table. (By default,
-        the first word is a successor to "."). See the example below.
+        <p>下面是一个不完整的 <code>build_successors_table</code> 函数定义。它的输入是一个单词列表（对应于莎士比亚的文本），输出是一个后继表。（默认情况下，第一个单词是句号
+          <code>"."</code> 的后继者）。请参考下面的示例。
+        </p>
 
         <blockquote>
-          <p>Note: there are two places where you need to write code, denoted by the two
-            <code>&quot;*** YOUR CODE HERE ***&quot;</code>
-          </p>
+          <p>注意：有两个需要填写代码的地方，标记为 <code>&quot;*** YOUR CODE HERE ***&quot;</code>。</p>
         </blockquote>
+
 
         <solution>
 
@@ -886,23 +801,19 @@ def distance(city_a, city_b):
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q build_successors_table</code></pre>
+        <pre><code class="nohighlight">python3 ok -q build_successors_table --local</code></pre>
 
-        <h3 class="question" id="q12">Q12: Construct the Sentence</h3>
+        <h3 class="question" id="q12">Q12: 生成句子</h3>
 
-        <p>Let's generate some sentences! Suppose we're given a starting word. We
-          can look up this word in our table to find its list of successors, and
-          then randomly select a word from this list to be the next word in the
-          sentence. Then we just repeat until we reach some ending punctuation.</p>
+        <p>让我们来生成一些句子！假设我们给定了一个起始单词。我们可以在后继表中查找这个单词，找到它的后继单词列表，然后从这个列表中随机选择一个单词作为句子的下一个单词。然后，我们重复这个过程，直到遇到某个终止标点符号。</p>
 
         <blockquote>
-          <p><em>Hint</em>: to randomly select from a list, import the Python random library with
-            <code>import random</code> and use the expression <code>random.choice(my_list)</code>
+          <p><em>提示</em>：要从列表中随机选择一个单词，可以导入 Python 的 random 库：
+            <code>import random</code>，然后使用表达式 <code>random.choice(my_list)</code> 进行选择。
           </p>
         </blockquote>
 
-        <p>This might not be a bad time to play around with adding strings
-          together as well. Let's fill in the <code>construct_sent</code> function!</p>
+        <p>现在是一个尝试字符串拼接的好时机。让我们完成 <code>construct_sent</code> 函数！</p>
 
         <solution>
 
@@ -926,18 +837,16 @@ def distance(city_a, city_b):
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q construct_sent</code></pre>
+        <pre><code class="nohighlight">python3 ok -q construct_sent --local</code></pre>
 
 
-        <h3 id="putting-it-all-together">Putting it all together</h3>
+        <h3 id="putting-it-all-together">整合所有内容</h3>
 
 
-        <p>Great! Now let's try to run our functions with some actual data. The following
-          snippet included in the skeleton code will return a list containing the words
-          in all of the works of Shakespeare.</p>
+        <p>太棒了！现在让我们尝试用一些实际数据运行我们的函数。以下代码片段包含在提供的框架代码中，它将返回一个包含莎士比亚所有作品单词的列表。</p>
 
         <blockquote>
-          <p><em>Warning</em>: Do <strong>NOT</strong> try to print the return result of this function.</p>
+          <p><em>警告</em>：请<strong>不要</strong>尝试打印此函数的返回结果。</p>
         </blockquote>
 
         <pre><code>def shakespeare_tokens(path=&#x27;shakespeare.txt&#x27;, url=&#x27;http://composingprograms.com/shakespeare.txt&#x27;):
@@ -950,15 +859,13 @@ def distance(city_a, city_b):
         shakespeare = urlopen(url)
         return shakespeare.read().decode(encoding=&#x27;ascii&#x27;).split()</code></pre>
 
-        <p>Uncomment the following two lines to run the above function and build the
-          successors table from those tokens.</p>
+        <p>取消以下两行代码的注释，以运行上述函数并从这些单词生成后继表。</p>
 
         <pre><code># Uncomment the following two lines
 # tokens = shakespeare_tokens()
 # table = build_successors_table(tokens)</code></pre>
 
-        <p>Next, let's define a utility function that constructs sentences from this
-          successors table:</p>
+        <p>接下来，让我们定义一个辅助函数，它可以根据后继表构造句子：</p>
 
         <pre><code>&gt;&gt;&gt; def sent():
 ...     return construct_sent(&#x27;The&#x27;, table)
@@ -971,18 +878,14 @@ def distance(city_a, city_b):
 &gt;&gt;&gt; sent()
 &quot; The bird of Tunis , or two white and plucker down with better ; that&#x27;s God&#x27;s sake.&quot;</code></pre>
 
-        <p>Notice that all the sentences start with the word "The". With a few
-          modifications, we can make our sentences start with a random word. The
-          following <code>random_sent</code> function (defined in your starter file) will
-          do the trick:</p>
+        <p>请注意，所有的句子都以“The”开头。只需进行一些小修改，我们就可以让句子以随机单词开头。以下 <code>random_sent</code> 函数（已在提供的代码文件中定义）可以实现这一点：</p>
+
 
         <pre><code>def random_sent():
     import random
     return construct_sent(random.choice(table[&#x27;.&#x27;]), table)</code></pre>
 
-        <p>Go ahead and load your file into Python (be sure to use the <code>&#x2d;i</code> flag).
-          You can now call the <code>random_sent</code> function to generate random
-          Shakespearean sentences!</p>
+        <p>现在，你可以将文件加载到 Python 中（确保使用 <code>-i</code> 选项）。然后，你就可以调用 <code>random_sent</code> 函数来生成随机的莎士比亚风格句子！</p>
 
         <pre><code>&gt;&gt;&gt; random_sent()
 &#x27; Long live by thy name , then , Dost thou more angel , good Master Deep&#x2d;vow , And tak&#x27;st more ado but following her , my sight Of speaking false!&#x27;
