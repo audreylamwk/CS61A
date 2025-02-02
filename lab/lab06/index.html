@@ -116,13 +116,7 @@
         <p>下载 <a href="lab06.zip">lab06.zip</a>。
           在压缩包中，你可以找到本实验问题的初始文件，以及一份 <a href="ok">Ok</a> 自动评分器。</p>
 
-
-
-
-
-
-
-        <h1 id="topics">Topics</h1>
+        <h1 id="topics">主要内容</h1>
 
 
         <p>Consult this section if you need a refresher on the material for this lab. It's okay to skip directly to the
@@ -296,17 +290,14 @@ True</code></pre>
 
 
 
-        <h2 id="nonlocal-codewriting">Nonlocal Codewriting</h2>
+        <h2 id="nonlocal-codewriting">非局部代码练习</h2>
 
+        <h3 class="question" id="q1">Q1: 递增加法器</h3>
 
-        <h3 class="question" id="q1">Q1: Make Adder Increasing</h3>
-
-        <p>Write a function which takes in an integer <code>a</code> and returns a one-argument function.
-          This function should take in some value <code>b</code> and return <code>a + b</code> the first time it is
-          called,
-          similar to <code>make_adder</code>. The second time it is called, however, it should return
-          <code>a + b + 1</code>,
-          then <code>a + b + 2</code> the third time, and so on.
+        <p>编写一个函数，该函数接收一个整数 <code>a</code> 并返回一个单参数函数。
+          这个函数应该接收一个值 <code>b</code>，第一次调用时返回 <code>a + b</code>，类似于 <code>make_adder</code>。
+          但是第二次调用时，它应该返回 <code>a + b + 1</code>，
+          第三次调用时返回 <code>a + b + 2</code>，以此类推。
         </p>
 
         <solution>
@@ -332,14 +323,14 @@ True</code></pre>
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q make_adder_inc</code></pre>
+        <pre><code class="nohighlight">python3 ok -q make_adder_inc --local</code></pre>
 
-        <h3 class="question" id="q2">Q2: Next Fibonacci</h3>
+        <h3 class="question" id="q2">Q2: 下一个斐波那契数</h3>
 
-        <p>Write a function <code>make_fib</code> that returns a function that returns the
-          next Fibonacci number each time it is called. (The Fibonacci sequence begins with 0
-          and then 1, after which each element is the sum of the preceding two.)
-          Use a <code>nonlocal</code> statement! In addition, do not use python lists to solve this problem.</p>
+        <p>编写一个函数 <code>make_fib</code>，它返回一个函数，该函数每次被调用时都会返回下一个斐波那契数。
+          （斐波那契数列从 0 开始，然后是 1，之后的每个元素都是前两个元素之和。）
+          使用 <code>nonlocal</code> 语句！此外，不要使用 Python 列表来解决此问题。
+        </p>
 
         <solution>
 
@@ -372,24 +363,21 @@ True</code></pre>
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q make_fib</code></pre>
-        <!--
- -->
+        <pre><code class="nohighlight">python3 ok -q make_fib --local</code></pre>
 
 
-        <h2 id="mutability">Mutability</h2>
+        <h2 id="mutability-1">可变性</h2>
 
-
-        <h3 class="question" id="q3">Q3: List-Mutation</h3>
+        <h3 class="question" id="q3">Q3: 列表变更</h3>
 
         <blockquote>
-          <p>Test your understaninding of list mutation with the following questions. What would Python display? Type it
-            in the intepreter if you're stuck!</p>
+          <p>通过以下问题来测试你对列表变更 (List Mutation) 的理解。Python 会输出什么？如果卡住了，可以在 Python 解释器中输入代码进行测试！</p>
 
-          <pre><code>python3 ok &#x2d;q list&#x2d;mutation &#x2d;u</code></pre>
+          <pre><code>python3 ok -q list-mutation -u --local</code></pre>
 
-          <p>Note: if nothing would be output by Python, type <code>Nothing</code>.</p>
+          <p>注意：如果 Python 不会输出任何内容，请输入 <code>Nothing</code>。</p>
         </blockquote>
+
 
         <pre><code>&gt;&gt;&gt; lst = [5, 6, 7, 8]
 &gt;&gt;&gt; lst.append(6)
@@ -412,25 +400,19 @@ True</code></pre>
 <div class="alt prompt-1">______</div><div class="solution prompt-1">&#x54;&#x72;&#x75;&#x65;</div>
 &gt;&gt;&gt; b is lst
 <div class="alt prompt-1">______</div><div class="solution prompt-1">&#x46;&#x61;&#x6c;&#x73;&#x65;</div></code></pre>
-        <button id='prompt-1' class='btn btn-outline btn-lg solutiontoggle prompt'>
-          Toggle Solution<noscript> (enable JavaScript)</noscript>
-        </button>
 
+        <h3 class="question" id="q4">Q4: 插入元素</h3>
 
-        <h3 class="question" id="q4">Q4: Insert Items</h3>
-
-        <p>Write a function which takes in a list <code>lst</code>, an argument <code>entry</code>, and another argument
-          <code>elem</code>. This function will check through each item present in <code>lst</code> to see if it is
-          equivalent with <code>entry</code>. Upon finding an equivalent entry, the function should modify the list by
-          placing <code>elem</code> into the list right after the found entry. At the end of the function, the modified
-          list should be returned. See the doctests for examples on how this function is utilized. Use list mutation to
-          modify the original list, no new lists should be created or returned.
+        <p>编写一个函数，该函数接受一个列表 <code>lst</code>，一个参数 <code>entry</code>，以及另一个参数 <code>elem</code>。
+          该函数会遍历 <code>lst</code> 中的每个元素，检查它是否与 <code>entry</code> 相等。
+          如果找到与 <code>entry</code> 相等的元素，则在其后面插入 <code>elem</code>。
+          最终，返回修改后的列表。请参考 doctests 以了解该函数的具体用法。
+          该函数必须使用<strong>列表变更（List Mutation）</strong> 来修改原始列表，不能创建或返回新的列表。
         </p>
 
-        <p><strong>Be careful in situations where the values passed into <code>entry</code> and <code>elem</code> are
-            equivalent, so as not to create an infinitely long list while iterating through it.</strong> If you find
-          that your code is taking more than a few seconds to run, it is most likely that the function is in a loop of
-          inserting new values.</p>
+        <p><strong>请注意：</strong>如果传入的 <code>entry</code> 和 <code>elem</code> 具有相同的值，
+          可能会导致无限循环，因为每次插入 <code>elem</code> 后都会遇到新的 <code>entry</code>，从而不断插入。
+          如果发现代码运行时间超过几秒钟，很可能是函数进入了无限插入的循环。</p>
 
         <solution>
 
@@ -458,7 +440,7 @@ True</code></pre>
 
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q insert_items</code></pre>
+        <pre><code class="nohighlight">python3 ok -q insert_items --local</code></pre>
 
 
         <h2 id="submit">Submit</h2>
@@ -487,15 +469,15 @@ True</code></pre>
             </ul>
             <li><a href="#required-questions">必答题</a></li>
             <ul>
-              <li><a href="#nonlocal-codewriting">Nonlocal Codewriting</a></li>
+              <li><a href="#nonlocal-codewriting">非局部代码练习</a></li>
               <ul>
-                <li><a href="#q1">Q1: Make Adder Increasing</a></li>
-                <li><a href="#q2">Q2: Next Fibonacci</a></li>
+                <li><a href="#q1">Q1: 递增加法器</a></li>
+                <li><a href="#q2">Q2: 下一个斐波那契数</a></li>
               </ul>
-              <li><a href="#mutability">Mutability</a></li>
+              <li><a href="#mutability-1">可变性</a></li>
               <ul>
-                <li><a href="#q3">Q3: List-Mutation</a></li>
-                <li><a href="#q4">Q4: Insert Items</a></li>
+                <li><a href="#q3">Q3: 列表变更</a></li>
+                <li><a href="#q4">Q4: 插入元素</a></li>
               </ul>
               <li><a href="#submit">Submit</a></li>
             </ul>
