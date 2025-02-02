@@ -624,10 +624,9 @@ StopIteration</code></pre>
 
 
 
-        <h2 id="iterators-and-generators">Iterators and Generators</h2>
+        <h2 id="iterators-and-generators">迭代器与生成器</h2>
 
-        <p>Generators also allow us to represent infinite sequences, such as the sequence of
-          natural numbers (1, 2, ...) shown in the function below!</p>
+        <p>生成器允许我们表示无限序列，例如下面函数中显示的自然数序列 (1, 2, ...)！</p>
 
         <pre><code>def naturals():
     &quot;&quot;&quot;A generator function that yields the infinite sequence of natural
@@ -644,11 +643,11 @@ StopIteration</code></pre>
         yield i
         i += 1</code></pre>
 
-        <h3 class="question" id="q1">Q1: Scale</h3>
+        <h3 class="question" id="q1">Q1: 缩放序列</h3>
 
-        <p>Implement the generator function <code>scale(it, multiplier)</code>, which yields elements of the
-          given iterable <code>it</code>, scaled by <code>multiplier</code>. As an extra challenge, try writing this
-          function using a <code>yield from</code> statement!</p>
+        <p>实现生成器函数 <code>scale(it, multiplier)</code>，它会产生可迭代对象 <code>it</code> 中的元素，
+          并将每个元素按 <code>multiplier</code> 进行缩放。
+          作为额外挑战，尝试使用 <code>yield from</code> 语句来实现这个函数！</p>
 
         <solution>
 
@@ -671,25 +670,25 @@ StopIteration</code></pre>
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q scale</code></pre>
+        <pre><code class="nohighlight">python3 ok -q scale --local</code></pre>
 
-        <h3 class="question" id="q2">Q2: Hailstone</h3>
+        <h3 class="question" id="q2">Q2: 冰雹序列</h3>
 
-        <p>Write a generator that outputs the hailstone sequence from homework 1.</p>
+        <p>编写一个生成器，它输出作业1 中的冰雹序列。</p>
 
-        <p>Here's a quick reminder of how the hailstone sequence is defined:</p>
+        <p>以下是冰雹序列的定义：</p>
 
         <ol>
-          <li>Pick a positive integer <code>n</code> as the start.</li>
-          <li>If <code>n</code> is even, divide it by 2.</li>
-          <li>If <code>n</code> is odd, multiply it by 3 and add 1.</li>
-          <li>Continue this process until <code>n</code> is 1.</li>
+          <li>选择一个正整数 <code>n</code> 作为起始值。</li>
+          <li>如果 <code>n</code> 是偶数，则将其除以 2。</li>
+          <li>如果 <code>n</code> 是奇数，则将其乘以 3 并加 1。</li>
+          <li>重复此过程，直到 <code>n</code> 变为 1。</li>
         </ol>
 
-        <p><strong>Note:</strong> It is highly encouraged (though not required) to try writing a solution using
-          recursion for some extra practice. Since
-          <code>hailstone</code> returns a generator, you can <code>yield from</code> a call to <code>hailstone</code>!
+        <p><strong>注意：</strong> 强烈建议（但不强制要求）使用递归来编写解决方案，以获得额外的练习。
+          由于 <code>hailstone</code> 返回一个生成器，你可以使用 <code>yield from</code> 调用 <code>hailstone</code>！
         </p>
+
 
         <solution>
 
@@ -712,23 +711,20 @@ StopIteration</code></pre>
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q hailstone</code></pre>
+        <pre><code class="nohighlight">python3 ok -q hailstone --local</code></pre>
 
+        <h2 id="wwpd-objects">WWPD: 对象</h2>
 
+        <h3 class="question" id="q3">Q3: 汽车类 (Car Class)</h3>
 
-
-        <h2 id="wwpd-objects">WWPD: Objects</h2>
-
-
-        <h3 class="question" id="q3">Q3: The Car class</h3>
-
-        <p><strong>Note:</strong> These questions use inheritance. For an overview of inheritance, see the <a
-            href="http://composingprograms.com/pages/25-object-oriented-programming.html#inheritance">inheritance
-            portion</a> of Composing Programs</p>
-
-        <p>Below is the definition of a <code>Car</code> class that we will be using in the following WWPD questions.
-          <strong>Note:</strong> This definition can also be found in <code>car.py</code>.
+        <p><strong>注意：</strong> 这些问题涉及继承。要了解继承的概述，请参考课本中的
+          <a href="https://composingprograms.netlify.app/2/5#_2-5-5-%E7%BB%A7%E6%89%BF">继承部分</a>。
         </p>
+
+        <p>下面是 <code>Car</code> 类的定义，我们将在后续 WWPD（Python 会输出什么？）问题中使用它。
+          <strong>注意：</strong> 该定义也可以在 <code>car.py</code> 文件中找到。
+        </p>
+
 
         <pre><code>class Car(object):
     num_wheels = 4
@@ -762,44 +758,13 @@ StopIteration</code></pre>
         return &#x27;Gas level: &#x27; + str(self.gas)</code></pre>
 
         <blockquote>
-          <p>Use Ok to test your knowledge with the following What would Python Display
-            questions.</p>
+          <p>使用 Ok 测试你对以下 "Python 会输出什么"（WWPD）问题的理解。</p>
 
-          <pre><code>python3 ok &#x2d;q wwpd&#x2d;car &#x2d;u</code></pre>
+          <pre><code>python3 ok -q wwpd-car -u --local</code></pre>
 
-          <p>If an error occurs, type Error. If nothing is displayed, type Nothing.</p>
+          <p>如果产生错误，请输入 <code>Error</code>。如果没有输出，请输入 <code>Nothing</code>。</p>
         </blockquote>
 
-        <!--
-
-<blockquote><pre><code>python3 ok &#x2d;q food_truck &#x2d;u</code></pre>
-
-<p>--></p>
-        </blockquote>
-
-        <!-- <pre><code>&gt;&gt;&gt; garcias_car = Car(&#x27;Tesla&#x27;, &#x27;Model S&#x27;)
-&gt;&gt;&gt; garcias_car.color
-<div class="alt prompt-1">______</div><div class="solution prompt-1">&#x27;&#x4e;&#x6f;&#x20;&#x63;&#x6f;&#x6c;&#x6f;&#x72;&#x20;&#x79;&#x65;&#x74;&#x2e;&#x20;&#x59;&#x6f;&#x75;&#x20;&#x6e;&#x65;&#x65;&#x64;&#x20;&#x74;&#x6f;&#x20;&#x70;&#x61;&#x69;&#x6e;&#x74;&#x20;&#x6d;&#x65;&#x2e;&#x27;</div>
-&gt;&gt;&gt; garcias_car.paint(&#x27;black&#x27;)
-<div class="alt prompt-1">______</div><div class="solution prompt-1">&#x27;&#x54;&#x65;&#x73;&#x6c;&#x61;&#x20;&#x4d;&#x6f;&#x64;&#x65;&#x6c;&#x20;&#x53;&#x20;&#x69;&#x73;&#x20;&#x6e;&#x6f;&#x77;&#x20;&#x62;&#x6c;&#x61;&#x63;&#x6b;&#x27;</div>
-&gt;&gt;&gt; garcias_car.color
-<div class="alt prompt-1">______</div><div class="solution prompt-1">&#x27;&#x62;&#x6c;&#x61;&#x63;&#x6b;&#x27;</div></code></pre>
-        <button id='prompt-1' class='btn btn-outline btn-lg solutiontoggle prompt'>
-        Toggle Solution<noscript> (enable JavaScript)</noscript>
-        </button>
-         -->
-        <!--
-<pre><code>&gt;&gt;&gt; garcias_car = Car(&#x27;Tesla&#x27;, &#x27;Model S&#x27;)
-&gt;&gt;&gt; garcias_truck = MonsterTruck(&#x27;Monster Truck&#x27;, &#x27;XXL&#x27;)
-&gt;&gt;&gt; garcias_car.size
-<div class="alt prompt-2">______</div><div class="solution prompt-2">&#x27;&#x54;&#x69;&#x6e;&#x79;&#x27;</div>
-&gt;&gt;&gt; garcias_truck.size
-<div class="alt prompt-2">______</div><div class="solution prompt-2">&#x27;&#x4d;&#x6f;&#x6e;&#x73;&#x74;&#x65;&#x72;&#x27;</div></code></pre>
-        <button id='prompt-2' class='btn btn-outline btn-lg solutiontoggle prompt'>
-        Toggle Solution<noscript> (enable JavaScript)</noscript>
-        </button>
-        
--->
         <pre><code>&gt;&gt;&gt; deneros_car = Car(&#x27;Tesla&#x27;, &#x27;Model S&#x27;)
 &gt;&gt;&gt; deneros_car.model
 <div class="alt prompt-3">______</div><div class="solution prompt-3">&#x27;&#x4d;&#x6f;&#x64;&#x65;&#x6c;&#x20;&#x53;&#x27;</div>
@@ -818,22 +783,6 @@ StopIteration</code></pre>
           Toggle Solution<noscript> (enable JavaScript)</noscript>
         </button>
 
-
-        <!-- <pre><code>&gt;&gt;&gt; Car.headlights
-<div class="alt prompt-4">______</div><div class="solution prompt-4">&#x32;</div>
-&gt;&gt;&gt; garcias_car.headlights
-<div class="alt prompt-4">______</div><div class="solution prompt-4">&#x32;</div>
-&gt;&gt;&gt; Car.headlights = 3
-&gt;&gt;&gt; garcias_car.headlights
-<div class="alt prompt-4">______</div><div class="solution prompt-4">&#x33;</div>
-&gt;&gt;&gt; garcias_car.headlights = 2
-&gt;&gt;&gt; Car.headlights
-<div class="alt prompt-4">______</div><div class="solution prompt-4">&#x33;</div></code></pre>
-        <button id='prompt-4' class='btn btn-outline btn-lg solutiontoggle prompt'>
-        Toggle Solution<noscript> (enable JavaScript)</noscript>
-        </button>
-         -->
-
         <pre><code>&gt;&gt;&gt; deneros_car = Car(&#x27;Tesla&#x27;, &#x27;Model S&#x27;)
 &gt;&gt;&gt; deneros_car.wheels = 2
 &gt;&gt;&gt; deneros_car.wheels
@@ -846,19 +795,9 @@ StopIteration</code></pre>
 <div class="alt prompt-5">______</div><div class="solution prompt-5">&#x45;&#x72;&#x72;&#x6f;&#x72;&#x20;&#x28;&#x54;&#x79;&#x70;&#x65;&#x45;&#x72;&#x72;&#x6f;&#x72;&#x29;</div>
 &gt;&gt;&gt; Car.drive(deneros_car)
 <div class="alt prompt-5">______</div><div class="solution prompt-5">&#x27;&#x43;&#x61;&#x6e;&#x6e;&#x6f;&#x74;&#x20;&#x64;&#x72;&#x69;&#x76;&#x65;&#x21;&#x27;</div></code></pre>
-        <button id='prompt-5' class='btn btn-outline btn-lg solutiontoggle prompt'>
-          Toggle Solution<noscript> (enable JavaScript)</noscript>
-        </button>
 
-        <!--
-
-<pre><code>&gt;&gt;&gt; MonsterTruck.drive(garcias_car)
-Error (AttributeError)</code></pre>
-
--->
-
-        <p>For the following, we reference the <code>MonsterTruck</code> class below.
-          <strong>Note</strong>: The <code>MonsterTruck</code> class can also be found in <code>car.py</code>.
+        <p>对于以下问题，我们参考 <code>MonsterTruck</code> 类。
+          <strong>注意</strong>：<code>MonsterTruck</code> 类也可以在 <code>car.py</code> 中找到。
         </p>
 
         <pre><code> class MonsterTruck(Car):
@@ -880,134 +819,79 @@ Error (AttributeError)</code></pre>
 <div class="alt prompt-6">______</div><div class="solution prompt-6">&#x56;&#x72;&#x6f;&#x6f;&#x6d;&#x21;&#x20;&#x54;&#x68;&#x69;&#x73;&#x20;&#x4d;&#x6f;&#x6e;&#x73;&#x74;&#x65;&#x72;&#x20;&#x54;&#x72;&#x75;&#x63;&#x6b;&#x20;&#x69;&#x73;&#x20;&#x68;&#x75;&#x67;&#x65;&#x21;&#xa;&#x27;&#x4d;&#x6f;&#x6e;&#x73;&#x74;&#x65;&#x72;&#x20;&#x42;&#x61;&#x74;&#x6d;&#x6f;&#x62;&#x69;&#x6c;&#x65;&#x20;&#x67;&#x6f;&#x65;&#x73;&#x20;&#x76;&#x72;&#x6f;&#x6f;&#x6d;&#x21;&#x27;</div>
 &gt;&gt;&gt; Car.rev(deneros_car)
 <div class="alt prompt-6">______</div><div class="solution prompt-6">&#x45;&#x72;&#x72;&#x6f;&#x72;&#x20;&#x28;&#x41;&#x74;&#x74;&#x72;&#x69;&#x62;&#x75;&#x74;&#x65;&#x45;&#x72;&#x72;&#x6f;&#x72;&#x29;</div></code></pre>
-        <button id='prompt-6' class='btn btn-outline btn-lg solutiontoggle prompt'>
-          Toggle Solution<noscript> (enable JavaScript)</noscript>
-        </button>
 
-        <!--
-<pre><code>&gt;&gt;&gt; class FoodTruck(MonsterTruck):
-...    delicious = &#x27;meh&#x27;
-...    def serve(self):
-...        if FoodTruck.size == &#x27;delicious&#x27;:
-...            print(&#x27;Yum!&#x27;)
-...        if self.food != &#x27;Tacos&#x27;:
-...            return &#x27;But no tacos...&#x27;
-...        else:
-...            return &#x27;Mmm!&#x27;
-&gt;&gt;&gt; taco_truck = FoodTruck(&#x27;Tacos&#x27;, &#x27;Truck&#x27;)
-&gt;&gt;&gt; taco_truck.food = &#x27;Guacamole&#x27;
-&gt;&gt;&gt; taco_truck.serve()
-<div class="alt prompt-7">______</div><div class="solution prompt-7">&#x27;&#x42;&#x75;&#x74;&#x20;&#x6e;&#x6f;&#x20;&#x74;&#x61;&#x63;&#x6f;&#x73;&#x2e;&#x2e;&#x2e;&#x27;</div>
-&gt;&gt;&gt; taco_truck.food = taco_truck.make
-&gt;&gt;&gt; FoodTruck.size = taco_truck.delicious
-&gt;&gt;&gt; taco_truck.serve()
-<div class="alt prompt-7">______</div><div class="solution prompt-7">&#x27;&#x4d;&#x6d;&#x6d;&#x21;&#x27;</div>
-&gt;&gt;&gt; taco_truck.size = &#x27;delicious&#x27;
-&gt;&gt;&gt; taco_truck.serve()
-<div class="alt prompt-7">______</div><div class="solution prompt-7">&#x27;&#x4d;&#x6d;&#x6d;&#x21;&#x27;</div>
-&gt;&gt;&gt; FoodTruck.pop_tire()
-<div class="alt prompt-7">______</div><div class="solution prompt-7">&#x45;&#x72;&#x72;&#x6f;&#x72;</div>
-&gt;&gt;&gt; FoodTruck.pop_tire(taco_truck)
-<div class="alt prompt-7">______</div><div class="solution prompt-7">&#x4e;&#x6f;&#x74;&#x68;&#x69;&#x6e;&#x67;</div>
-&gt;&gt;&gt; taco_truck.drive()
-<div class="alt prompt-7">______</div><div class="solution prompt-7">&#x56;&#x72;&#x6f;&#x6f;&#x6d;&#x21;&#x20;&#x54;&#x68;&#x69;&#x73;&#x20;&#x4d;&#x6f;&#x6e;&#x73;&#x74;&#x65;&#x72;&#x20;&#x54;&#x72;&#x75;&#x63;&#x6b;&#x20;&#x69;&#x73;&#x20;&#x68;&#x75;&#x67;&#x65;&#x21;&#xa;&#x27;&#x54;&#x61;&#x63;&#x6f;&#x73;&#x20;&#x54;&#x72;&#x75;&#x63;&#x6b;&#x20;&#x63;&#x61;&#x6e;&#x6e;&#x6f;&#x74;&#x20;&#x64;&#x72;&#x69;&#x76;&#x65;&#x21;&#x27;</div></code></pre>
-        <button id='prompt-7' class='btn btn-outline btn-lg solutiontoggle prompt'>
-        Toggle Solution<noscript> (enable JavaScript)</noscript>
-        </button>
-        
--->
 
 
         <h2 id="magic-the-lambda-ing">Magic: The Lambda-ing</h2>
 
+        <p>在本实验的下一部分，我们将实现一款卡牌游戏！</p>
 
-        <p>In the next part of this lab, we will be implementing a card game!</p>
-
-        <p>You can start the game by typing:</p>
+        <p>你可以通过以下命令启动游戏：</p>
 
         <pre><code>python3 cardgame.py</code></pre>
 
-        <p><strong>This game doesn't work yet</strong>. If we run this right now, the code will
-          error, since we haven't implemented anything yet. When it's working, you
-          can exit the game and return to the command line with <code>Ctrl&#x2d;C</code> or <code>Ctrl&#x2d;D</code>.
-        </p>
+        <p><strong>这个游戏目前还不能运行</strong>。如果我们现在运行它，代码会报错，因为我们还没有实现任何内容。
+          当游戏正常运行后，你可以使用 <code>Ctrl-C</code> 或 <code>Ctrl-D</code> 退出游戏并返回命令行。</p>
 
-        <p>This game uses several different files.</p>
+        <p>这个游戏使用了多个不同的文件：</p>
 
         <ul>
-          <li>Code for all the questions in this lab can be found in <code>classes.py</code>.</li>
-          <li>Some utility for the game can be found in <code>cardgame.py</code>, but you won't need
-            to open or read this file. This file doesn't actually mutate any instances
-            directly - instead, it calls methods of the different classes, maintaining
-            a strict abstraction barrier.</li>
-          <li>If you want to modify your game later to add your own custom cards and decks,
-            you can look in <code>cards.py</code> to see all the standard cards and the default deck;
-            here, you can add more cards and change what decks you and your opponent use.
-            The cards were not created with balance in mind, so feel free to modify the stats
-            and add/remove cards as desired.</li>
+          <li>本实验所有问题的代码都可以在 <code>classes.py</code> 中找到。</li>
+          <li>游戏的一些工具代码在 <code>cardgame.py</code> 中，但你不需要打开或阅读这个文件。
+            这个文件实际上不会直接修改任何实例，而是调用不同类的方法，严格保持抽象屏障。</li>
+          <li>如果你想在以后修改游戏，添加自定义卡牌和卡组，可以查看 <code>cards.py</code>。
+            这个文件包含了所有标准卡牌和默认卡组；你可以在这里添加更多卡牌，或者更改你和对手使用的卡组。
+            这些卡牌在设计时没有考虑平衡性，因此你可以随意调整属性，添加或移除卡牌。</li>
         </ul>
 
-        <p><strong>Rules of the Game</strong> This game is a little involved, though not nearly as much as its namesake.
-          Here's
-          how it goes:</p>
+        <p><strong>游戏规则</strong> 这个游戏相对复杂，但远没有它的同名游戏那么复杂。游戏流程如下：</p>
 
-        <p>There are two players. Each player has a hand of cards and a deck, and at the
-          start of each round, each player draws a card from their deck. If a player's
-          deck is empty when they try to draw, they will automatically lose the game.
-          Cards have a name, an attack stat, and a defense stat. Each round, each player
-          chooses one card to play from their own hands. The card with the higher <em>power</em>
-          wins the round. Each played card's power value is calculated as follows:</p>
+        <p>游戏有两名玩家。每位玩家都有一手牌和一个卡组，每轮开始时，每位玩家从卡组中抽一张牌。
+          如果玩家在尝试抽牌时卡组已空，则该玩家会自动输掉游戏。
+          卡牌具有名称、攻击力和防御力。每轮，每位玩家从手牌中选择一张卡牌进行对战。
+          具有更高<em>战斗力</em>的卡牌赢得该轮对战。
+          每张已出战卡牌的战斗力计算方式如下：</p>
 
         <pre><code>(player card&#x27;s attack) &#x2d; (opponent card&#x27;s defense) / 2</code></pre>
 
-        <p>For example, let's say Player 1 plays a card with 2000 ATK/1000 DEF and Player 2 plays
-          a card with 1500 ATK/3000 DEF. Their cards' powers are calculated as:</p>
+        <p>例如，假设 Player 1 出了一张攻击力 2000 / 防御力 1000 的卡牌，而 Player 2 出了一张攻击力 1500 / 防御力 3000 的卡牌。
+          他们的卡牌战斗力计算如下：</p>
 
         <pre><code>P1: 2000 &#x2d; 3000/2 = 2000 &#x2d; 1500 = 500
 P2: 1500 &#x2d; 1000/2 = 1500 &#x2d; 500 = 1000</code></pre>
 
-        <p>so Player 2 would win this round.</p>
+        <p>因此，Player 2 赢得这一轮对战。</p>
 
-        <p>The first player to win 8 rounds wins the match!</p>
+        <p>第一个赢得 8 轮的 Player 将赢得整场比赛！</p>
 
-        <p>However, there are a few effects we can add (in the optional questions section) to
-          make this game a bit more interesting. Cards are split into Tutor, TA, and Professor
-          types, and each type has a different <em>effect</em> when they're played. All effects are applied
-          before power is calculated during that round:</p>
+        <p>不过，在可选问题部分，我们还可以添加一些特殊效果，使游戏更加有趣。卡牌分为 Tutor、TA 和 Professor 类型，
+          每种类型的卡牌在出战时都会触发不同的 <em>效果</em>，并且这些效果会在当轮战斗力计算之前生效：</p>
 
         <ul>
-          <li>A Tutor will cause the opponent to discard and re-draw the first 3 cards in their hand.</li>
-          <li>A TA will swap the opponent card's attack and defense.
-            <!-- * An Instructor will add 300 attack and defense to all cards in the player's deck, and then
-  add a copy of the opponent's card to both the player's deck and the player's hand.-->
-          </li>
-          <li>A Professor adds the opponent card's attack and defense to all cards in their deck and
-            then remove all cards in the opponent's deck that share its attack <em>or</em> defense!</li>
+          <li><strong>Tutor</strong> 使对手弃掉手牌中的前三张卡，并重新抽取三张。</li>
+          <li><strong>TA</strong> 交换对手卡牌的攻击力和防御力。</li>
+          <li><strong>Professor</strong> 将对手卡牌的攻击力和防御力加到对手卡组的所有卡牌上，
+            然后移除对手卡组中所有攻击力 <em>或</em> 防御力与该卡牌相同的卡。</li>
         </ul>
 
-        <p>These are a lot of rules to remember, so refer back here if you need to review them,
-          and let's start making the game!</p>
+        <p>规则较多，如果需要回顾规则，请随时返回此处查看。现在让我们开始制作这款游戏吧！</p>
 
-        <h3 class="question" id="q4">Q4: Making Cards</h3>
+        <h3 class="question" id="q4">Q4: 创建卡牌</h3>
 
-        <p>To play a card game, we're going to need to have cards, so let's make some!
-          We're gonna implement the basics of the <code>Card</code> class first.</p>
+        <p>要玩卡牌游戏，我们首先需要制作卡牌！让我们先实现 <code>Card</code> 类的基本功能。</p>
 
-        <p>First, implement the <code>Card</code> class constructor in <code>classes.py</code>. This constructor
-          takes three arguments:</p>
+        <p>首先，在 <code>classes.py</code> 中实现 <code>Card</code> 类的构造方法，该方法接受三个参数：</p>
 
         <ul>
-          <li>the <code>name</code> of the card, a string</li>
-          <li>the <code>attack</code> stat of the card, an integer</li>
-          <li>the <code>defense</code> stat of the card, an integer</li>
+          <li>卡牌的 <code>name</code>（名称），字符串类型</li>
+          <li>卡牌的 <code>attack</code>（攻击力），整数类型</li>
+          <li>卡牌的 <code>defense</code>（防御力），整数类型</li>
         </ul>
 
-        <p>Each <code>Card</code> instance should keep track of these values using instance attributes
-          called <code>name</code>, <code>attack</code>, and <code>defense</code>.</p>
+        <p>每个 <code>Card</code> 实例都应该使用实例属性 <code>name</code>、<code>attack</code> 和 <code>defense</code> 来存储这些值。</p>
 
-        <p>You should also implement the <code>power</code> method in <code>Card</code>, which takes in another card as
-          an input and calculates the current card's power. Check the Rules section if you want
-          a refresher on how power is calculated.</p>
+        <p>你还需要实现 <code>Card</code> 类中的 <code>power</code> 方法，该方法接收另一张卡牌作为输入，
+          并计算当前卡牌的战斗力。如果需要回顾战斗力计算方式，请查看规则部分。</p>
 
         <solution>
 
@@ -1056,39 +940,37 @@ P2: 1500 &#x2d; 1000/2 = 1500 &#x2d; 500 = 1000</code></pre>
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q Card.__init__
-python3 ok -q Card.power</code></pre>
+        <pre><code class="nohighlight">python3 ok -q Card.__init__ --local
+python3 ok -q Card.power --local</code></pre>
 
-        <h3 class="question" id="q5">Q5: Making a Player</h3>
-        Now that we have cards, we can make a deck, but we still need players to
-        actually use them. We'll now fill in the implementation of the <code>Player</code> class.
+        <h3 class="question" id="q5">Q5: 创建 Player</h3>
 
-        <p>A <code>Player</code> instance has three instance attributes:</p>
+        <p>现在我们已经有了卡牌，并且可以组成卡组，但仍然需要 Player 来使用这些卡牌。
+          现在，我们将完善 <code>Player</code> 类的实现。</p>
+
+        <p>每个 <code>Player</code> 实例有三个实例属性：</p>
 
         <ul>
-          <li><code>name</code> is the player's name. When you play the game, you can enter your name,
-            which will be converted into a string to be passed to the constructor.</li>
-          <li><code>deck</code> is an instance of the <code>Deck</code> class. You can draw from it using
-            its <code>.draw()</code> method.</li>
-          <li><code>hand</code> is a list of <code>Card</code> instances. Each player should start with 5
-            cards in their hand, drawn from their <code>deck</code>. Each card in the hand can be
-            selected by its index in the list during the game. When a player draws a new
-            card from the deck, it is added to the end of this list.</li>
+          <li><code>name</code>：Player 的名称。在游戏中，你可以输入自己的名字，名称会被转换为字符串并传递给构造方法。</li>
+          <li><code>deck</code>：<code>Deck</code> 类的一个实例。你可以使用其 <code>.draw()</code> 方法从中抽取卡牌。</li>
+          <li><code>hand</code>：一个包含 <code>Card</code> 实例的列表。每个 Player 应该在游戏开始时从 <code>deck</code> 中抽取 5 张卡牌作为起始手牌。
+            在游戏过程中，手牌中的卡牌可以通过索引进行选择。当 Player 抽取新卡牌时，该卡牌会被添加到列表末尾。</li>
         </ul>
 
-        <p>Complete the implementation of the constructor for <code>Player</code> so that <code>self.hand</code>
-          is set to a list of 5 cards drawn from the player's <code>deck</code>.</p>
+        <p>完成 <code>Player</code> 类的构造方法，使 <code>self.hand</code> 被初始化为 5 张从 <code>deck</code> 中抽取的卡牌列表。</p>
 
-        <p>Next, implement the <code>draw</code> and <code>play</code> methods in the <code>Player</code> class. The
-          <code>draw</code> method draws a card from the deck and adds it to the
-          player's hand. The <code>play</code> method removes and returns a card from the player's hand at the
-          given index.
-        </p>
+        <p>接下来，在 <code>Player</code> 类中实现 <code>draw</code> 和 <code>play</code> 方法：</p>
+
+        <ul>
+          <li><code>draw</code> 方法用于从 <code>deck</code> 中抽取一张卡，并将其加入 Player 的手牌。</li>
+          <li><code>play</code> 方法用于根据给定的索引从 Player 的手牌中移除并返回一张卡。</li>
+        </ul>
 
         <blockquote>
-          <p>Call <code>deck.draw()</code> when implementing <code>Player.__init__</code> and <code>Player.draw</code>.
-            Don't worry about how this function works - leave it all to the abstraction!</p>
+          <p>在实现 <code>Player.__init__</code> 和 <code>Player.draw</code> 方法时，需要调用 <code>deck.draw()</code>。
+            不必关心该方法的内部实现，直接使用抽象提供的功能即可！</p>
         </blockquote>
+
 
         <solution>
 
@@ -1143,42 +1025,34 @@ python3 ok -q Card.power</code></pre>
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q Player.__init__
-python3 ok -q Player.draw
-python3 ok -q Player.play</code></pre>
+        <pre><code class="nohighlight">python3 ok -q Player.__init__ --local
+python3 ok -q Player.draw --local
+python3 ok -q Player.play --local</code></pre>
 
-        <p>After you complete this problem, you'll be able to play a working version of
-          the game! Type</p>
+        <p>完成这个问题后，你将获得一个可运行的游戏版本！输入：</p>
 
         <pre><code>python3 cardgame.py</code></pre>
 
-        <p>to start a game of Magic: The Lambda-ing!</p>
+        <p>即可开始玩 Magic: The Lambda-ing！</p>
 
-        <p>This version doesn't have the effects for different cards, yet - to get those
-          working, try out the optional questions below.</p>
+        <p>当前版本还没有为不同类型的卡牌实现特殊效果。如果你想让这些效果生效，可以尝试完成下面的可选问题。</p>
 
 
         <h1 id="optional-questions">选做题</h1>
 
 
-        <p>The following code-writing questions will all be in <code>classes.py</code>.</p>
+        <p>以下的代码编写问题都将在 <code>classes.py</code> 中完成。</p>
 
-        <p>For the following sections, do <strong>not</strong> overwrite any lines already provided in the
-          code. Additionally, make sure to uncomment any calls to <code>print</code> once you have implemented
-          each method. These are used to display information to the user, and changing them
-          may cause you to fail tests that you would otherwise pass.</p>
+        <p>对于接下来的部分，<strong>不要</strong>修改代码中已经提供的任何内容。此外，在实现每个方法后，请确保取消注释所有对 <code>print</code>
+          的调用。这些调用用于向用户显示信息，修改它们可能会导致你未能通过测试。</p>
 
         <h3 class="question" id="q6">Q6: Tutors: Flummox</h3>
 
-        <p>To really make this card game interesting, our cards should have effects!
-          We'll do this with the <code>effect</code> function for cards, which takes
-          in the opponent card, the current player, and the opponent player.</p>
+        <p>为了使这个卡牌游戏更加有趣，我们的卡牌应该具有一些效果！我们将通过 <code>effect</code> 函数来实现这些效果，它接受对手的卡牌、当前玩家和对手玩家作为输入。</p>
 
-        <p>Implement the <code>effect</code> method for Tutors, which causes the opponent to discard
-          the first 3 cards in their hand and then draw 3 new cards. Assume there at least 3 cards
-          in the opponent's hand and at least 3 cards in the opponent's deck.</p>
+        <p>实现 Tutors 的 <code>effect</code> 方法，使其导致对手丢弃手中的前三张卡牌，并且从对方的牌库中抽取三张新卡。假设对手的手牌中至少有三张卡，并且对方的牌库中至少有三张卡。</p>
 
-        <p>Remember to uncomment the call to <code>print</code> once you're done!</p>
+        <p>记得完成后取消注释中对 <code>print</code> 的调用！</p>
 
         <solution>
 
@@ -1208,12 +1082,11 @@ python3 ok -q Player.play</code></pre>
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q TutorCard.effect</code></pre>
+        <pre><code class="nohighlight">python3 ok -q TutorCard.effect --local</code></pre>
 
         <h3 class="question" id="q7">Q7: TAs: Shift</h3>
 
-        <p>Let's add an effect for TAs now! Implement the <code>effect</code> method for TAs, which
-          swaps the attack and defense of the opponent's card.</p>
+        <p>现在我们为 TAs 添加一个效果！实现 TAs 的 <code>effect</code> 方法，它会交换对手卡牌的攻击力和防御力。</p>
 
         <solution>
 
@@ -1239,19 +1112,18 @@ python3 ok -q Player.play</code></pre>
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q TACard.effect</code></pre>
+        <pre><code class="nohighlight">python3 ok -q TACard.effect --local</code></pre>
 
+
+        html
+        复制代码
         <h3 class="question" id="q8">Q8: The Professor Arrives</h3>
 
-        <p>A new challenger has appeared! Implement the <code>effect</code> method for the Professor,
-          who adds the opponent card's attack and defense to all cards in the player's
-          deck and then removes <em>all</em> cards in the opponent's deck that have the same
-          attack or defense as the opponent's card.</p>
+        <p>一个新的挑战者出现了！实现 Professor 的 <code>effect</code> 方法，它会将对手卡牌的攻击力和防御力加到玩家卡组中的所有卡牌上，然后移除对手卡组中所有与对手卡牌的攻击力或防御力相同的卡牌。
+        </p>
 
         <blockquote>
-          <p><em>Note:</em> You might run into trouble when you mutate a list as you're iterating
-            through it. Try iterating through a copy instead! You can use slicing to copy
-            a list:</p>
+          <p><em>注意：</em>当你在遍历列表时修改该列表，可能会遇到问题。试着遍历列表的副本！你可以通过切片来复制列表：</p>
 
           <pre><code>  &gt;&gt;&gt; lst = [1, 2, 3, 4]
   &gt;&gt;&gt; copy = lst[:]
@@ -1295,12 +1167,10 @@ python3 ok -q Player.play</code></pre>
         </solution>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q ProfessorCard.effect</code></pre>
+        <pre><code class="nohighlight">python3 ok -q ProfessorCard.effect --local</code></pre>
 
-        <p>After you complete this problem, we'll have a fully functional game of Magic:
-          The Lambda-ing! This doesn't have to be the end, though - we encourage you to
-          get creative with more card types, effects, and even adding more custom cards
-          to your deck!</p>
+        <p>完成这个问题后，我们将拥有一个功能完整的 Magic: The Lambda-ing 游戏！不过，这不必是结束 - 我们鼓励你发挥创意，添加更多卡牌类型、效果，甚至将更多自定义卡牌加入你的卡组！</p>
+
         <script>
           $('.alwaystoggle').css('display', 'inline-block');
           $('.alwaystoggle').click(function () {
@@ -1325,19 +1195,19 @@ python3 ok -q Player.play</code></pre>
             </ul>
             <li><a href="#required-questions">必答题</a></li>
             <ul>
-              <li><a href="#iterators-and-generators">Iterators and Generators</a></li>
+              <li><a href="#iterators-and-generators">迭代器与生成器</a></li>
               <ul>
-                <li><a href="#q1">Q1: Scale</a></li>
-                <li><a href="#q2">Q2: Hailstone</a></li>
+                <li><a href="#q1">Q1: 缩放序列</a></li>
+                <li><a href="#q2">Q2: 冰雹序列</a></li>
               </ul>
-              <li><a href="#wwpd-objects">WWPD: Objects</a></li>
+              <li><a href="#wwpd-objects">WWPD: 对象</a></li>
               <ul>
-                <li><a href="#q3">Q3: The Car class</a></li>
+                <li><a href="#q3">Q3: 汽车类 (Car Class)</a></li>
               </ul>
               <li><a href="#magic-the-lambda-ing">Magic: The Lambda-ing</a></li>
               <ul>
-                <li><a href="#q4">Q4: Making Cards</a></li>
-                <li><a href="#q5">Q5: Making a Player</a></li>
+                <li><a href="#q4">Q4: 创建卡牌</a></li>
+                <li><a href="#q5">Q5: 创建 Player</a></li>
               </ul>
             </ul>
             <li><a href="#optional-questions">选做题</a></li>
