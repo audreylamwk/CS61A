@@ -400,8 +400,8 @@
         <h3 class="question" id="q2">Q2: 距离计算</h3>
 
         <p>实现 <code>distance</code> 函数，用于计算两个城市对象之间的距离。回顾一下，两个坐标点 <code>(x1, y1)</code> 和 <code>(x2, y2)</code>
-          之间的距离可以通过计算 <code>sqrt</code> of <code>(x1 - x2)**2 + (y1 - y2)**2</code> 来得到。我们已经为你导入了 <code>sqrt</code>
-          以方便使用。请使用城市的纬度和经度作为其坐标，并使用选择器函数来访问这些信息！</p>
+          之间的距离可以通过计算 <code>sqrt((x1 - x2)**2 + (y1 - y2)**2)</code> 来得到。我们已经为你导入了 <code>sqrt</code>
+          函数以方便使用。请使用城市的纬度和经度作为其坐标，并使用选择器函数来访问这些信息！</p>
 
         <solution>
 
@@ -473,7 +473,7 @@ def distance(city_a, city_b):
         <p>即使你违反了抽象屏障，你的 <code>distance</code> 和 <code>closer_city</code> 代码仍可能通过 doctest。要检查是否存在此问题，请运行以下命令：</p>
 
         <p>使用 Ok 来测试你的代码：</p>
-        <pre><code class="nohighlight">python3 ok -q check_city_abstraction</code></pre>
+        <pre><code class="nohighlight">python3 ok -q check_city_abstraction --local</code></pre>
 
         <p><code>check_city_abstraction</code> 函数仅用于 doctest，它会将 <code>city</code> 抽象的实现替换为另一种方式，运行前两部分的测试，然后恢复原始实现。</p>
 
@@ -534,7 +534,7 @@ def distance(city_a, city_b):
     |
     4</code></pre>
 
-        <p>如果我们调用 <code>sprout_leaves(t, [5, 6])</code>，结果将是以下树：</p>
+        <p>如果我们调用 <code>sprout_leaves(t, [5, 6])</code>，生成的树如下：</p>
 
         <pre><code>       1
      /   \
@@ -628,10 +628,10 @@ def distance(city_a, city_b):
         <h3 class="question" id="q8">Q8: 坐标</h3>
 
         <p>实现一个函数 <code>coords</code>，它接受一个函数 <code>fn</code>，一个序列 <code>seq</code>，
-          以及该函数输出的 <code>lower</code>（下界）和 <code>upper</code>（上界）。<code>coords</code> 返回一个包含坐标对（列表）的列表，使得：</p>
+          以及该函数输出的 <code>lower</code>（下界）和 <code>upper</code>（上界）。<code>coords</code> 返回一个包含两个坐标（列表）的列表，使得：</p>
 
         <ul>
-          <li>每个 (x, y) 对应的坐标对表示为 <code>[x, fn(x)]</code></li>
+          <li>每个 (x, y) 对应的坐标表示为 <code>[x, fn(x)]</code></li>
           <li>x 坐标来自给定的序列</li>
           <li>结果仅包含那些 y 坐标在给定上界和下界范围内（包含边界）的坐标对</li>
         </ul>
@@ -662,8 +662,8 @@ def distance(city_a, city_b):
 
         <h3 class="question" id="q9">Q9: 交错洗牌</h3>
 
-        <p>常见的 <a href="https://fredhohman.com/card-shuffling/static/images/riffle.gif">交错洗牌（riffle shuffle）</a>
-          方法用于洗一副牌（或者在我们的情况下，是一个序列）。洗牌后的新排列方式是：
+        <p><a href="https://fredhohman.com/card-shuffling/static/images/riffle.gif">交错洗牌（riffle shuffle）</a>
+          方法常用于洗一副牌（在本题中，是一个序列）。洗完牌后新的排列方式是：
           顶部的牌后面接着中间的牌，然后是第二张牌，再接着是中间的下一张牌，以此类推。
           假设序列的元素数量为偶数，请编写一个使用列表推导式的表达式来生成洗牌后的序列。</p>
 
@@ -690,7 +690,7 @@ def distance(city_a, city_b):
         <p>使用 Ok 来测试你的代码：</p>
         <pre><code class="nohighlight">python3 ok -q riffle --local</code></pre>
 
-        <h3 class="question" id="q10">Q10: 添加树</h3>
+        <h3 class="question" id="q10">Q10: 两树之和</h3>
 
         <p>定义
           <code>add_trees</code> 函数，该函数接收两棵树作为输入，返回一棵新的树，其中每个对应位置的节点来自两棵树相加的结果。如果某个位置的节点只在一棵树中存在，而在另一棵树中不存在，该节点也应出现在新树中。
@@ -753,8 +753,8 @@ def distance(city_a, city_b):
 
         <h2 id="shakespeare-and-dictionaries">莎士比亚与字典</h2>
 
-        <p>我们将使用字典来近似莎士比亚的全部作品！我们要使用一个二元语法（bigram）语言模型。基本思想如下：我们从某个单词开始——例如 "The"。然后，我们遍历莎士比亚所有的文本，记录每次 "The"
-          出现后紧随的单词，并将其添加到一个列表中，这个列表被称为 "The" 的 <em>后继者（successors）</em>。假设我们对莎士比亚曾经使用过的每一个单词都做了这样的处理。</p>
+        <p>我们将使用字典来近似莎士比亚的全部作品！我们要使用一个二元语法（bigram）语言模型。它的基本思想如下：我们从某个单词开始——例如 "The"。然后，我们遍历莎士比亚所有的文本，记录每次 "The"
+          出现后紧随的单词，并将其添加到一个列表中，这个列表中的单词被称为 "The" 的 <em>后继者（successors）</em>。假设我们对莎士比亚曾经使用过的每一个单词都做了这样的处理。</p>
 
         <p>回到 "The"。现在，我们可以从这个列表中随机选择一个单词，比如 "cat"。接着，我们查找 "cat"
           的后继者，并从中随机选择一个单词，如此往复。最终，这个过程会以一个句号（"."）终止，我们就生成了一句莎士比亚风格的句子！</p>
@@ -935,7 +935,7 @@ def distance(city_a, city_b):
             <ul>
               <li><a href="#q8">Q8: 坐标</a></li>
               <li><a href="#q9">Q9: 交错洗牌</a></li>
-              <li><a href="#q10">Q10: 添加树</a></li>
+              <li><a href="#q10">Q10: 两树之和</a></li>
             </ul>
             <ul>
               <li><a href="#fun-question">趣味问题！</a></li>
